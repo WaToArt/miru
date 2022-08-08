@@ -1,4 +1,4 @@
-Objective:
+# Objective:
 - Resolve personal issue of "o no, what anime/manga should I from my ***MAL/Anilist/Kitsu.io*** list? idk sad :'("
 - LEARN WHAT AND HOW EVERYTHING WORKS :3
 # First phase of project
