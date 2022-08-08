@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<myanimelist>
+  <myinfo>
+    <user_export_type>2</user_export_type>
+  </myinfo>
+  <manga>
+  <manga_mangadb_id>119161</manga_mangadb_id>
+  <my_read_chapters>10</my_read_chapters>
+  <my_read_volumes>0</my_read_volumes>
+  <my_start_date>2022-07-30</my_start_date>
+  <my_status>Reading</my_status>
+  <my_times_read>0</my_times_read>
+  <update_on_import>1</update_on_import>
+</manga>
+  <manga>
+  <manga_mangadb_id>90125</manga_mangadb_id>
+  <my_read_chapters>0</my_read_chapters>
+  <my_read_volumes>0</my_read_volumes>
+  <my_start_date>2022-07-29</my_start_date>
+  <my_status>Reading</my_status>
+  <my_times_read>0</my_times_read>
+  <update_on_import>1</update_on_import>
+</manga>
+  <manga>
+  <manga_mangadb_id>89087</manga_mangadb_id>
+  <my_read_chapters>0</my_read_chapters>
+  <my_read_volumes>0</my_read_volumes>
+  <my_start_date>2022-07-29</my_start_date>
+  <my_status>Reading</my_status>
+  <my_times_read>0</my_times_read>
+  <update_on_import>1</update_on_import>
+</manga>
+  <manga>
+  <manga_mangadb_id>60783</manga_mangadb_id>
+  <my_read_chapters>101</my_read_chapters>
+  <my_read_volumes>0</my_read_volumes>
+  <my_start_date>2022-07-29</my_start_date>
+  <my_finish_date>2022-07-29</my_finish_date>
+  <my_status>Completed</my_status>
+  <my_times_read>0</my_times_read>
+  <update_on_import>1</update_on_import>
+</manga>
+  <manga>
+  <manga_mangadb_id>42451</manga_mangadb_id>
+  <my_read_chapters>142</my_read_chapters>
+  <my_read_volumes>0</my_read_volumes>
+  <my_start_date>2022-07-29</my_start_date>
+  <my_finish_date>2022-07-29</my_finish_date>
+  <my_status>Completed</my_status>
+  <my_times_read>0</my_times_read>
+  <update_on_import>1</update_on_import>
+</manga>
+  <manga>
+  <manga_mangadb_id>36615</manga_mangadb_id>
+  <my_read_chapters>140</my_read_chapters>
+  <my_read_volumes>0</my_read_volumes>
+  <my_start_date>2022-07-29</my_start_date>
+  <my_finish_date>2022-07-29</my_finish_date>
+  <my_status>Completed</my_status>
+  <my_times_read>0</my_times_read>
+  <update_on_import>1</update_on_import>
+</manga>
+</myanimelist>
