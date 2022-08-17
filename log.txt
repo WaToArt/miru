@@ -1,0 +1,1107 @@
+commit 6ce88f8bfbacdb4aa84d57c1c1f1f3f875b0f5c0
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 16 10:17:38 2022 -0700
+
+    Change in 'test_scan_json.py': moved tests into class
+
+commit e4ba0624e1be117b33151195295899371245e902
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 16 10:00:49 2022 -0700
+
+    Add: pytest with class
+
+commit eb9aa92a70118d9469f66ba8143cd8de3484d7cd
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 16 09:32:34 2022 -0700
+
+    Added pytest-xdist '-n' '3' to Docker Compose
+
+commit 12514631144fba7ac79ea60b9219b36e9688f04e
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 18:56:56 2022 -0700
+
+    Updated Checklist and Session Log
+
+commit 5c116849bb622148c47bb49975762c0b246db8ca
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 16:01:47 2022 -0700
+
+    push
+
+commit 2cbd54fab9f1e3ae14800f7e72e0d2bc19009d66
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 16:01:26 2022 -0700
+
+    page 'purerandomtitles/' works without an error so far
+
+commit 99c8c00a69a7d3e8c5df99b0d36565d023354bfc
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 15:56:41 2022 -0700
+
+    passed tests for func 'search_xml_location'; but need to test Django
+
+commit d0c42809e3fd0bd97b6b0297a98ced4a2eb0c5cd
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 15:41:10 2022 -0700
+
+    Refactored and genearlized instance 'self.root' with func parse_xml' and 'search_xml_locations'
+
+commit a10d60b87fa84bca3963574608c2e6e38683e2db
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 14:50:11 2022 -0700
+
+    refactored
+
+commit 481e3733158a67cfd2074c841197aaaf0abb19ea
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 14:38:42 2022 -0700
+
+    Created inheritance classes from scan_xml
+
+commit 997e0640c444ee94878c88f092ec41df8f58c5e2
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 14:14:20 2022 -0700
+
+    added file search to func 'read_local_db_regular_json'
+
+commit 7914dda7013fddc5f0353888d52cd6ebb026e501
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 13:48:53 2022 -0700
+
+    created code, but will shift into function
+
+commit 7bb9e415f43e3f01635e75627e2ad234e9cd385b
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 00:42:15 2022 -0700
+
+    fixed link for "randomUserMAL" in the html
+
+commit b01fd0341eb753409bfb3ba19d688e8556849a42
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 00:28:27 2022 -0700
+
+    Next time:
+    
+    > Implement searching for file in two different directories
+
+commit 098c04e95f9e9f18996e0b7421773a26e6f397ee
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 00:26:42 2022 -0700
+
+    Implemented anime title from user's list
+
+commit 06ff2b3297aba2c06c1959bd0d2ef06a8bdcafed
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 00:08:49 2022 -0700
+
+    Realigned texts for 'purerandomtitles'
+
+commit 051c461391409f3559964c93c071975c0beb395a
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Aug 14 00:06:41 2022 -0700
+
+    swapped from using 'next' to regular for loop.
+    
+    > Results: Django's error "StopIteration" has not randomly appeared so far.
+
+commit 323c589f3ccd180894fa2e6d012d34307e227875
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 23:59:56 2022 -0700
+
+    Stopping sesh...
+    
+    Current issue:
+    Although webpage loads as expected, it sometimes throws an error 500. This might be due to how fast the front-end loads compared to the backend
+
+commit 84290665da937686e44530c4661c31b124148f16
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 23:51:32 2022 -0700
+
+    implemented functional for webpage 'purerandomtitles'
+
+commit c746ce800ad58156d157bc2844db927cb201db27
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 22:39:01 2022 -0700
+
+    implemented func 'get_random_title_info'
+
+commit e79737930effb5acfae6d1017e35a1912d565e24
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 22:32:33 2022 -0700
+
+    chosen v2 for func 'get_random_id()'
+
+commit 547beb1af5687c80d577d3ba28df8b7076b331f6
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 22:31:28 2022 -0700
+
+    wrote an unnessary test for fun
+
+commit 6836dd8e228fa813e4648dcf814c84e1498dc07d
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 22:11:55 2022 -0700
+
+    Ran time-test for func 'get_random_id'...
+    
+    > On average, v2 of func was more efficient.
+
+commit 503f4362083a0cd508436214ce313c412c5539d2
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 21:55:37 2022 -0700
+
+    wrote time-test func 'time_testing()'
+
+commit d4554798656486251135c2fa5949f717ce485abd
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 21:53:46 2022 -0700
+
+    wrote inital time-test code for func 'get_random_id'
+
+commit 4fe8be35dc9b37427f51baf2f4539d1158f24822
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 21:42:26 2022 -0700
+
+    refactored code
+
+commit 68d8f7cb4ee414f0bd1f713d3198027c40a08815
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 20:54:18 2022 -0700
+
+    Wrote future funcs' names
+
+commit 0be2cd5101e9ee9a48fbe4ede1c59f5caf49bd09
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 20:48:04 2022 -0700
+
+    Refactoring and added RSRC to find file with substring and recency
+
+commit 6770409eeb40268b587b0c104408caf7843d6c35
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 20:15:38 2022 -0700
+
+    Refactoring and assigning instance var 'self.current_anime' to None in func 'set_current_anime_from_db'
+
+commit 661955fcd6267160e2106950544721c162cfe9d5
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 20:05:07 2022 -0700
+
+    Refactoring...
+    
+    >Removing old code
+
+commit cada477b89036673fff3f2c5f862e84e3405ad4b
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 16:08:56 2022 -0700
+
+    Added working RNG to func 'set_any_random_title'
+
+commit aefd3fd3d223b14d0c99ba89f8dfebee8dfc8495
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 15:50:49 2022 -0700
+
+    Making steps to learning how random.seed works.
+    
+    > Test 'set_any_random_title' is currently failing
+
+commit c34fcb652f989d92d9812c92c30a06241713f2a1
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 15:41:22 2022 -0700
+
+    all of old tests pass
+
+commit dfc5e269002f47bca9dcfb0da81c1c2852aa2d3d
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 15:32:01 2022 -0700
+
+    Readjusted tests for grabbing titles
+
+commit 8509f2fa1233a2b81c546302e50f0287621ab1a4
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 15:29:26 2022 -0700
+
+    Added instance var 'self.current_anime' to easily retrieve chosen anime...
+    
+    > need to readjust failing tests and func
+
+commit 847f80164d6a2ccfcdbf06cb0d2503dff9a08918
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 15:08:36 2022 -0700
+
+    Refactored how Database worked and reworked tests...
+    
+    > If func "verify_repo()" was true, the instance var 'json_data' was emptied out and its data was put into instance var 'db_anime_data'
+
+commit d87511a1c6bd57ac31d560c50c25d3dc544c830f
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 13:52:24 2022 -0700
+
+    added test related to minified json...
+    
+    Minified json works like the regular json.It might be better to use for speed. It
+
+commit be227ffa12a4b040e211a9c12b9f127758da86d9
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 13:49:18 2022 -0700
+
+    Slowly implement "get_random_title" and minified works
+
+commit 2d459359ab4cbafd21963b8f26e6fbd0e9778ceb
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Aug 13 13:07:30 2022 -0700
+
+    Initialized HTML
+
+commit 5826e9e7ca07812755c6714058b4e0e6091bf0b9
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 12 17:11:26 2022 -0700
+
+    started on app "purerandomtitles"
+
+commit 644fdda9437914c205c92aa3aad716dd8e3215ff
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 9 13:02:12 2022 -0700
+
+    >> UPDATED: 0-checklists.md
+    
+    > mentioned to add function that obtain's the DB's last update to ensure that the latest database is being used.
+
+commit fb92d90b4c53c5f7797692aa6bf42c714ce4a206
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 9 12:59:47 2022 -0700
+
+    >> Added: function that uses "minified" verison of anime database.
+    
+    > needs to be tested when connected to stable unlimited internet
+
+commit 870d881d5bec9e1589cc82e5315adc2246c07fe7
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 9 12:43:53 2022 -0700
+
+    >>REIMPLEMENTED: functions for settings links of instance variables related to Anilist and Kitsu
+
+commit 24e6ebd9d900f805af111f374fdf65449dcd9e47
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 9 12:27:26 2022 -0700
+
+    >> REMOVED:
+    
+    >all tests related to Anilist and Kitsu. Reworking code soon.
+
+commit 14672834fb245de2a1ffcac8ad8b9e548a1c70af
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 9 12:25:26 2022 -0700
+
+    >> REMOVED: test for kitsu_id as it's not needed
+
+commit 5a811b1d2c33281b130ed796d88ecdb164d50211
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 9 12:24:25 2022 -0700
+
+    > TEMP REMOVAL: functions related to Anilist and Kitsu.
+    
+    > Will reinstate them later
+
+commit 41b3d7a643498ff867ae80f9150d63f4d7744a3f
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 9 12:14:19 2022 -0700
+
+    REMOVED: old instance variables
+
+commit 1c2448204a2eab4cb3364c159fb115ed9295d882
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 9 12:09:00 2022 -0700
+
+    > Renamed function: "set_all_links()" to "set_all_links_anime()"
+    
+    > Reason: Strictly focusing on anime. Other medias might have different format.
+    
+    > Next: fix all tests
+
+commit ce3916ec90a4de612ef4355f4a61d0c5c3faf1e3
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 9 12:06:20 2022 -0700
+
+    REMOVED: instance variables related ids for Anilist and Kitsu.io as all of them use MAL as the foundation
+
+commit bc6ddaa53fa3dd3f7945d468f72ce9cf27e23611
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 8 00:47:33 2022 -0700
+
+    updated readme.md
+
+commit 1d1491a6e0578d3b6741777e95ab6421a6eade08
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 14:19:14 2022 -0700
+
+    > updated Session_Log.md
+    
+    > Included "next session"
+
+commit a72e6b8cfa560cd5b83868625f6e8e7dbe43687a
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 14:14:01 2022 -0700
+
+    updated Session_Log.md
+
+commit 2518fc1825ba77df8a7fb4f80350326b2581eb8b
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 14:07:50 2022 -0700
+
+    > implemented grabbing info from anime_db
+    
+    > renamed variable to "db_all_anime" for clarity
+
+commit f27b4702ba4b5df452bedc35100ce24e0d95d698
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 13:49:55 2022 -0700
+
+    > db_info.md about how Anilist handles its database...
+    
+    Anilist also uses MAL's id as the foundation
+
+commit f5f144770e8bd2ce163482131ebce30c757b60dc
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 13:46:04 2022 -0700
+
+    cleaned up function "grab_link_with_substring"
+
+commit 22b4038ec6cc486afafb9ca1d653c0181ac6e77b
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 13:44:47 2022 -0700
+
+    > removed "try and except" as it wasn't needed for the substring search function
+    
+    > removed comments of old code
+
+commit 462995b87fe92e1e2947e01aaeb99f785d6c9753
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 13:41:09 2022 -0700
+
+    > RSRC 10 - how Python's function "next" works
+
+commit 2409185ebd410d6edc1432d3695fb99cf9976a20
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 13:36:50 2022 -0700
+
+    comment now includes "substring" in string
+
+commit c064863fb53382c62e64e06e122fd2407e67bf33
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 13:35:57 2022 -0700
+
+    > Added RSRC 9; details about Python's equalivant to Java's "For-each" loop and if statement with "contains()" BUT Python combining it together.
+    
+    > Docker also passed all tests
+
+commit 7a469417486abd59fd636ec529670e1eb1f07260
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 13:29:46 2022 -0700
+
+    passed test for function "obtain_anime_all_sources"???
+    
+    Need to test with Docker to confirm and see results
+
+commit fdc4abf0c343557211fed87b1fa4ece85bc0cb0f
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 13:27:31 2022 -0700
+
+    modified and passed previous tests
+
+commit fc776438423421db26a9bd82e73858657b4ed43d
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 13:11:07 2022 -0700
+
+    replaced modules using old name "get_title_db" to new name "get_anime_db"
+
+commit 81dff1c35483271d1c57e401f9035d3af1664b9f
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 13:09:44 2022 -0700
+
+    repurposed function ("get_title_db" to return an anime's db info
+
+commit 71340939bf1f8d1a6bd470557948aa84974d152d
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 12:40:40 2022 -0700
+
+    added comment to possibly change a function to be more general.
+    
+    Its functionality seems for the purpose
+
+commit 06948e92a35e839335526b78766b34385b7b1f6e
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 12:35:34 2022 -0700
+
+    repurposed function "check_mal_id_in_db" to either return None or the parameter's string/URL
+
+commit 8d3d76f9dd307612d3a8cfe63af99cd2b8e3ff0b
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 12:31:50 2022 -0700
+
+    passed test (not found in database) to account if the URL isn't found for function "obtain_anime_all_sources".
+    
+    This function is still WIP
+
+commit 65d8961431445d2bf4c062cdda2bee51364c01e5
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 12:06:51 2022 -0700
+
+    wrote test fixtures AND wrote part of function "obtain_anime_info()"
+
+commit f797961022376f01fc3ecabd5223ba9e6e82845c
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Aug 5 11:34:41 2022 -0700
+
+    readjusted naming scheme AND passed all tests
+
+commit bbae73d3d01f2e306cbb7868695caea5b928aa0e
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 19:48:21 2022 -0700
+
+    renamed all modules to be easier to navigate
+
+commit 61fbb75e5e8d0b4824ff2a74c05d576ca2e53c8e
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 19:44:05 2022 -0700
+
+    passed test for function "check_mal_id_in_db()"
+
+commit f9b23933b81db372ca0c9d5cf0393ed4dc1a633a
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 19:26:52 2022 -0700
+
+    created test for new function: "check_mal_id_in_db()"
+
+commit 18313e36155862160a2ff35a542fff65b829209d
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 16:31:40 2022 -0700
+
+    updated session_log.md
+
+commit 8f80c1b98b4193e2e7811686ceee329bf3cfdf4f
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 16:26:02 2022 -0700
+
+    passed verification test for function "read_online_db_json".
+    
+    # "json.dumps" was failing the verification test
+
+commit a66f8b4b7bc8bbed8e0b049d707398d6f59b7694
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 16:18:09 2022 -0700
+
+    modified Dockerfile to copy database files
+
+commit a7bb4347e59e5147fbc537441b21ac81fecc1508
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 16:10:09 2022 -0700
+
+    Passed test for verification test for function "read_local_db_json"
+    
+    # Swapped from "json.loads()" to "json.load()", which stopped triggering this erroe: "TypeError: the JSON object must be str, bytes or bytearray, not TextIOWrapper". json.loads couldn't read a TextIOWrapper format
+
+commit 41d8739a19ab61870491526e747c5b54fec3c39e
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 16:04:18 2022 -0700
+
+    encountered TypeError for function "verify_repo"
+
+commit 51c235168b2d47c7646ec37c1fe78e1171923225
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 15:46:33 2022 -0700
+
+    > wrote parts of function "read_local_db_json".
+    
+    > Also wrote outline for function "start_program"
+
+commit 8bdeabcf4c0bc67aa36d9ecb06184cd2ae9708e7
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 14:28:58 2022 -0700
+
+    moved onto writing tests for functions:
+    >> "read_local_db_json"
+    >> "read_online_db_json"
+
+commit 0062b3326cd93da0498603aa22af347c206c770e
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 14:19:13 2022 -0700
+
+    added comments and starting on function "read_local_db_json"
+
+commit 74ea16e9772cedea7243b23b8fc4ba0dd5adff3c
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 14:03:54 2022 -0700
+
+    created function "read_online_db_json"
+
+commit f4d6b39a3d2d3b383e39ba13a5af2acf9f033c6f
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 13:41:36 2022 -0700
+
+    wrote variable and function relating to ask whether to yes local or online db's json
+
+commit c38642c4339a2fad17078382f06faba6439490a6
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Aug 4 13:19:06 2022 -0700
+
+    moved tests for class "read_file" into it's own module for ease of access and org
+
+commit d8c8cef820390e4fa6a5838b883e81b4a10b7d96
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Wed Aug 3 13:15:01 2022 -0700
+
+    2 file pushes:
+    
+    - Added comment to resource file about using JSON hosted on Github
+    - Added comment to class "scan_xml" to IMMEDIATELY run two functinos
+
+commit 737e3750d851a76e1d9cd8114992350b8b5cc1b6
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 2 16:10:35 2022 -0700
+
+    change "scan_files" to "scan_xml"
+
+commit ffa0728facbf66aa0d4422a60703fe73176825aa
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 2 12:37:38 2022 -0700
+
+    updated checklist:
+    
+    - MAYBE... save info to a separate file after running program?
+
+commit 3ed88efeb620b3bd4402e36d9e35f58d0f793556
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Tue Aug 2 12:24:57 2022 -0700
+
+    Wrote plan for integrating JSON and XML
+
+commit fc2e28d26a2dac4e84387ee8630db70111c23595
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 13:33:09 2022 -0700
+
+    updated .MDs
+
+commit 7e95d26d3b6d5f724172fac835feff654ac398f3
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 13:26:16 2022 -0700
+
+    1) passed all test; including testing class 'scan_xml' variable "format_media"
+    
+    2) fixed missing arg when "format_media" arg was added to scan_xml's "__init__"
+
+commit ca753db70972f308fe99e4226150d8214670a913
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 13:04:23 2022 -0700
+
+    passed test for function "check_animeid_MAL"
+
+commit b0f6e0b0dc29d23177740e5fb85b2217882e478b
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 12:44:41 2022 -0700
+
+    passed test for info_db's variable "my_status"
+
+commit 67e2968ae6db309db3ca228fde32d8eb0a55fb1d
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 12:37:30 2022 -0700
+
+    currently passing all tests
+
+commit 5d5ee4a545010a5ab93ed64318ea9adbf98f0363
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 12:26:26 2022 -0700
+
+    finished writing foundation info_db
+
+commit 74525a8407475d2218cbe16021b312903b213b48
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 12:19:51 2022 -0700
+
+    sync
+
+commit 5d4121b44d4be2b156d94032c6d4155a0f30bfb4
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 11:50:53 2022 -0700
+
+    renamed again to find modules easily
+
+commit 946e11effa07a51a8262e48de11a3b017f7ba3e2
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 11:48:45 2022 -0700
+
+    change class's name from "media" to "media_info"
+
+commit e40e85ddf8b85ff57ac2b64cc6124a83928939ea
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 11:44:45 2022 -0700
+
+    added TODO on what to execute next
+
+commit 7b1bcbbd5adedaa98b00d10917f0ac946777ee2e
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 11:39:44 2022 -0700
+
+    wrote test to check for string length
+
+commit 8b42f49c99f5eb51af8ae80f3437e857088ba498
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 03:24:43 2022 -0700
+
+    COME BACK LATER TO LOG WHAT HAPPENED... im sleepy
+
+commit 6a3a0da914d698bcd6993ebfdaabf3660fcec549
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 02:40:23 2022 -0700
+
+    function "get_random_id" works
+
+commit bfbaaa334d15ce60e4e5fb6c060ed784cc0924ef
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 01:59:26 2022 -0700
+
+    wrote note on why calling function "format_database()" in function "__init__" failed
+
+commit b5ea5669cc9906105660cd596207336520c6533a
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 01:55:14 2022 -0700
+
+    passed test for "check_ids()"
+
+commit 8b4e577ed1ed642fe7a81a5d6818f68a01929b96
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 01:43:10 2022 -0700
+
+     current attempt sotred all values from xml; FAILED
+
+commit 827d769d2ad822c08490cfd7ec31abbaa76722c7
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 00:45:02 2022 -0700
+
+    sync
+
+commit bf735f7ef8591cfad7c5a8edca0f30183150cab0
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 00:37:40 2022 -0700
+
+    passing all tests;
+
+commit cf9595a69abeee6a101e4cfeb306afd0bc42ad2a
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Mon Aug 1 00:15:54 2022 -0700
+
+    trying out xml functions in __main__
+
+commit 981793ec30a516a3293c999e10d8b2c9ca112026
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 19:36:33 2022 -0700
+
+    created and log session
+
+commit 4a7716a85d2d0dc6498459df68b305e5e0fb52e4
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 19:31:13 2022 -0700
+
+    add
+
+commit 083f18a436674d72b5bc920cd048455df5279f5f
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 19:28:53 2022 -0700
+
+    added new flags to pytest commands
+
+commit 24fc2310a94679a116abc8b54b13f39e17b59eb7
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 18:49:21 2022 -0700
+
+    added Typing hints to all functions
+
+commit 478754862e155140d645184729ca59cbbd158da8
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 17:19:23 2022 -0700
+
+    Provided example of folder structure to account that reading files will consistently work
+
+commit 119709a8770e974ec04c78f60759a66e71318cbc
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 15:37:36 2022 -0700
+
+    Docker now properly read files;
+    
+    Added comments on how to structure copying files and making sure that all stay in their respective folder locations
+
+commit 63971f5c2284c64df5e377f84d7f48f9b76aa88d
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 15:18:11 2022 -0700
+
+    pytest passes after reorganzing file locations...
+    
+    need to test Docker-compose AND Dockerfile to see if it contained test passes
+
+commit 6059aeff957f1b7c080f4dc3876aa95589498760
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 15:12:15 2022 -0700
+
+    current Dockerfile setup works for finding xml file; still needs to refine
+
+commit 1692c05b12b8e62bdbf070502ae61bb170a3f204
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 14:52:10 2022 -0700
+
+    passed tests for function "readline_file()"
+
+commit b5f562475817080ab8a182689fc5a926c3c8e082
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 12:47:23 2022 -0700
+
+    added comment on commented area
+
+commit 7723aef17bf45ff9165b18f9dfd7dc03802ef335
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 12:46:41 2022 -0700
+
+    shifting focus to conftest.py and how it works with PyTest.fixtures
+
+commit 7b88740e8eec47ed86b02a56789a3c4c2bcce6ec
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 12:16:06 2022 -0700
+
+    expection "FileNotFoundError" works as intended
+
+commit d4bf9ed259e3f78e8bcb2688821bf3cffe49d27a
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 12:13:28 2022 -0700
+
+    updated note about location of xml... AND moved .xml files into root for "with open" to work
+
+commit 933ecdde000c5e19a75612cc0eba497a5ea4a7aa
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 12:01:03 2022 -0700
+
+    moved xml to where the root of the project is located
+
+commit c3e8dcb242ef47aea633c8713eb968b824d286ce
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 05:24:39 2022 -0700
+
+    i
+
+commit 6292cdfbdf3451c3d1278f69f03bc1e2bd5d03c0
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 04:23:03 2022 -0700
+
+    import xml.etree.ElementTree
+
+commit 5ead221ba293076308751d1fe921c908df1c286b
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 04:04:27 2022 -0700
+
+    sync
+
+commit b00294649f18465a5da39415c71ad4a5ae3fcd4d
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 04:04:14 2022 -0700
+
+    Sync-ing repo with new .gitignore;
+    
+    used "git rm -r --cached ." command
+
+commit 43534ef6f5b33acb3a1f655a41e314bc9986022d
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 04:00:56 2022 -0700
+
+    updated .gitignore
+
+commit 6d35170f8e37f1df55aa5e5c3f3a6d44685a979f
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sun Jul 31 03:57:09 2022 -0700
+
+    renamedmodule
+
+commit 572740bdd9a685b199e6cca3b2e8791a8535e859
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 21:05:47 2022 -0700
+
+    checked off "create dockerfile and docker-compose" of checklist
+
+commit 0ebfc655a1f4048888f828066359542a97b148f3
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 21:02:47 2022 -0700
+
+    Docker setup is complete. Added comments on how to run Docker
+
+commit 86930b0bfe54c02ed7e6e5fb592ff69d1ce0a1ca
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 20:21:20 2022 -0700
+
+    docker compose setup properly
+
+commit 1440107f3c82e0cf68800338fb66480ff1af8230
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 19:57:16 2022 -0700
+
+    created Dockerfile
+
+commit f0d16dc94150804ba19b67e9690785b3e2f59e67
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 17:52:37 2022 -0700
+
+    added checklist for Front-end
+
+commit 9c8b9fdfdaef2dbf339f6feb6522b6a4891b9684
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 17:51:29 2022 -0700
+
+    added more to checklist
+
+commit adf2074a017c20af9b03a3847c57f7ccf7e2ba0d
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 17:50:25 2022 -0700
+
+    created checklist.md for organization purposes
+
+commit ee264d8b28921f5a840895003811ab4527ad2ff1
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 15:18:37 2022 -0700
+
+    wrote pytest.fixture "ln_86"...
+    
+    need to write two test classes related to URLs
+
+commit d498405a3413f2da81d37de2a54fbb334540bd57
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 15:13:18 2022 -0700
+
+    included note about how Light Novel is handled by category and URL
+
+commit e0afdc5a89a2449598e8414e22e4da40dc725197
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 15:07:58 2022 -0700
+
+    wrote pytest.fixtures AND passed
+
+commit 3d90660c4f4e536aec8054bbb0edfa1949151984
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 14:56:24 2022 -0700
+
+    sucessfully refactored code; need to remove old code that's been commented
+
+commit a5f078bfee7abb6e92820537c076b58d644feac8
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 14:54:37 2022 -0700
+
+    started refactoring code the 3 individual "set_site_links" into main body; need to incorporate class variable "self.url_type" into it
+
+commit efcc0303bd6ab1a8064442aabb26a5811f46193c
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 14:51:47 2022 -0700
+
+    Added class varible "self.url_type:str", which will be used to create URLs
+
+commit 2736ac345e3441d8fe8b960ab3028af9fbb8eeb1
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 14:47:23 2022 -0700
+
+    removed slash from URLs
+
+commit d9ba3434f0a27df9a8e2b485ad97e340137913ea
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 14:43:15 2022 -0700
+
+    created tests; need to code proper functions in class "Manga"
+
+commit 3035ac402cc14f082ca35a438fed8f9cd5c6bf80
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 00:31:33 2022 -0700
+
+    created mod "scandb.py"
+
+commit 45cfdc61a8c2b5f6d02fbb41bb93d0857fefe248
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Sat Jul 30 00:28:33 2022 -0700
+
+    refactored code
+
+commit 4d34fa08c782646f833f54bd9c338b18c0c55436
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 23:54:50 2022 -0700
+
+    refactoring; all tests are passing
+
+commit 6ac633ebe6ec3a515ffc333e0beef382b3047bbe
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 23:52:04 2022 -0700
+
+    refactoring code; Python-izing code that I wrote in Java style
+
+commit 4f0a3ff0b868b0d56168664ef6797944b2a6c722
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 22:48:31 2022 -0700
+
+    reorganize file location AND added notes about Lambda usage
+
+commit 300fa4d81fe4310314017be01e4e9d0bb5ffc779
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 22:44:00 2022 -0700
+
+    ending coding session...
+    
+    Next time: Write Dockerfile to test app
+
+commit 17cfe1c8cc49d4e2ff4873fd82805920d754e9bb
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 22:40:32 2022 -0700
+
+    readjusted pytest.fixture's "class_anime_wotaku_ni_koi"
+
+commit daea310c956676d686178bf5f3653b3978170983
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 22:25:06 2022 -0700
+
+    passed all tsetse
+
+commit 25f43d96e75cdea6f79b06ce0b0377fc74671ca2
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 22:21:46 2022 -0700
+
+    all tests works after refactoring
+
+commit 7e1655142c7ccb406ab9f3393fd2505907ab8e00
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 22:12:01 2022 -0700
+
+    created separate classes for databases MAL and  Anilist...
+    
+    might put them them into main class since it is simplier than creating multiple anime classes that inhiertes different classes
+
+commit 66b7bb43850f2eb2efa34216c31c1390357239cf
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 21:50:06 2022 -0700
+
+    updated .gitignore
+
+commit a5fbed87a97bceca7c5e4d822c640cc98db4da1a
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 21:11:27 2022 -0700
+
+    passed tests regarding setting links
+
+commit 7dacd33b14d4b7758a362fc33366a239762a1a68
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 20:58:22 2022 -0700
+
+    readjusted name
+
+commit b01083ac4ccafb4d3849099d547036e87ae78ea6
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 20:51:39 2022 -0700
+
+    removed redunant tests
+
+commit e4394c57c3e55f9104ef426fdfba937faf91da33
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 20:51:28 2022 -0700
+
+    commented out redunant tests
+
+commit 61b976163b952c5d5af889e5217f43d26a98db58
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 20:44:29 2022 -0700
+
+    created more tests
+
+commit c6688c4f6eb928550007dd2d29645d84599b5837
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 20:33:54 2022 -0700
+
+    created and passed tests
+
+commit c24b5dcdde6ef4bf48ff8d8b447c08c0e8400621
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 20:23:36 2022 -0700
+
+    creating tests
+
+commit 95158bd15c1ecec46fcdb51b004bb954c62b1d1d
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 18:54:20 2022 -0700
+
+    updated "info_kitsuio_xml.md"
+
+commit d0be1678d922ef51347af3ffd8439c38309bb12a
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 18:39:45 2022 -0700
+
+    updated doc "info_kitsuio.xml"
+
+commit 77390071dcfe8097c5851ebc38f18e17bba40ffc
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 18:37:35 2022 -0700
+
+    wrote tests AND reorganized folders
+
+commit dd7203c4efd8778c39ffdeed764893605ce18967
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 17:47:36 2022 -0700
+
+    updated 'db_info.md' about databases AND included tutorial on how to scrape data
+
+commit 9240bf3336093c3832e0934e12782f84e2bd5d05
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 17:27:54 2022 -0700
+
+    created separate folder for notes
+
+commit 0fd56738c8170b873eb668fdfb49e0011bb9f1d5
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 17:07:42 2022 -0700
+
+    uploaded new XML data from Kitsu
+
+commit a8f4bc38f60e2f4fd13b74d6d431932dda341ca1
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Fri Jul 29 17:03:26 2022 -0700
+
+    Updated repo
+
+commit 43444b99b72385e27586669672f43109b82d1701
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Jul 21 14:11:30 2022 -0700
+
+    updated Notes.md...
+    
+    Included kitsu.io's APIs
+
+commit 8cb88ba5267e0c7c8c41dc8cc8d6495cb139d69d
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Jul 21 14:08:26 2022 -0700
+
+    updated Notes.nd
+
+commit 27d67de14c83ea4c873f4288ff7130c7c66ee363
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Jul 21 14:07:46 2022 -0700
+
+    update Notes.md
+
+commit 0f3b949b66640bca3791f9a8e58cf8c7a424cdfa
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Jul 21 14:07:25 2022 -0700
+
+    updated Notes.md
+
+commit 9aea722133749777b248f560017cab7ad8c64bf2
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Jul 21 14:04:38 2022 -0700
+
+    update readme.md
+
+commit 09199f08f720c6cd008eeef1e8ac13c0ccf519c9
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Jul 21 14:04:19 2022 -0700
+
+    update readme.md
+
+commit 03f3e42ff623f10ea0c00205b13c3e66ba15a776
+Author: WaToArt <93100367+WaToArt@users.noreply.github.com>
+Date:   Thu Jul 21 14:02:37 2022 -0700
+
+    Initializing repo

@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+        <title>
+            Random Title
+        </title>
+        <link rel="stylesheet" href="{% static 'purerandomtitles/style.css' %}">
+        
+    </head>
+    <body>
+        <div class="what2watch">
+            <h2>Here's a random anime from your list: </h2>
+            <h1> <a href={{ randomUserMAL }}> {{ randomUserAnime }}</a> </h1>
+            <br>
+            <h2>Here's a completely random anime title:</h2>
+            <h1> <a href={{randomDbMAL}}> {{randomDbTitle}} </a></h1>
+        </div>
+        <br><br><br><br>
+        <div class="credits">
+            <h1> <a href="https://github.com/manami-project/anime-offline-database">Database used: Project Minami</a> </h1>
+        </div> 
+    </body>
+</html>
