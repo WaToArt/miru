@@ -1,6 +1,6 @@
 
 class info:
-    def __init__(self, id:int):
+    def __init__(self, id:int=None):
         self.id_primary = id
         self.database = None        
         
@@ -10,8 +10,7 @@ class info:
         ## Options: "anime" and "manga"
         ### IMPORTANT INFO: Light novels are put under the "manga" category, which the url also contains "url"
         self.url_type:str = None 
-
-
+        
         self.title:str = None
 
         self.link_mal:str = None 
@@ -19,40 +18,35 @@ class info:
         self.link_anilist:str = None
         
         self.id_mal:int = None # Using "None" works when variable is set as "int" data type.
-        self.id_kitsu:int = None
-        self.id_anilist:int = None
+
 
 
     # === Batch commands ===
     
-    def set_all_links(self):
+    def set_all_links_anime(self):
         # TODO - need to account if series doesn't exist on other websites
         self.set_mal_link()
-        self.set_kitsu_link()
-        self.set_anilist_link()
+        # self.set_kitsu_link()
+        # self.set_anilist_link()
 
-    def use_database_MAL(self, title, kitsu_id, anilist_id): # MAL database
+    def use_database_MAL(self): # MAL database
         
         # TODO - need to account if series doesn't exist on other websites
 
         # Potential set of sequence depending on which database is the primary one
-        self.id_mal = self.id_primary
-        self.database = "MAL"
+        self.database = "mal"
 
-        self.title = title
-        self.id_kitsu = kitsu_id
-        self.id_anilist = anilist_id
-
-    def use_datebase_Anilist(self, title, mal_id, kitsu_id): # database is Anilist
+    def use_datebase_Anilist(self): # database is Anilist
         # TODO - need to account if series doesn't exist on other websites
 
         # Potential set of sequence depending on which database is the primary one
-        self.id_anilist = self.id_primary
-        self.database = "Anilist"
+        self.database = "anilist"
+    def use_datebase_Kitsu(self): # database is Anilist
+        # TODO - need to account if series doesn't exist on other websites
 
-        self.title = title
-        self.id_mal = mal_id
-        self.id_kitsu = kitsu_id
+        # Potential set of sequence depending on which database is the primary one
+        self.database = "kitsu"
+
     
     # Links will use self.url_types
     # TODO - need to account if webpage doesn't exist on other websites
@@ -66,21 +60,21 @@ class info:
     
     
 
-    def set_kitsu_link(self):
+    def set_kitsu_link(self, kitsu_url:str = None): # FIXME - add parameter where it is a string that contains Kitsu's URL
         new_kitsu_link = ""
-        if self.id_kitsu == None:
+        if kitsu_url == None:
             new_kitsu_link = "Kitsu.io doesn't have a page :'("
         else:
-            new_kitsu_link = f"https://kitsu.io/{self.url_type}/{self.id_kitsu}"
+            new_kitsu_link = kitsu_url
         self.link_kitsu = new_kitsu_link
         
 
-    def set_anilist_link(self):
+    def set_anilist_link(self, anilist_url:str =None): #FIXME
         results = ""
-        if self.id_anilist == None:
+        if anilist_url == None:
             results = "Anilist doesn't have a webpage ;["
         else:
-            results = f"https://anilist.co/{self.url_type}/{self.id_anilist}"
+            results = anilist_url
         self.link_anilist = results
 
     # === Scan databases

@@ -1,51 +1,52 @@
 <?xml version="1.0"?>
+<!-- Officially obtains via Kitsu.io -->
 <myanimelist>
   <myinfo>
     <user_export_type>1</user_export_type>
   </myinfo>
   <anime>
-  <series_animedb_id>48556</series_animedb_id>
-  <my_watched_episodes>0</my_watched_episodes>
-  <my_read_volumes>0</my_read_volumes>
-  <my_status>Dropped</my_status>
-  <my_times_watched>0</my_times_watched>
-  <update_on_import>1</update_on_import>
+    <series_animedb_id>48556</series_animedb_id>
+    <my_watched_episodes>0</my_watched_episodes>
+    <my_read_volumes>0</my_read_volumes>
+    <my_status>Dropped</my_status>
+    <my_times_watched>0</my_times_watched>
+    <update_on_import>1</update_on_import>
 </anime>
   <anime>
-  <series_animedb_id>40417</series_animedb_id>
-  <my_watched_episodes>0</my_watched_episodes>
-  <my_read_volumes>0</my_read_volumes>
-  <my_status>On Hold</my_status>
-  <my_times_watched>0</my_times_watched>
-  <update_on_import>1</update_on_import>
+    <series_animedb_id>40417</series_animedb_id>
+    <my_watched_episodes>0</my_watched_episodes>
+    <my_read_volumes>0</my_read_volumes>
+    <my_status>On Hold</my_status>
+    <my_times_watched>0</my_times_watched>
+    <update_on_import>1</update_on_import>
 </anime>
   <anime>
-  <series_animedb_id>50265</series_animedb_id>
-  <my_watched_episodes>9</my_watched_episodes>
-  <my_read_volumes>0</my_read_volumes>
-  <my_start_date>2022-07-30</my_start_date>
-  <my_status>Watching</my_status>
-  <my_times_watched>0</my_times_watched>
-  <update_on_import>1</update_on_import>
+    <series_animedb_id>50265</series_animedb_id>
+    <my_watched_episodes>9</my_watched_episodes>
+    <my_read_volumes>0</my_read_volumes>
+    <my_start_date>2022-07-30</my_start_date>
+    <my_status>Watching</my_status>
+    <my_times_watched>0</my_times_watched>
+    <update_on_import>1</update_on_import>
 </anime>
   <anime>
-  <series_animedb_id>35968</series_animedb_id>
-  <my_watched_episodes>11</my_watched_episodes>
-  <my_read_volumes>0</my_read_volumes>
-  <my_start_date>2022-07-29</my_start_date>
-  <my_finish_date>2022-07-29</my_finish_date>
-  <my_status>Completed</my_status>
-  <my_times_watched>0</my_times_watched>
-  <update_on_import>1</update_on_import>
+    <series_animedb_id>35968</series_animedb_id>
+    <my_watched_episodes>11</my_watched_episodes>
+    <my_read_volumes>0</my_read_volumes>
+    <my_start_date>2022-07-29</my_start_date>
+    <my_finish_date>2022-07-29</my_finish_date>
+    <my_status>Completed</my_status>
+    <my_times_watched>0</my_times_watched>
+    <update_on_import>1</update_on_import>
 </anime>
   <anime>
-  <series_animedb_id>46095</series_animedb_id>
-  <my_watched_episodes>13</my_watched_episodes>
-  <my_read_volumes>0</my_read_volumes>
-  <my_start_date>2022-07-29</my_start_date>
-  <my_finish_date>2022-07-29</my_finish_date>
-  <my_status>Completed</my_status>
-  <my_times_watched>0</my_times_watched>
-  <update_on_import>1</update_on_import>
+    <series_animedb_id>46095</series_animedb_id>
+    <my_watched_episodes>13</my_watched_episodes>
+    <my_read_volumes>0</my_read_volumes>
+    <my_start_date>2022-07-29</my_start_date>
+    <my_finish_date>2022-07-29</my_finish_date>
+    <my_status>Completed</my_status>
+    <my_times_watched>0</my_times_watched>
+    <update_on_import>1</update_on_import>
 </anime>
 </myanimelist>

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-		<!--
-		 Created by XML Export feature at MyAnimeList.net
-		 Version 1.1.0
-		-->
-		
+	<!--
+		Created by XML Export feature at MyAnimeList.net
+		Version 1.1.0
+	-->
+	
+	<!-- Use MAL's official exporter: http://myanimelist.net/panel.php?go=export -->
+	
+
 		<myanimelist>
 		
 			<myinfo>

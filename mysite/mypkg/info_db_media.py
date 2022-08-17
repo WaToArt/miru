@@ -3,6 +3,7 @@ class db_info:
         self.id_media:int = id_media
         self.my_status:str = my_status
         self.format_media:str = format_media
+        
         # Will add more later class variables later
 
     def __str__(self) -> str:

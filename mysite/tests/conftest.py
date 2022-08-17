@@ -27,9 +27,9 @@ def class_info_wotakoi() -> info:
 
     return info_wotakoi
 
-@pytest.fixture(autouse=True)
-def info_wotakoi_title(class_info_wotakoi) -> None:
-    class_info_wotakoi.id_kitsu = 13660
+# @pytest.fixture(autouse=True)
+# def info_wotakoi_title(class_info_wotakoi) -> None:
+#     class_info_wotakoi.id_kitsu = 13660
 
 
 # === Arrange - fixture "Wotaku"/"Wotakoi" ===
@@ -41,13 +41,13 @@ def anime_wotaku_title() -> str:
 def anime_wotaku_id_mal() -> int:
     return 35968
 
-@pytest.fixture
-def anime_wotaku_id_kitsu() -> int:
-    return 13660
+# @pytest.fixture
+# def anime_wotaku_id_kitsu() -> int:
+#     return 13660
 
-@pytest.fixture
-def anime_wotaku_id_anilist() -> int:
-    return 99578
+# @pytest.fixture
+# def anime_wotaku_id_anilist() -> int:
+#     return 99578
 
 @pytest.fixture
 def anime_wotaku_link_mal() -> str:
@@ -62,7 +62,7 @@ def anime_wotaku_link_kitsu() -> str:
     return "https://kitsu.io/anime/13660"
 
 @pytest.fixture
-def anime_wotaku_ni_koi(anime_wotaku_title,anime_wotaku_id_kitsu,anime_wotaku_id_anilist) -> anime: # Uses MAL database
+def anime_wotaku_ni_koi() -> anime: # Uses MAL database
     anime_wotakoi = anime(35968)
 
     # # Method 1 - works, but this manually call functions 1 by 1. These function calls were already tested from its father class, "info".
@@ -71,21 +71,14 @@ def anime_wotaku_ni_koi(anime_wotaku_title,anime_wotaku_id_kitsu,anime_wotaku_id
     # anime_wotakoi.id_kitsu = (13660)
     # anime_wotakoi.id_anilist = (99578)
 
-    # # Method 2 - This works as well, but let's independently input the parameters for reliablibity reasons
-    # anime_wotakoi.use_database_MAL(anime_wotaku_title,anime_wotaku_id_kitsu,anime_wotaku_id_anilist)
-
-
-
-    # # Method 3 AND preferred way - Primary way to setup class as it also explains which database is being used (name of function) AND check that all of the functions are working properly.
-    # ## Shifting these two functions into "autouse" fixture
-    # anime_wotakoi.use_database_MAL("Wotaku ni Koi wa Muzukashii", 13660, 99578) 
+  
 
     return anime_wotakoi
 
 @pytest.fixture(autouse=True)
 def anime_wotakoi_use_db_MAL(anime_wotaku_ni_koi) -> None:
-    anime_wotaku_ni_koi.use_database_MAL("Wotaku ni Koi wa Muzukashii", 13660, 99578) 
-    anime_wotaku_ni_koi.set_all_links()
+    anime_wotaku_ni_koi.use_database_MAL() 
+    anime_wotaku_ni_koi.set_all_links_anime()
 
 
 
@@ -94,8 +87,8 @@ def anime_wotakoi_use_db_MAL(anime_wotaku_ni_koi) -> None:
 @pytest.fixture
 def manga_horimiya() -> manga:
     manga_horimiya = manga(42451)
-    manga_horimiya.use_database_MAL("Horimiya", None, 72451)
-    manga_horimiya.set_all_links()
+    manga_horimiya.use_database_MAL()
+    manga_horimiya.set_all_links_anime()
 
     return manga_horimiya
 
@@ -109,7 +102,7 @@ def ln_86() -> lightnovel: # ln = light novel
 
 
     ln_86 = lightnovel(ln_86_mal_id)
-    ln_86.use_database_MAL(ln_86_title, ln_86_kitsu_id,ln_86_anilist_id)
+    ln_86.use_database_MAL()
 
     return ln_86
 
