@@ -38,6 +38,8 @@
 - Use APIs from Kitsu
 - Use APIs from Anilist
 - Use APIs from MyAnimeList (MAL)
+- Implementing Switch/Match?
+    >> https://www.freecodecamp.org/news/python-switch-statement-switch-case-example/
 
 - Learn Front-end...
     - ~~ HTML~~
