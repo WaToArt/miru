@@ -26,11 +26,15 @@
     - Setup HTML
     - Styling:
         - Center the output
+    - When website is deployed, allow user to upload their XML to run the app
 - MAYBE...
     - After scanning a file, maybe save it to a local file so program runs again next time, it saves time?
         - Ask user if they want to use an updated-XML file
         - Figure out how an updated file might trigger to scan automatically?
-
+    - Sessions
+        >> https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Sessions
+        >> https://cs50.harvard.edu/web/2020/notes/3/#sessions
+        - Could be used to store each store's session/ data locally? This way, the app still works offline.
 
 > Misc
 - Learn how to implement Django
@@ -40,6 +44,8 @@
 - Use APIs from MyAnimeList (MAL)
 - Implementing Switch/Match?
     >> https://www.freecodecamp.org/news/python-switch-statement-switch-case-example/
+
+
 
 - Learn Front-end...
     - ~~ HTML~~
