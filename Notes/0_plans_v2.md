@@ -5,6 +5,9 @@
 
 # Objectives
 - Write cleaner code with new knowledge.
+    - New knowledge learned from:
+        - CS50w
+        - Obey the Testing Goat
     - TDD the heck out of the process.
         - Create function tests first, then unit tests.
     - Implement techinques from Obey the Testing Goat.
@@ -21,3 +24,6 @@
     - database.py
         - Stores info obtained from parsed info
             - Debatable whether this is needed, but shall see.
+- Libraries to consider for program:
+    - 
+
