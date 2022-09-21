@@ -11,6 +11,8 @@
     - TDD the heck out of the process.
         - Create function tests first, then unit tests.
     - Implement techinques from Obey the Testing Goat.
+    - Use match/ switch case if there are a lot of "if/else if" statements!
+    - Be strict with type hints and use library mypy
 - Create an executable CLI (Command Line Interface) first.
     - This requires less step for users to run the program.
     - Instead of overthinking and taking a while to create a proper webpage, a CLI should be the first step.
