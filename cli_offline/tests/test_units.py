@@ -18,4 +18,11 @@ class Tests_parsed_anime_database:
         assert p_a_db.existence_json == True, f"Method runs and checks that the json exists locally."
         
         assert output_pathway_json == './database_project_manami/anime-offline-database-minified.json'
-        
+    
+    def test_verify_correct_repo_local_file_exists(self):
+        p_a_db:parsed_anime_database = parsed_anime_database()
+
+        assert p_a_db.correct_repo == False,'Start up should be immediately False'
+
+        p_a_db.verify_correct_repo_of_json()
+        assert p_a_db.correct_repo == True, ''

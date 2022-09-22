@@ -11,6 +11,8 @@ class parsed_anime_database:
     """
     def __init__(self) -> None:
         self.existence_json:bool = False
+        self.pathway_json:str = None
+
         self.correct_repo:bool = False
 
         self.check_repo_of_json()
@@ -29,23 +31,25 @@ class parsed_anime_database:
             '../database_project_manami/'
         }
 
-        pathway_json:str = None
         for file_name in file_names: # Look for minified version first.
             for directory in directories:
                 for root, dirs, files, in os.walk(directory):
                     if file_name in files:
                         self.existence_json = True
-                        pathway_json = os.path.join(root, file_name)
-                        return pathway_json
+                        self.pathway_json = os.path.join(root, file_name)
+                        return
 
         # If json was not found in the directories.
         self.existence_json = False
-        return pathway_json
+        self.pathway_json = None
+        return
 
     def read_json():
         pass
 
-    def check_repo_of_json(self):
+    def verify_correct_repo_of_json(self) -> None:
+        
+        # If json's repo doesn't match, set the file's existence and pathway to None. Display message to user about file being incorrect.
         pass
 
     def download_json(self):

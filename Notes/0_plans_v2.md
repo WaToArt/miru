@@ -26,6 +26,7 @@
     - database.py
         - Stores info obtained from parsed info
             - Debatable whether this is needed, but shall see.
+- Obtain information directly from Json directly instead of storing all of the json in a global variable.
 - Libraries to consider for program:
     - 
 
