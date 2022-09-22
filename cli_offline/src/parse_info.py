@@ -34,13 +34,12 @@ class parsed_anime_database:
             for directory in directories:
                 for root, dirs, files, in os.walk(directory):
                     if file_name in files:
+                        self.existence_json = True
                         pathway_json = os.path.join(root, file_name)
-                        break
+                        return pathway_json
 
-        if pathway_json != None:
-            self.existence_json = True
-        else:
-            self.existence_json = False
+        # If json was not found in the directories.
+        self.existence_json = False
         return pathway_json
 
     def read_json():
