@@ -1,12 +1,13 @@
-Notes/anime-offline-database.json
+anime-offline-database.json*
 *anime-offline-database.json
+anime-offline-database-minified.json*
+*anime-offline-database-minified.json
 *.DS_Store
 rng-venv/
 .pytest_cache/
 *.pyc
 *__pycache__
-databases/anime-offline-database-minified.json
-xml_mal/animelist_1659156396_-_9830802.xml
+\xml_mal/animelist_1659156396_-_9830802.xml
 xml_mal/animelist_1659156396_-_9830802.xml.gz
 xml_mal/mangalist_1659156419_-_9830802.xml
 xml_mal/mangalist_1659156419_-_9830802.xml.gz

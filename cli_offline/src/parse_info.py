@@ -1,8 +1,31 @@
 import json
 from xml.etree import ElementTree
 
-class parshed_anime_database:
-    pass
+class parsed_anime_database:
+    """ Doc:
+    Index:
+        json = manami project's anime-offline-database
+        
+    """
+    def __init__(self) -> None:
+        self.correct_repo:bool = False
 
-class parshed_user_list:
+        self.check_repo_of_json()
+    
+    def check_local_json(self):
+        # Check if json exist locally in directory "databases"
+        pass
+
+    def check_repo_of_json(self, json):
+        pass
+
+    def download_json(self):
+        # TODO - Download minified json
+
+            # TODO - If failed to download minified json, download regular json
+        
+        pass
+
+
+class parsed_user_list:
     pass

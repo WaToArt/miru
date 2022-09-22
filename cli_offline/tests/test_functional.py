@@ -38,8 +38,6 @@ class Tests_user_cli:
             ## The program will download the json if Mark types yes OR Mark timed out after 5 seconds.
             ## If download failed, pop a 5 second failed-message and only return back to the options list.
         
-        
-        
         # Purposely fail
         fail_intentionally_sadge()    
     def test_executing_grabbing_random_anime_from_user_list(self, capsys):
@@ -50,4 +48,5 @@ class Tests_user_cli:
 
             ## If download failed, pop a 5 second message and only return the raw ID and MAL link.
 
+        # Purposely fail
         fail_intentionally_sadge()
