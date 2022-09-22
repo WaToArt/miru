@@ -1,5 +1,7 @@
+import os
 import json
 from xml.etree import ElementTree
+
 
 class parsed_anime_database:
     """ Doc:
@@ -8,13 +10,17 @@ class parsed_anime_database:
         
     """
     def __init__(self) -> None:
+        self.existence_json:bool = False
         self.correct_repo:bool = False
 
         self.check_repo_of_json()
     
-    def check_local_json(self):
+    def check_local_json(self) -> bool:
         # Check if json exist locally in directory "databases"
-        pass
+        if anime_database_exists:
+            self.existence_json = True
+        else:
+            self.existence_json = False
 
     def check_repo_of_json(self, json):
         pass
