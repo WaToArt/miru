@@ -29,5 +29,6 @@
 - Obtain information directly from Json directly instead of storing all of the json in a global variable.
 - Libraries to consider for program:
     - pytest-monitor
-        - Just downloaded (9/22/2022), but need to verify if this checks performance and resource usage as I envisioned.
+        - ~~ Just downloaded (9/22/2022), but need to verify if this checks performance and resource usage as I envisioned.~~
+            - Doesn't work on Apple Silicon :'(
 
