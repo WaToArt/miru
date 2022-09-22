@@ -15,14 +15,38 @@ class parsed_anime_database:
 
         self.check_repo_of_json()
     
-    def check_local_json(self) -> bool:
-        # Check if json exist locally in directory "databases"
-        if anime_database_exists:
+    def check_existence_local_json(self) -> str:
+        # Check if json exist locally in directory "database_project_manami", and checks on several levels.
+        
+        # Consists of two versions for the anime offline database, provided by Manami project.
+        file_names: list[str] = {
+            'anime-offline-database-minified.json',
+            'anime-offline-database.json'
+        }
+
+        directories: set[str] = {
+            './database_project_manami',
+            '../database_project_manami/'
+        }
+
+        pathway_json:str = None
+        for file_name in file_names: # Look for minified version first.
+            for directory in directories:
+                for root, dirs, files, in os.walk(directory):
+                    if file_name in files:
+                        pathway_json = os.path.join(root, file_name)
+                        break
+
+        if pathway_json != None:
             self.existence_json = True
         else:
             self.existence_json = False
+        return pathway_json
 
-    def check_repo_of_json(self, json):
+    def read_json():
+        pass
+
+    def check_repo_of_json(self):
         pass
 
     def download_json(self):
@@ -35,3 +59,8 @@ class parsed_anime_database:
 
 class parsed_user_list:
     pass
+    
+if __name__ == '__main__':
+    padb = parsed_anime_database()
+    pathway = padb.check_existence_local_json()
+    print(pathway)

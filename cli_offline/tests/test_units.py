@@ -9,11 +9,13 @@ def fail_intentionally_sadge():
     assert None == "failed intentionally"
 class Tests_parsed_anime_database:
 
-    @pytest.fixture(scope="class", autouse=True)
-    def setup_raw_p_a_db() -> parsed_anime_database:
-        return parsed_anime_database()
-
-    def test_check_local_json(self):
+    def test_check_existence_local_json(self):
         p_a_db:parsed_anime_database = parsed_anime_database()
 
-        assert p_a_db.co == True, f"The repo is not from {repository_manami_project_json}"
+        assert p_a_db.existence_json == False, f"Should report false when first launch."
+
+        output_pathway_json:str = p_a_db.check_existence_local_json()
+        assert p_a_db.existence_json == True, f"Method runs and checks that the json exists locally."
+        
+        assert output_pathway_json == './database_project_manami/anime-offline-database-minified.json'
+        
