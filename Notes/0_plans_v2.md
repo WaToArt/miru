@@ -31,4 +31,9 @@
     - pytest-monitor
         - ~~ Just downloaded (9/22/2022), but need to verify if this checks performance and resource usage as I envisioned.~~
             - Doesn't work on Apple Silicon :'(
-
+    - tkinter
+        - Setting up a GUI
+            > https://docs.python.org/3/library/tkinter.html
+            > https://stackoverflow.com/a/47068925
+    - Pyinstaller
+        > https://pyinstaller.org/en/stable/
