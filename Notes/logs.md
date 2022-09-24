@@ -1,10 +1,19 @@
 
 # 9/24/2022
 
+- Ending sesh:
+    - Finished implementating and writing test for function:
+        - read_json()
+            - There might be scenarios I am unaccounting for.
+            - I think it might be to verify the repo before saving locally.
+            
+
 - Resuming session:
-    - ~~Working on download_json() first~~ Complete
+    - ~~Working on download_json() first~~ #Complete
         - Need to add script:
-            > If folder doesn't exist, create the directory to contain the database.
+            ~~ > If folder doesn't exist, create the directory to contain the database. ~~ #Completed
+        
+
     
 
 # 9/23/2022

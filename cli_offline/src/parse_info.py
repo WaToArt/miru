@@ -20,8 +20,11 @@ class parsed_anime_database:
         self.correct_repo:bool = False
 
     
-    def check_existence_local_json(self) -> str:
-        # Check if json exist locally in directory "database_project_manami", and checks on several levels.
+    def verify_existence_local_json(self) -> str:
+        """
+        Check if json exist locally in directory "database_project_manami", and checks on several levels.
+        """
+        message_existence:str = "None of the required database were found."
         
         # Consists of two versions for the anime offline database, provided by Manami project.
         file_names: list[str] = [
@@ -41,12 +44,14 @@ class parsed_anime_database:
                         self.existence_json = True
                         self.current_database = file_name
                         self.pathway_json =  os.path.join(root, file_name)
-                        return
+
+                        message_existence = f"{file_name} was found. This will be used :3"
+                        return message_existence
 
         # If json was not found in the directories.
         self.existence_json = False
         self.pathway_json = None
-        return
+        return message_existence
 
     def read_json(self):
         if self.pathway_json == None:
@@ -103,6 +108,9 @@ class parsed_anime_database:
 
                 return message_download
         
+        # TODO - Implement verify repo before saving locally.
+            # Maybe add it to each of the for loops when downloading from link.
+
         new_directory = r'./database_project_manami'
         if not os.path.exists(new_directory): # RFER 04
             os.makedirs(new_directory)

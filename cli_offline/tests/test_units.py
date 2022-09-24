@@ -6,27 +6,35 @@ from src.ui import user_interface
 from pytest_socket import socket_disabled
 repository_manami_project_json:str = "https://github.com/manami-project/anime-offline-database"
 
+name_minified_anime_database:str = "anime-offline-database-minified.json"
+name_regular_anime_database:str = "anime-offline-database.json"
+
 def fail_intentionally_sadge():
     assert None == "failed intentionally"
 class Tests_parsed_anime_database:
 
-    def check_existence_local_json(self): # Have this run when Json is downloaded instead.
-        p_a_db:parsed_anime_database = parsed_anime_database()
-
+    def check_file_existence_local_json(self, p_a_db:parsed_anime_database): # Have this run when Json is downloaded instead.
         assert p_a_db.existence_json == False, f"Should report false when first launch."
 
-        p_a_db.check_existence_local_json()
+        output_message:str = p_a_db.verify_existence_local_json()
         assert p_a_db.existence_json == True, f"Method runs and checks that the json exists locally."
-        assert p_a_db.pathway_json == './database_project_manami/anime-offline-database-minified.json'
+        
+        assert './database_project_manami/' or '/database_project_manami/' in p_a_db.pathway_json  
+        assert name_minified_anime_database or name_regular_anime_database in p_a_db.pathway_json
+
+
+        assert 'was found. This will be used :3' in output_message
+
+
     
     def test_download_json_sucess(self):
         p_a_db:parsed_anime_database = parsed_anime_database()
         output_message = p_a_db.download_json()
 
         assert "Sucessfully downloaded one of the databases!" and "was downloaded" in output_message
-        assert 'anime-offline-database.json' or 'anime-offline-database-minified.json' in output_message
+        assert name_regular_anime_database or name_minified_anime_database in output_message
 
-        self.check_existence_local_json()
+        self.check_file_existence_local_json(p_a_db)
         
     def test_download_json_failed(self): #force offline mode so no network connection is made
         
