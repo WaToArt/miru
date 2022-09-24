@@ -1,12 +1,17 @@
 
 # 9/24/2022
 
+- NExt time:
+    - Learn how to validate json
+        - Read this:
+            > https://stackoverflow.com/a/54491882
+
 - Ending sesh:
     - Finished implementating and writing test for function:
         - read_json()
             - There might be scenarios I am unaccounting for.
             - I think it might be to verify the repo before saving locally.
-            
+
 
 - Resuming session:
     - ~~Working on download_json() first~~ #Complete
