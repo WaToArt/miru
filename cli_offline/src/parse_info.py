@@ -2,6 +2,8 @@ import os
 import json
 from xml.etree import ElementTree
 
+import requests
+
 
 class parsed_anime_database:
     """ Doc:
@@ -64,11 +66,38 @@ class parsed_anime_database:
         pass
 
     def download_json(self):
-        # TODO - Download minified json
-
-            # TODO - If failed to download minified json, download regular json
+        """ Credits for anime offline database
+        Link: https://github.com/manami-project/anime-offline-database
         
-        pass
+        """
+        url_json:dict[str] = {
+            'minified': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true',
+            'regular': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database.json?raw=true',
+        }
+        #RFER 02 # TODO - Download minified json
+        requested_json = requests.get(url_json['minified'])
+        anime_db_json_name:str = 'anime-offline-database-minified.json'
+
+        if requested_json != 200:
+            # TODO - If failed to download minified json, download regular json
+            print("Error #1: Failed to download minified ")
+            requested_json = requests.get(url_json['regular'])
+            anime_db_json_name:str = 'anime-offline-database.json'
+
+            if requested_json != 200:
+                anime_db_json_name = None
+                raise Exception("ERROR #2: Failed to download REGULAR anime offline database as well :[")
+        
+        with open(f'database_project_manami/{anime_db_json_name}',mode= 'w+') as file: # Unsure if pathway works.
+            file.write(json.dumps(requested_json))
+
+            file.close()
+
+
+        
+
+
+        
 
 
 class parsed_user_list:

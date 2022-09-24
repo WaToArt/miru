@@ -1,4 +1,19 @@
 
+
+# 9/23/2022
+
+- Next sesh:
+    - Work on:
+        - read_json()
+        - download_json()
+            - 
+
+- Worked on today:
+    - class: parsed_anime_database
+        - functions:
+            - read_json()
+            - download_json()
+
 # 9/22/2022
 
 - Next time:
