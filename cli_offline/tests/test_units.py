@@ -10,7 +10,7 @@ def fail_intentionally_sadge():
     assert None == "failed intentionally"
 class Tests_parsed_anime_database:
 
-    def test_check_existence_local_json(self):
+    def check_existence_local_json(self): # Have this run when Json is downloaded instead.
         p_a_db:parsed_anime_database = parsed_anime_database()
 
         assert p_a_db.existence_json == False, f"Should report false when first launch."
@@ -25,6 +25,8 @@ class Tests_parsed_anime_database:
 
         assert "Sucessfully downloaded one of the databases!" and "was downloaded" in output_message
         assert 'anime-offline-database.json' or 'anime-offline-database-minified.json' in output_message
+
+        self.check_existence_local_json()
         
     def test_download_json_failed(self): #force offline mode so no network connection is made
         
