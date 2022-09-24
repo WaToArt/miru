@@ -90,7 +90,7 @@ class parsed_anime_database:
                 raise Exception("ERROR #2: Failed to download REGULAR anime offline database as well :[")
         
         with open(f'database_project_manami/{anime_db_json_name}',mode= 'w+') as file: # Unsure if pathway works.
-            file.write(json.dumps(requested_json))
+            file.write(json.dumps(requested_json.json()))
 
             file.close()
 
