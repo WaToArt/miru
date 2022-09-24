@@ -2,7 +2,9 @@
 # 9/24/2022
 
 - Resuming session:
-    - Working on download_json() first
+    - ~~Working on download_json() first~~ Complete
+        - Need to add script:
+            > If folder doesn't exist, create the directory to contain the database.
     
 
 # 9/23/2022

@@ -37,3 +37,6 @@
             > https://stackoverflow.com/a/47068925
     - Pyinstaller
         > https://pyinstaller.org/en/stable/
+    - pytest-socket
+        - I think it forces selected test to run without a network connection
+        > https://github.com/miketheman/pytest-socket

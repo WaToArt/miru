@@ -3,6 +3,7 @@ import pytest
 from src.parse_info import parsed_anime_database
 from src.ui import user_interface
 
+from pytest_socket import socket_disabled
 repository_manami_project_json:str = "https://github.com/manami-project/anime-offline-database"
 
 def fail_intentionally_sadge():
@@ -23,12 +24,13 @@ class Tests_parsed_anime_database:
         output_message = p_a_db.download_json()
 
         assert "Sucessfully downloaded one of the databases!" and "was downloaded" in output_message
+        assert 'anime-offline-database.json' or 'anime-offline-database-minified.json' in output_message
         
-
     def test_download_json_failed(self): #force offline mode so no network connection is made
+        
         p_a_db:parsed_anime_database = parsed_anime_database()
-        output_message = p_a_db.download_json()
-
+        output_message = p_a_db.download_json(True)
+        
         assert output_message == "Failed to either Json options for anime offline databases :'["
     def test_verify_correct_repo_local_file_exists(self):
         p_a_db:parsed_anime_database = parsed_anime_database()

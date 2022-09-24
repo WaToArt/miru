@@ -68,7 +68,7 @@ class parsed_anime_database:
         # If json's repo doesn't match, set the file's existence and pathway to None. Display message to user about file being incorrect.
         pass
 
-    def download_json(self) -> str:
+    def download_json(self, debug_force_fail_connection:str = False) -> str:
         """ Credits for anime offline database
         Link: https://github.com/manami-project/anime-offline-database
 
@@ -77,6 +77,9 @@ class parsed_anime_database:
         """
 
         message_download:str = "Failed to either Json options for anime offline databases :'["
+
+        if debug_force_fail_connection:
+            return message_download
 
         url_json:dict = {
             'minified': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true',
@@ -100,11 +103,15 @@ class parsed_anime_database:
 
                 return message_download
         
+        new_directory = r'./database_project_manami'
+        if not os.path.exists(new_directory): # RFER 04
+            os.makedirs(new_directory)
+
         with open(f'database_project_manami/{anime_db_json_name}', mode= 'w+') as file: # Unsure if pathway works.
             file.write(json.dumps(requested_json.json()))
             file.close()
 
-        message_download = f"Sucessfully downloaded one of the databases! {anime_db_json_name} was downloaded"
+        message_download = f'Sucessfully downloaded one of the databases! "{anime_db_json_name}" was downloaded'
         
         return message_download
 

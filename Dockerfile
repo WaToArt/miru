@@ -16,9 +16,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # For destination, you need to specify "./mysite" to copy the files into the same-named folder.
 ## If you just use "." for destination, it will only copy the files raw.
 ### This is important info whenever you need to read files.
-COPY /mysite ./mysite
+COPY /cli_offline ./cli_offline
 COPY /xml_files ./xml_files
-COPY /databases ./databases
 
 # This code is being run in Docker-compose.yml
 # ENTRYPOINT ["pytest", "-v", "--lf", "-l", "--suppress-tests-failed-exit-code", "--continue-on-collection-errors","--junitxml=reports/results.xml"]

@@ -21,3 +21,7 @@
 - How to save a downloaded file with "with open":
 >> https://stackoverflow.com/a/44699728
 >> https://docs.python.org/3/library/functions.html#open
+
+# RFER 04
+- Create directory if it doesn't exist
+>> https://stackoverflow.com/a/1274465
