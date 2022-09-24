@@ -1,4 +1,9 @@
 
+# 9/24/2022
+
+- Resuming session:
+    - Working on download_json() first
+    
 
 # 9/23/2022
 
@@ -6,7 +11,7 @@
     - Work on:
         - read_json()
         - download_json()
-            - 
+        
 
 - Worked on today:
     - class: parsed_anime_database

@@ -3,6 +3,7 @@ import json
 from xml.etree import ElementTree
 
 import requests
+from requests import Response
 
 
 class parsed_anime_database:
@@ -70,21 +71,21 @@ class parsed_anime_database:
         Link: https://github.com/manami-project/anime-offline-database
         
         """
-        url_json:dict[str] = {
+        url_json:dict = {
             'minified': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true',
             'regular': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database.json?raw=true',
         }
         #RFER 02 # TODO - Download minified json
-        requested_json = requests.get(url_json['minified'])
+        requested_json:Response = requests.get(url_json['minified'])
         anime_db_json_name:str = 'anime-offline-database-minified.json'
 
-        if requested_json != 200:
+        if requested_json.status_code != 200:
             # TODO - If failed to download minified json, download regular json
             print("Error #1: Failed to download minified ")
             requested_json = requests.get(url_json['regular'])
             anime_db_json_name:str = 'anime-offline-database.json'
 
-            if requested_json != 200:
+            if requested_json.status_code != 200:
                 anime_db_json_name = None
                 raise Exception("ERROR #2: Failed to download REGULAR anime offline database as well :[")
         
@@ -105,5 +106,4 @@ class parsed_user_list:
     
 if __name__ == '__main__':
     padb = parsed_anime_database()
-    pathway = padb.check_existence_local_json()
-    print(pathway)
+    pathway = padb.download_json()
