@@ -14,6 +14,7 @@ class parsed_anime_database:
     """
     def __init__(self) -> None:
         self.existence_json:bool = False
+        self.current_database:str = None
         self.pathway_json:str = None
 
         self.correct_repo:bool = False
@@ -38,7 +39,8 @@ class parsed_anime_database:
                 for root, dirs, files, in os.walk(directory):
                     if file_name in files:
                         self.existence_json = True
-                        self.pathway_json = os.path.join(root, file_name)
+                        self.current_database = file_name
+                        self.pathway_json =  os.path.join(root, file_name)
                         return
 
         # If json was not found in the directories.
@@ -66,11 +68,16 @@ class parsed_anime_database:
         # If json's repo doesn't match, set the file's existence and pathway to None. Display message to user about file being incorrect.
         pass
 
-    def download_json(self):
+    def download_json(self) -> str:
         """ Credits for anime offline database
         Link: https://github.com/manami-project/anime-offline-database
+
+        If the download was sucessful, it should return a message saying the "download was sucessfully". If it failed, it should return 
         
         """
+
+        message_download:str = "Failed to either Json options for anime offline databases :'["
+
         url_json:dict = {
             'minified': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true',
             'regular': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database.json?raw=true',
@@ -87,12 +94,20 @@ class parsed_anime_database:
 
             if requested_json.status_code != 200:
                 anime_db_json_name = None
-                raise Exception("ERROR #2: Failed to download REGULAR anime offline database as well :[")
-        
-        with open(f'database_project_manami/{anime_db_json_name}',mode= 'w+') as file: # Unsure if pathway works.
-            file.write(json.dumps(requested_json.json()))
+                print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
+                
+                # message_download = "Failed to either Json options for anime offline databases :'["
 
+                return message_download
+        
+        with open(f'database_project_manami/{anime_db_json_name}', mode= 'w+') as file: # Unsure if pathway works.
+            file.write(json.dumps(requested_json.json()))
             file.close()
+
+        message_download = f"Sucessfully downloaded one of the databases! {anime_db_json_name} was downloaded"
+        
+        return message_download
+
 
 
         

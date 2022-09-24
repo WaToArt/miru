@@ -18,6 +18,18 @@ class Tests_parsed_anime_database:
         assert p_a_db.existence_json == True, f"Method runs and checks that the json exists locally."
         assert p_a_db.pathway_json == './database_project_manami/anime-offline-database-minified.json'
     
+    def test_download_json_sucess(self):
+        p_a_db:parsed_anime_database = parsed_anime_database()
+        output_message = p_a_db.download_json()
+
+        assert "Sucessfully downloaded one of the databases!" and "was downloaded" in output_message
+        
+
+    def test_download_json_failed(self): #force offline mode so no network connection is made
+        p_a_db:parsed_anime_database = parsed_anime_database()
+        output_message = p_a_db.download_json()
+
+        assert output_message == "Failed to either Json options for anime offline databases :'["
     def test_verify_correct_repo_local_file_exists(self):
         p_a_db:parsed_anime_database = parsed_anime_database()
 
