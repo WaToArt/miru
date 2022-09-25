@@ -23,10 +23,12 @@ class parsed_anime_database:
     """
     def __init__(self) -> None:
         self.existence_json:bool = False
-        self.current_database:str = None
         self.pathway_json:str = None
         self.latest_json:bool = False
         self.correct_repo:bool = False
+
+        self.current_local_database:str = None
+        self.current_online_database:str = None
 
     
     def verify_existence_local_json(self) -> str:
@@ -51,7 +53,7 @@ class parsed_anime_database:
                 for root, dirs, files, in os.walk(directory):
                     if file_name in files:
                         self.existence_json = True
-                        self.current_database = file_name
+                        self.current_local_database = file_name
                         self.pathway_json =  os.path.join(root, file_name)
 
                         message_existence = f"{file_name} was found. This will be used :3"
@@ -143,11 +145,9 @@ class parsed_anime_database:
 
     def compare_last_update(self, online_json_date:str=None) -> str: # RFER 10
         """
-        
         Check date of repo and determine whether to download newest json from repo
 
         entry in json: "lastUpdate"
-
         """
         if not self.existence_json:
             return "A local json doesn't exist :'("
@@ -171,7 +171,7 @@ class parsed_anime_database:
 
         
 
-    def download_json(self, debug_force_fail_connection:bool = False) -> str:
+    def download_json(self, debug_force_fail_connection:bool = False) -> Response:
         """ Credits for anime offline database
         Link: https://github.com/manami-project/anime-offline-database
 
@@ -192,8 +192,6 @@ class parsed_anime_database:
         url = url_json['minified']
         response_json:Response = requests.get(url, stream=True)
         anime_db_json_name:str = 'anime-offline-database-minified.json'
-        self.verify_existence_local_json()
-        self.verify_correct_repo_of_json(json_file=response_json.json())
 
         if response_json.status_code != 200 or self.correct_repo == False:
             # TODO - If failed to download minified json, download regular json
@@ -201,36 +199,24 @@ class parsed_anime_database:
             url = url_json["regular"]
             response_json = requests.get(url,stream=True)
             anime_db_json_name:str = 'anime-offline-database.json'
-            self.verify_correct_repo_of_json(json_file=response_json.json())
 
             if response_json.status_code != 200 or self.correct_repo == False:
                 anime_db_json_name = None
+                response_json = None
+
                 print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
-                
-                # message_download = "Failed to either Json options for anime offline databases :'["
+        self.current_online_database = anime_db_json_name
+        return response_json
 
-                return message_download
-        
-        
-
-        # TODO - Implement verify correct repo before saving locally.
-            # Maybe add it to each of the for loops when downloading from link.
-
-        print(self.compare_last_update(response_json.json()['lastUpdate']))
-
-        if self.latest_json:
-            # TODO - If the local version is up-to-date, don't download the new one. Maybe give user option on whether they still want to download the new one regardless?
-            message_download = "The local json is up to date :3"
-            return message_download
-
+    def save_json(self, response_json:Response):
         new_directory = r'./database_project_manami'
         if not os.path.exists(new_directory): # RFER 04
             os.makedirs(new_directory)
 
         # This saves the newly downloaded json to local storage.
-        new_relative_path:str = f'database_project_manami/{anime_db_json_name}'
+        new_relative_path:str = f'database_project_manami/{self.current_online_database}'
         with open(new_relative_path, mode= 'w+') as file, tqdm(
-            desc=anime_db_json_name,
+            desc=self.current_online_database,
             total= int(response_json.headers['content-length']),
             unit='iB',
             unit_scale=True,
@@ -240,15 +226,13 @@ class parsed_anime_database:
             size = file.write(json.dumps(response_json.json(), indent=1))
             p_bar.update(size)
 
-
-
-
         file_size:int = ((os.stat(new_relative_path).st_size) / (10**6)) # RFER 05 && RFER 06
 
-        message_download = f'Sucessfully downloaded one of the databases! "{anime_db_json_name}" was downloaded and saved locally with the size of ({file_size} mb) :D'
+        message_download = f'Sucessfully downloaded one of the databases! "{self.current_online_database}" was downloaded and saved locally with the size of ({file_size} mb) :D'
         
-        return message_download
+        self.current_online_database = None # Reset to None
 
+        print(message_download)
 
 
         

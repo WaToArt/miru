@@ -55,3 +55,7 @@
     >> ~~ https://stackoverflow.com/questions/466345/convert-string-jun-1-2005-133pm-into-datetime ~~
     - Proper format:
         >> https://stackoverflow.com/a/24476708
+
+# RFER 11
+- Implementing multiple conditions in Match Case:
+>> https://stackoverflow.com/a/69642922
