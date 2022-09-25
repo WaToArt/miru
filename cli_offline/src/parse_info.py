@@ -1,5 +1,6 @@
 import os
 import json
+from xml.dom import ValidationErr
 from xml.etree import ElementTree
 
 import requests
@@ -9,7 +10,7 @@ from tqdm.auto import tqdm
 from os import devnull
 from docopt import docopt
 
-from jsonschema import validate
+from jsonschema import validate, ValidationError
 
 class parsed_anime_database:
     """ Doc:
@@ -92,18 +93,6 @@ class parsed_anime_database:
         repository_url:str = "https://github.com/manami-project/anime-offline-database"
         # repository_url:str = "fail on purpose; keep it up on this difficult self-taught coding journey! you got this :3" # DEBUG - dummy to fail on purpose :3 
 
-
-        ### Setup using jsonschema
-        # Version 1
-        # schema_anime_offline_database = {
-        #     "license": {
-        #         "name": license_name,
-        #         "url": license_url,
-        #     },
-        #     "repository": repository_url,
-        # }
-
-        #Version 2
         schema_anime_offline_database = {
             "type": "object",
             "properties": {
@@ -123,30 +112,15 @@ class parsed_anime_database:
             },
         }
 
-        # ### Version 1 of validating... Doesn't work: never fails, despite intentionally have wrong url.
-        # try:
-        #     validate(instance=json_file, schema=schema_anime_offline_database)
-        # except:
-        #     return False
-        # else:
-        #     return True
-
-        # ### Version 2
-        # if schema_anime_offline_database not in json_file:
-        #     return False
-        # else:
-        #     return True
-
-        ### Version 3
         try:
             validate(instance=json_file, schema=schema_anime_offline_database)
-            return True
-        except:
-            return False
-        else:
-            return True
+            self.correct_repo =  True
+            return "Sucess! Correct repo :3"
+        except ValidationError as e:
+            self.correct_repo = False
+            return f"Incorrect repo :'(. Error message: {e}"
 
-        # If json's repo doesn't match, set the file's existence and pathway to None. Display message to user about file being incorrect.
+        # If json's repo doesn't match, set the global variable "correct_repo" to False; if correct, set it to True. Display message to user about file being incorrect.
         
 
     def move_old_json_to_backup_folder(self):
@@ -254,3 +228,6 @@ if __name__ == '__main__':
     output:bool = padb.verify_correct_repo_of_json()
 
     print(output)
+    print()
+    print(padb.existence_json)
+    print(padb.correct_repo)
