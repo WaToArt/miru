@@ -76,14 +76,18 @@ class parsed_anime_database:
         # If json's repo doesn't match, set the file's existence and pathway to None. Display message to user about file being incorrect.
         pass
 
-    def progress_bar_downloading(self, response_json:Response, anime_db_json_name:str):
-        
-        opts = docopt(__doc__)
-        eg_out = opts['--output'].replace("/dev/null", devnull)
+    def progress_bar_downloading(self, response_json:Response, anime_db_json_name='test'):
+        total_size_bytes = int(response_json.headers.get('content-length',0))
+        block_size = 1024
+        progress_bar = tqdm(total=total_size_bytes, unit='iB', unit_scale=True)
+        with open(f'{anime_db_json_name}.json', 'wb') as file:
+            for data in response_json.iter_content(block_size):
+                progress_bar.update(len(data))
+                file.write(data)
+        progress_bar.close()
 
-        with tqdm.wrapattr(open(eg_out, "wb"), "write", unit_scale=True, unit_divisor=1024, total=int(response_json.headers.get('content-length', 0))) as p_bar:
-            for chunk in response_json.iter_content(chunk_size=4096):
-                p_bar.write(chunk)
+
+
 
 
     def download_json(self, debug_force_fail_connection:bool = False) -> str:
@@ -105,6 +109,9 @@ class parsed_anime_database:
         }
         #RFER 02 # TODO - Download minified json
         response_json:Response = requests.get(url_json['minified'], stream=True)
+
+        self.progress_bar_downloading(response_json)
+
         anime_db_json_name:str = 'anime-offline-database-minified.json'
 
         if response_json.status_code != 200:
@@ -121,7 +128,7 @@ class parsed_anime_database:
 
                 return message_download
         
-        self.progress_bar_downloading(response_json, anime_db_json_name)
+        
 
         # TODO - Implement verify repo before saving locally.
             # Maybe add it to each of the for loops when downloading from link.
@@ -135,6 +142,9 @@ class parsed_anime_database:
         with open(new_relative_path, mode= 'w+') as file: # Unsure if pathway works.
             file.write(json.dumps(response_json.json(), indent=1))
             file.close()
+        
+
+
         file_size:int = (os.stat(new_relative_path).st_size) / (10**6) # RFER 05 && RFER 06
 
         message_download = f'Sucessfully downloaded one of the databases! "{anime_db_json_name}" was downloaded ({file_size} mb) :D'
