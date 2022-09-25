@@ -73,7 +73,7 @@ class parsed_anime_database:
             return
         
 
-    def verify_correct_repo_of_json(self) -> None:
+    def verify_correct_repo_of_json(self, json_file:dict= None) -> bool:
         """
         Things to verify:
             - licence/
@@ -82,10 +82,16 @@ class parsed_anime_database:
             - repository
 
         """
+
+        if json_file == None:
+            json_file = json.load(open(f'{self.pathway_json}'))
+
         license_name:str = "GNU Affero General Public License v3.0"
         license_url:str = "https://github.com/manami-project/anime-offline-database/blob/master/LICENSE"
 
-        repository_url:str = "https://github.com/manami-project/anime-offline-database"
+        # repository_url:str = "https://github.com/manami-project/anime-offline-database"
+        repository_url:str = "https://github.com/manami-project/anime-offline-databas213213e" # dummy
+
 
         ### Setup using jsonschema
         schema_anime_offline_database:dict = {
@@ -96,8 +102,16 @@ class parsed_anime_database:
             "repository": repository_url,
         }
 
+        ### Version 1 of validating... Doesn't work: never fails, despite intentionally have wrong url.
+        try:
+            validate(instance=json_file, schema=schema_anime_offline_database)
+        except:
+            return False
+        else:
+            return True
+
         # If json's repo doesn't match, set the file's existence and pathway to None. Display message to user about file being incorrect.
-        pass
+        
 
     def move_old_json_to_backup_folder(self):
         """
@@ -200,5 +214,7 @@ class parsed_user_list:
     
 if __name__ == '__main__':
     padb = parsed_anime_database()
-    pathway = padb.download_json()
-    print(pathway)
+    padb.verify_existence_local_json()
+    output:bool = padb.verify_correct_repo_of_json()
+
+    print(output)
