@@ -25,7 +25,7 @@ class parsed_anime_database:
         self.existence_json:bool = False
         self.current_database:str = None
         self.pathway_json:str = None
-
+        self.latest_json:bool = False
         self.correct_repo:bool = False
 
     
@@ -156,13 +156,15 @@ class parsed_anime_database:
             local_json_file:dict = json.load(file)
             local_json_date:str = local_json_file['lastUpdate']
             file.close()
-
-        date_local_json:datetime = datetime.strptime(local_json_date)
-        date_online_repo:datetime = datetime.strptime(online_json_date)
+        date_parameters:str = '%Y-%m-%d'
+        date_local_json:datetime = datetime.strptime(local_json_date, date_parameters)
+        date_online_repo:datetime = datetime.strptime(online_json_date, date_parameters)
 
         if date_local_json >= date_online_repo:
+            self.latest_json = True
             return "The local json is up-to-date :3"
         else:
+            self.latest_json = False
             return "There's a newer json online :O"
 
 
@@ -190,9 +192,8 @@ class parsed_anime_database:
         url = url_json['minified']
         response_json:Response = requests.get(url, stream=True)
         anime_db_json_name:str = 'anime-offline-database-minified.json'
-
-        test_foo = json.load(response_json.json())
-        self.verify_correct_repo_of_json()
+        self.verify_existence_local_json()
+        self.verify_correct_repo_of_json(json_file=response_json.json())
 
         if response_json.status_code != 200 or self.correct_repo == False:
             # TODO - If failed to download minified json, download regular json
@@ -200,7 +201,7 @@ class parsed_anime_database:
             url = url_json["regular"]
             response_json = requests.get(url,stream=True)
             anime_db_json_name:str = 'anime-offline-database.json'
-            self.verify_correct_repo_of_json()
+            self.verify_correct_repo_of_json(json_file=response_json.json())
 
             if response_json.status_code != 200 or self.correct_repo == False:
                 anime_db_json_name = None
@@ -212,8 +213,15 @@ class parsed_anime_database:
         
         
 
-        # TODO - Implement verify repo before saving locally.
+        # TODO - Implement verify correct repo before saving locally.
             # Maybe add it to each of the for loops when downloading from link.
+
+        print(self.compare_last_update(response_json.json()['lastUpdate']))
+
+        if self.latest_json:
+            # TODO - If the local version is up-to-date, don't download the new one. Maybe give user option on whether they still want to download the new one regardless?
+            message_download = "The local json is up to date :3"
+            return message_download
 
         new_directory = r'./database_project_manami'
         if not os.path.exists(new_directory): # RFER 04
@@ -254,6 +262,7 @@ class parsed_user_list:
     
 if __name__ == '__main__':
     padb = parsed_anime_database()
+    padb.download_json()
     padb.verify_existence_local_json()
     output:bool = padb.verify_correct_repo_of_json()
 

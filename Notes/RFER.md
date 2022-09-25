@@ -52,4 +52,6 @@
 
 # RFER 10
 - Comparing dates
-    >> https://stackoverflow.com/questions/466345/convert-string-jun-1-2005-133pm-into-datetime
+    >> ~~ https://stackoverflow.com/questions/466345/convert-string-jun-1-2005-133pm-into-datetime ~~
+    - Proper format:
+        >> https://stackoverflow.com/a/24476708
