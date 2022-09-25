@@ -59,7 +59,7 @@ class parsed_anime_database:
         self.pathway_json = None
         return message_existence
 
-    def read_json(self):
+    def read_json(self): # This might not be needed
         if self.pathway_json == None:
             return
 
@@ -74,7 +74,7 @@ class parsed_anime_database:
             return
         
 
-    def verify_correct_repo_of_json(self, json_file:dict= None) -> bool:
+    def verify_correct_repo_of_json(self, json_file:dict= None) -> str:
         """
         Things to verify:
             - licence/
@@ -85,8 +85,10 @@ class parsed_anime_database:
         """
 
         if json_file == None:
+            self.verify_existence_local_json()
             with open(self.pathway_json) as file:
                 json_file = json.load(file)
+                file.close()
 
         license_name:str = "GNU Affero General Public License v3.0"
         license_url:str = "https://github.com/manami-project/anime-offline-database/blob/master/LICENSE"
@@ -112,13 +114,17 @@ class parsed_anime_database:
             },
         }
 
+        output_message:str = None
         try:
             validate(instance=json_file, schema=schema_anime_offline_database)
             self.correct_repo =  True
-            return "Sucess! Correct repo :3"
+            output_message = "Sucess! Correct repo :3"
         except ValidationError as e:
             self.correct_repo = False
-            return f"Incorrect repo :'(. Error message: {e}"
+            output_message = f"Incorrect repo :'(. \n\nError message: {e}"
+        
+        return output_message
+
 
         # If json's repo doesn't match, set the global variable "correct_repo" to False; if correct, set it to True. Display message to user about file being incorrect.
         
@@ -229,5 +235,4 @@ if __name__ == '__main__':
 
     print(output)
     print()
-    print(padb.existence_json)
     print(padb.correct_repo)
