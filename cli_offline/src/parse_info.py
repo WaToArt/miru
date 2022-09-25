@@ -120,9 +120,6 @@ class parsed_anime_database:
             response_json = requests.get(url,stream=True)
             anime_db_json_name:str = 'anime-offline-database.json'
 
-            if response_json.status_code == 200:
-                self.progress_bar_downloading(url)
-
             if response_json.status_code != 200:
                 anime_db_json_name = None
                 print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
@@ -141,9 +138,16 @@ class parsed_anime_database:
             os.makedirs(new_directory)
 
         new_relative_path:str = f'database_project_manami/{anime_db_json_name}'
-        with open(new_relative_path, mode= 'w+') as file: # Unsure if pathway works.
-            file.write(json.dumps(response_json.json(), indent=1))
-           
+        with open(new_relative_path, mode= 'w+') as file, tqdm(
+            desc=anime_db_json_name,
+            total= int(response_json.headers['content-length']),
+            unit='iB',
+            unit_scale=True,
+            unit_divisor=1024,
+        ) as p_bar: # Unsure if pathway works.
+            
+            chunk = file.write(json.dumps(response_json.json(), indent=1))
+            p_bar.update(chunk)
             file.close()
         
 
