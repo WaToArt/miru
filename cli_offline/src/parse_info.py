@@ -9,6 +9,8 @@ from tqdm.auto import tqdm
 from os import devnull
 from docopt import docopt
 
+from jsonschema import validate
+
 class parsed_anime_database:
     """ Doc:
     Index:
@@ -85,7 +87,14 @@ class parsed_anime_database:
 
         repository_url:str = "https://github.com/manami-project/anime-offline-database"
 
-
+        ### Setup using jsonschema
+        schema_anime_offline_database:dict = {
+            "license": {
+                "name": license_name,
+                "url": license_url,
+            },
+            "repository": repository_url,
+        }
 
         # If json's repo doesn't match, set the file's existence and pathway to None. Display message to user about file being incorrect.
         pass
