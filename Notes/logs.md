@@ -1,4 +1,14 @@
 
+
+# 9/25/2022
+
+- Important info from json to verify:
+    "license": {
+        "name": "GNU Affero General Public License v3.0",
+        "url": "https://github.com/manami-project/anime-offline-database/blob/master/LICENSE"
+    },
+    "repository": "https://github.com/manami-project/anime-offline-database",
+    "lastUpdate": "2022-09-21",
 # 9/24/2022
 
 - Implemented download progress bar with tdqm.

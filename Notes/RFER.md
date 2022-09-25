@@ -49,3 +49,7 @@
 # RFER 09
 - How to open Json file in Python
     >> https://www.geeksforgeeks.org/read-json-file-using-python/
+
+# RFER 10
+- Comparing dates
+    >> https://stackoverflow.com/questions/466345/convert-string-jun-1-2005-133pm-into-datetime

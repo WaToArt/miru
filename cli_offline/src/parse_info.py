@@ -12,6 +12,10 @@ from docopt import docopt
 
 from jsonschema import validate, ValidationError
 
+from datetime import datetime
+
+from symbol import argument
+
 class parsed_anime_database:
     """ Doc:
     Index:
@@ -138,7 +142,7 @@ class parsed_anime_database:
         
         pass
 
-    def check_date(self):
+    def check_date(self) -> str: # RFER 10
         """
         
         Check date of repo and determine whether to download newest json from repo
@@ -146,9 +150,17 @@ class parsed_anime_database:
         entry in json: "lastUpdate"
 
         """
+        date_local_json:datetime = datetime.strptime()
+        date_online_repo:datetime = datetime.strptime()
+
+        if date_local_json >= date_online_repo:
+            return "The local json is up-to-date :3"
+        else:
+            return "There's a newer json online :O"
 
 
-        pass
+
+        
 
     def download_json(self, debug_force_fail_connection:bool = False) -> str:
         """ Credits for anime offline database
