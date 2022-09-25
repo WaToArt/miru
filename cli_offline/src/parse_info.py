@@ -14,7 +14,6 @@ from jsonschema import validate, ValidationError
 
 from datetime import datetime
 
-from symbol import argument
 
 class parsed_anime_database:
     """ Doc:
@@ -142,7 +141,7 @@ class parsed_anime_database:
         
         pass
 
-    def check_date(self) -> str: # RFER 10
+    def compare_last_update(self, online_json=None) -> str: # RFER 10
         """
         
         Check date of repo and determine whether to download newest json from repo
@@ -150,6 +149,9 @@ class parsed_anime_database:
         entry in json: "lastUpdate"
 
         """
+        if not self.existence_json:
+            return "A local json doesn't exist :'("
+
         date_local_json:datetime = datetime.strptime()
         date_online_repo:datetime = datetime.strptime()
 
@@ -183,15 +185,16 @@ class parsed_anime_database:
         url = url_json['minified']
         response_json:Response = requests.get(url, stream=True)
         anime_db_json_name:str = 'anime-offline-database-minified.json'
+        self.verify_correct_repo_of_json()
 
-        if response_json.status_code != 200:
+        if response_json.status_code != 200 or self.correct_repo == False:
             # TODO - If failed to download minified json, download regular json
             print("Error #1: Failed to download minified ")
             url = url_json['regular']
             response_json = requests.get(url,stream=True)
             anime_db_json_name:str = 'anime-offline-database.json'
 
-            if response_json.status_code != 200:
+            if response_json.status_code != 200 or self.correct_repo == False:
                 anime_db_json_name = None
                 print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
                 
@@ -208,6 +211,7 @@ class parsed_anime_database:
         if not os.path.exists(new_directory): # RFER 04
             os.makedirs(new_directory)
 
+        # This saves the newly downloaded json to local storage.
         new_relative_path:str = f'database_project_manami/{anime_db_json_name}'
         with open(new_relative_path, mode= 'w+') as file, tqdm(
             desc=anime_db_json_name,
@@ -248,3 +252,9 @@ if __name__ == '__main__':
     print(output)
     print()
     print(padb.correct_repo)
+
+
+    # Testing to see how response.headers works... This isn't useful.
+    response:Response = requests.get('https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true')
+
+    print(response.headers)
