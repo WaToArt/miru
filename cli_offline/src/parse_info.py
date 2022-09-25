@@ -90,17 +90,38 @@ class parsed_anime_database:
         license_name:str = "GNU Affero General Public License v3.0"
         license_url:str = "https://github.com/manami-project/anime-offline-database/blob/master/LICENSE"
 
-        # repository_url:str = "https://github.com/manami-project/anime-offline-database"
-        repository_url:str = "https://github.com/manami-project/anime-offline-databas213213e" # dummy
+        repository_url:str = "https://github.com/manami-project/anime-offline-database"
+        # repository_url:str = "https://github.com/manami-project/anime-offline-databas213213e" # dummy
 
 
         ### Setup using jsonschema
+        # Version 1
+        # schema_anime_offline_database = {
+        #     "license": {
+        #         "name": license_name,
+        #         "url": license_url,
+        #     },
+        #     "repository": repository_url,
+        # }
+
+        #Version 2
         schema_anime_offline_database = {
-            "license": {
-                "name": license_name,
-                "url": license_url,
+            "type": "object",
+            "properties": {
+                "license": {
+                    "name": { "type": "string",
+                        "enum": [license_name],
+                    },
+                    "url": {
+                        "type": "string",
+                        "enum": [license_url],
+                    }
+                },
+                "repository": {
+                    "type": "string",
+                    "enum": [repository_url],
+                },
             },
-            "repository": repository_url,
         }
 
         # ### Version 1 of validating... Doesn't work: never fails, despite intentionally have wrong url.
@@ -118,6 +139,13 @@ class parsed_anime_database:
         #     return True
 
         ### Version 3
+        try:
+            validate(instance=json_file, schema=schema_anime_offline_database)
+            return True
+        except:
+            return False
+        else:
+            return True
 
         # If json's repo doesn't match, set the file's existence and pathway to None. Display message to user about file being incorrect.
         

@@ -40,3 +40,8 @@
 # RFER 07
 - Tqdm and JSON
 >> https://stackoverflow.com/a/56633292
+
+# RFER 08
+- Examples to use Jsonschema to validate that the correct json matches correctly
+    >> https://stackoverflow.com/a/26532777
+    >> https://towardsdatascience.com/how-to-validate-your-json-using-json-schema-f55f4b162dce
