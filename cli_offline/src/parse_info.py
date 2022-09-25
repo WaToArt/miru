@@ -141,7 +141,7 @@ class parsed_anime_database:
         
         pass
 
-    def compare_last_update(self, online_json=None) -> str: # RFER 10
+    def compare_last_update(self, online_json_date:str=None) -> str: # RFER 10
         """
         
         Check date of repo and determine whether to download newest json from repo
@@ -152,8 +152,13 @@ class parsed_anime_database:
         if not self.existence_json:
             return "A local json doesn't exist :'("
 
-        date_local_json:datetime = datetime.strptime()
-        date_online_repo:datetime = datetime.strptime()
+        with open(self.pathway_json) as file:
+            local_json_file:dict = json.load(file)
+            local_json_date:str = local_json_file['lastUpdate']
+            file.close()
+
+        date_local_json:datetime = datetime.strptime(local_json_date)
+        date_online_repo:datetime = datetime.strptime(online_json_date)
 
         if date_local_json >= date_online_repo:
             return "The local json is up-to-date :3"
@@ -185,14 +190,17 @@ class parsed_anime_database:
         url = url_json['minified']
         response_json:Response = requests.get(url, stream=True)
         anime_db_json_name:str = 'anime-offline-database-minified.json'
+
+        test_foo = json.load(response_json.json())
         self.verify_correct_repo_of_json()
 
         if response_json.status_code != 200 or self.correct_repo == False:
             # TODO - If failed to download minified json, download regular json
             print("Error #1: Failed to download minified ")
-            url = url_json['regular']
+            url = url_json["regular"]
             response_json = requests.get(url,stream=True)
             anime_db_json_name:str = 'anime-offline-database.json'
+            self.verify_correct_repo_of_json()
 
             if response_json.status_code != 200 or self.correct_repo == False:
                 anime_db_json_name = None
@@ -257,4 +265,12 @@ if __name__ == '__main__':
     # Testing to see how response.headers works... This isn't useful.
     response:Response = requests.get('https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true')
 
-    print(response.headers)
+    loaded_str = json.loads(response.text)
+
+    print(loaded_str['lastUpdate'])
+
+    loaded_json = response.json()
+    print(loaded_json['lastUpdate'])
+
+    # bar = json.load(response.json())
+    # print(bar['lastUpdate'])
