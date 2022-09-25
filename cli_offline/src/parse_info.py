@@ -76,16 +76,16 @@ class parsed_anime_database:
         # If json's repo doesn't match, set the file's existence and pathway to None. Display message to user about file being incorrect.
         pass
 
-    def progress_bar_downloading(self, response_json:Response = None, anime_db_json_name=None, url:str = None):
+    # def progress_bar_downloading(self, response_json:Response = None, anime_db_json_name=None, url:str = None):
 
-        total_size_bytes = int(requests.get(url, stream=True).headers['content-length'])
-        block_size = 1024
-        progress_bar = tqdm(total=total_size_bytes, unit='iB', unit_scale=True)
-        with open(f'{anime_db_json_name}.json', 'wb') as file:
-            for data in response_json.iter_content(block_size):
-                progress_bar.update(len(data))
-                file.write(data)
-        progress_bar.close()
+    #     total_size_bytes = int(requests.get(url, stream=True).headers['content-length'])
+    #     block_size = 1024
+    #     progress_bar = tqdm(total=total_size_bytes, unit='iB', unit_scale=True)
+    #     with open(f'{anime_db_json_name}.json', 'wb') as file:
+    #         for data in response_json.iter_content(block_size):
+    #             progress_bar.update(len(data))
+    #             file.write(data)
+    #     progress_bar.close()
 
 
 
@@ -145,16 +145,17 @@ class parsed_anime_database:
             unit_scale=True,
             unit_divisor=1024,
         ) as p_bar: # Unsure if pathway works.
-            
-            chunk = file.write(json.dumps(response_json.json(), indent=1))
-            p_bar.update(chunk)
-            file.close()
-        
+            ### Version 1
+            # chunk = file.write(json.dumps(response_json.json(), indent=1))
+            # p_bar.update(chunk)
+            # file.close()
+            size = file.write(json.dumps(response_json.json()))
+            p_bar.update(size)
 
 
-        file_size:int = (os.stat(new_relative_path).st_size) / (10**6) # RFER 05 && RFER 06
+        file_size:int = ((os.stat(new_relative_path).st_size) / (10**6)) # RFER 05 && RFER 06
 
-        message_download = f'Sucessfully downloaded one of the databases! "{anime_db_json_name}" was downloaded ({file_size} mb) :D'
+        message_download = f'Sucessfully downloaded one of the databases! "{anime_db_json_name}" was downloaded and saved locally wit the size of ({file_size} mb) :D'
         
         return message_download
 
