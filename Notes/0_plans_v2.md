@@ -40,3 +40,11 @@
     - pytest-socket
         - I think it forces selected test to run without a network connection
         > https://github.com/miketheman/pytest-socket
+    - Progress bar libraries:
+        - progressbar2
+            >> https://pypi.org/project/progressbar2/
+        - tqdm
+            >> https://github.com/tqdm/tqdm
+            - examples:
+                >> https://stackoverflow.com/a/37573701
+                >> https://github.com/tqdm/tqdm/blob/master/examples/tqdm_requests.py

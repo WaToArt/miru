@@ -5,6 +5,9 @@ from xml.etree import ElementTree
 import requests
 from requests import Response
 
+from tqdm.auto import tqdm
+from os import devnull
+from docopt import docopt
 
 class parsed_anime_database:
     """ Doc:
@@ -73,7 +76,17 @@ class parsed_anime_database:
         # If json's repo doesn't match, set the file's existence and pathway to None. Display message to user about file being incorrect.
         pass
 
-    def download_json(self, debug_force_fail_connection:str = False) -> str:
+    def progress_bar_downloading(self, response_json:Response, anime_db_json_name:str):
+        
+        opts = docopt(__doc__)
+        eg_out = opts['--output'].replace("/dev/null", devnull)
+
+        with tqdm.wrapattr(open(eg_out, "wb"), "write", unit_scale=True, unit_divisor=1024, total=int(response_json.headers.get('content-length', 0))) as p_bar:
+            for chunk in response_json.iter_content(chunk_size=4096):
+                p_bar.write(chunk)
+
+
+    def download_json(self, debug_force_fail_connection:bool = False) -> str:
         """ Credits for anime offline database
         Link: https://github.com/manami-project/anime-offline-database
 
@@ -91,16 +104,16 @@ class parsed_anime_database:
             'regular': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database.json?raw=true',
         }
         #RFER 02 # TODO - Download minified json
-        requested_json:Response = requests.get(url_json['minified'])
+        response_json:Response = requests.get(url_json['minified'], stream=True)
         anime_db_json_name:str = 'anime-offline-database-minified.json'
 
-        if requested_json.status_code != 200:
+        if response_json.status_code != 200:
             # TODO - If failed to download minified json, download regular json
             print("Error #1: Failed to download minified ")
-            requested_json = requests.get(url_json['regular'])
+            response_json = requests.get(url_json['regular'],stream=True)
             anime_db_json_name:str = 'anime-offline-database.json'
 
-            if requested_json.status_code != 200:
+            if response_json.status_code != 200:
                 anime_db_json_name = None
                 print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
                 
@@ -108,6 +121,8 @@ class parsed_anime_database:
 
                 return message_download
         
+        self.progress_bar_downloading(response_json, anime_db_json_name)
+
         # TODO - Implement verify repo before saving locally.
             # Maybe add it to each of the for loops when downloading from link.
 
@@ -115,11 +130,14 @@ class parsed_anime_database:
         if not os.path.exists(new_directory): # RFER 04
             os.makedirs(new_directory)
 
-        with open(f'database_project_manami/{anime_db_json_name}', mode= 'w+') as file: # Unsure if pathway works.
-            file.write(json.dumps(requested_json.json()))
-            file.close()
+        new_relative_path:str = f'database_project_manami/{anime_db_json_name}'
 
-        message_download = f'Sucessfully downloaded one of the databases! "{anime_db_json_name}" was downloaded'
+        with open(new_relative_path, mode= 'w+') as file: # Unsure if pathway works.
+            file.write(json.dumps(response_json.json(), indent=1))
+            file.close()
+        file_size:int = (os.stat(new_relative_path).st_size) / (10**6) # RFER 05 && RFER 06
+
+        message_download = f'Sucessfully downloaded one of the databases! "{anime_db_json_name}" was downloaded ({file_size} mb) :D'
         
         return message_download
 
@@ -137,3 +155,4 @@ class parsed_user_list:
 if __name__ == '__main__':
     padb = parsed_anime_database()
     pathway = padb.download_json()
+    print(pathway)

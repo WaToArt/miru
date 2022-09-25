@@ -25,3 +25,14 @@
 # RFER 04
 - Create directory if it doesn't exist
 >> https://stackoverflow.com/a/1274465
+
+# RFER 05
+- Grabbing size of file:
+>> https://www.geeksforgeeks.org/how-to-get-file-size-in-python/
+
+# RFER 06
+- How to calculate computer bytes into human readable numbers:
+>> ~~ https://code.activestate.com/recipes/577081-humanized-representation-of-a-number-of-bytes/ ~~
+- ~~ used this as reference~~
+    >>~~  https://thispointer.com/python-get-file-size-in-kb-mb-or-gb-human-readable-format/ ~~
+- Actually referenced this: https://www.google.com/search?q=how+many+bytes+in+1mb

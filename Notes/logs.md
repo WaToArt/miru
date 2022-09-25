@@ -11,6 +11,7 @@
         - read_json()
             - There might be scenarios I am unaccounting for.
             - I think it might be to verify the repo before saving locally.
+            - Need to implement a check whether the the existing local json  is newer or older.
 
 
 - Resuming session:
