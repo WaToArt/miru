@@ -36,3 +36,7 @@
 - ~~ used this as reference~~
     >>~~  https://thispointer.com/python-get-file-size-in-kb-mb-or-gb-human-readable-format/ ~~
 - Actually referenced this: https://www.google.com/search?q=how+many+bytes+in+1mb
+
+# RFER 07
+- Tqdm and JSON
+>> https://stackoverflow.com/a/56633292

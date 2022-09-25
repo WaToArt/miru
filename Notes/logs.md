@@ -1,6 +1,10 @@
 
 # 9/24/2022
 
+- Implemented download progress bar with tdqm.
+    - Using Stream allows the file to be downloaded in chunks
+        - UPDATE: progress bar isn't being updated. No iteration/for loop is actively updating the progress bar
+
 - NExt time:
     - Learn how to validate json
         - Read this:

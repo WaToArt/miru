@@ -48,5 +48,5 @@
             - examples:
                 >> https://stackoverflow.com/a/37573701
                 >> https://github.com/tqdm/tqdm/blob/master/examples/tqdm_requests.py
-        - Used this one:
-            >> https://stackoverflow.com/a/56633292
+            - Used this one:
+                >> https://stackoverflow.com/a/56633292
