@@ -72,7 +72,21 @@ class parsed_anime_database:
         
 
     def verify_correct_repo_of_json(self) -> None:
-        
+        """
+        Things to verify:
+            - licence/
+                - name
+                - url
+            - repository
+
+        """
+        license_name:str = "GNU Affero General Public License v3.0"
+        license_url:str = "https://github.com/manami-project/anime-offline-database/blob/master/LICENSE"
+
+        repository_url:str = "https://github.com/manami-project/anime-offline-database"
+
+
+
         # If json's repo doesn't match, set the file's existence and pathway to None. Display message to user about file being incorrect.
         pass
 
@@ -83,6 +97,18 @@ class parsed_anime_database:
 
         """
         
+        pass
+
+    def check_date(self):
+        """
+        
+        Check date of repo and determine whether to download newest json from repo
+
+        entry in json: "lastUpdate"
+
+        """
+
+
         pass
 
     def download_json(self, debug_force_fail_connection:bool = False) -> str:

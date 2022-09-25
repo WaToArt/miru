@@ -9,7 +9,7 @@
     - Learn how to validate json
         - Read this:
             > https://stackoverflow.com/a/54491882
-
+            >> https://pypi.org/project/jsonschema/
 - Ending sesh:
     - Finished implementating and writing test for function:
         - read_json()
