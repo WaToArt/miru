@@ -76,8 +76,9 @@ class parsed_anime_database:
         # If json's repo doesn't match, set the file's existence and pathway to None. Display message to user about file being incorrect.
         pass
 
-    def progress_bar_downloading(self, response_json:Response, anime_db_json_name=None, url_json:str = None):
-        total_size_bytes = int(response_json.headers['content-length'])
+    def progress_bar_downloading(self, response_json:Response = None, anime_db_json_name=None, url:str = None):
+
+        total_size_bytes = int(requests.get(url, stream=True).headers['content-length'])
         block_size = 1024
         progress_bar = tqdm(total=total_size_bytes, unit='iB', unit_scale=True)
         with open(f'{anime_db_json_name}.json', 'wb') as file:
@@ -108,13 +109,19 @@ class parsed_anime_database:
             'regular': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database.json?raw=true',
         }
         #RFER 02 # TODO - Download minified json
-        response_json:Response = requests.get(url_json['minified'], stream=True)
+        url = url_json['minified']
+        response_json:Response = requests.get(url, stream=True)
         anime_db_json_name:str = 'anime-offline-database-minified.json'
+
         if response_json.status_code != 200:
             # TODO - If failed to download minified json, download regular json
             print("Error #1: Failed to download minified ")
-            response_json = requests.get(url_json['regular'],stream=True)
+            url = url_json['regular']
+            response_json = requests.get(url,stream=True)
             anime_db_json_name:str = 'anime-offline-database.json'
+
+            if response_json.status_code == 200:
+                self.progress_bar_downloading(url)
 
             if response_json.status_code != 200:
                 anime_db_json_name = None
@@ -134,10 +141,9 @@ class parsed_anime_database:
             os.makedirs(new_directory)
 
         new_relative_path:str = f'database_project_manami/{anime_db_json_name}'
-
         with open(new_relative_path, mode= 'w+') as file: # Unsure if pathway works.
             file.write(json.dumps(response_json.json(), indent=1))
-            self.progress_bar_downloading(response_json)
+           
             file.close()
         
 
