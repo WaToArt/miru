@@ -89,9 +89,8 @@ class parsed_anime_database:
 
         license_name:str = "GNU Affero General Public License v3.0"
         license_url:str = "https://github.com/manami-project/anime-offline-database/blob/master/LICENSE"
-
         repository_url:str = "https://github.com/manami-project/anime-offline-database"
-        # repository_url:str = "https://github.com/manami-project/anime-offline-databas213213e" # dummy
+        # repository_url:str = "fail on purpose; keep it up on this difficult self-taught coding journey! you got this :3" # DEBUG - dummy to fail on purpose :3 
 
 
         ### Setup using jsonschema
