@@ -2,6 +2,10 @@
 
 # 9/25/2022
 
+- ENDING SESH
+    - Things completed:
+        - 
+
 - Important info from json to verify:
     "license": {
         "name": "GNU Affero General Public License v3.0",
