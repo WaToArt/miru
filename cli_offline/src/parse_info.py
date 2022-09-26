@@ -169,6 +169,9 @@ class parsed_anime_database:
     def progress_bar_download(self, response: Response= None) -> None:
         if response == None:
             return # Debug; end early
+
+        # output_response = response.json()
+        output_response = None
         
         total_size_bytes:int = int(response.headers.get('content-length', 0))
         block_size:int = 1024
@@ -180,10 +183,14 @@ class parsed_anime_database:
 
         for data in response.iter_content(block_size):
             progress_bar.update(len(data))
+            output_response += data
+
         progress_bar.close()
 
         if total_size_bytes != 0 and progress_bar.n != total_size_bytes:
             print("Error: The download broke :'[")
+        
+        return output_response
 
     def download_json(self, debug_force_fail_connection:bool = False) -> dict:
         """ Credits for anime offline database
@@ -207,6 +214,9 @@ class parsed_anime_database:
         response:Response = requests.get(url, stream=True)
         anime_db_json_name:str = 'anime-offline-database-minified.json'
 
+        # if response.status_code == 200:
+        #     self.progress_bar_download(response=response)
+
         if response.status_code != 200:
             # TODO - If failed to download minified json, download regular json
             print("Error #1: Failed to download minified ")
@@ -214,6 +224,9 @@ class parsed_anime_database:
             response = requests.get(url,stream=True)
             anime_db_json_name:str = 'anime-offline-database.json'
 
+            # if response.status_code == 200:
+            #     self.progress_bar_download(response=response)
+            
             if response.status_code != 200:
                 anime_db_json_name = None
                 response = None
