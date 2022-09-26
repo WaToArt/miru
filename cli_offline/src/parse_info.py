@@ -1,10 +1,12 @@
 import os
 import json
+from pickletools import int4
 from xml.dom import ValidationErr
 from xml.etree import ElementTree
 
 import requests
 from requests import Response
+from requests import models
 
 from tqdm.auto import tqdm
 from os import devnull
@@ -30,6 +32,20 @@ class parsed_anime_database:
         self.current_local_database:str = None
         self.current_online_database:str = None
 
+    def psuedocode_for_ui_execute_downloading_json(self) -> None:
+        """
+        Psuedocode:
+            - verify_existence_local_json
+            - download_json
+            - verify_correct_repo_of_json
+            - compare_last_update
+                - Ask user if they still want to download the new Json
+                    - Default after timeout: Download
+            - move old json (if it exists) into a separate folder that's old. # TODO - Need to create function
+            - save_json
+
+        """
+        pass
     
     def verify_existence_local_json(self) -> str:
         """
@@ -63,21 +79,6 @@ class parsed_anime_database:
         self.existence_json = False
         self.pathway_json = None
         return message_existence
-
-    def read_json(self): # This might not be needed
-        if self.pathway_json == None:
-            return
-
-        try:
-            with open(self.pathway_json, 'r') as anime_offline_database:
-                data_offline = json.load(anime_offline_database)
-        except FileNotFoundError as e:
-            print(f"Error: {e}")
-            data_offline = None
-        
-        if data_offline == None:
-            return
-        
 
     def verify_correct_repo_of_json(self, json_file:json= None) -> str:
         """
@@ -165,11 +166,26 @@ class parsed_anime_database:
             self.latest_json = False
             return "There's a newer json online :O"
 
-
-
+    def progress_bar_download(self, response: Response= None) -> None:
+        if response == None:
+            return # Debug; end early
         
+        total_size_bytes:int = int(response.headers.get('content-length', 0))
+        block_size:int = 1024
+        progress_bar = tqdm(
+            total=total_size_bytes,
+            unit='iB',
+            unit_scale=True
+        )
 
-    def download_json(self, debug_force_fail_connection:bool = False) -> json:
+        for data in response.iter_content(block_size):
+            progress_bar.update(len(data))
+        progress_bar.close()
+
+        if total_size_bytes != 0 and progress_bar.n != total_size_bytes:
+            print("Error: The download broke :'[")
+
+    def download_json(self, debug_force_fail_connection:bool = False) -> dict:
         """ Credits for anime offline database
         Link: https://github.com/manami-project/anime-offline-database
 
@@ -188,41 +204,50 @@ class parsed_anime_database:
         }
         #RFER 02 # TODO - Download minified json
         url = url_json['minified']
-        response_json:Response = requests.get(url, stream=True)
+        response:Response = requests.get(url, stream=True)
         anime_db_json_name:str = 'anime-offline-database-minified.json'
 
-        if response_json.status_code != 200 or self.correct_repo == False:
+        if response.status_code != 200:
             # TODO - If failed to download minified json, download regular json
             print("Error #1: Failed to download minified ")
             url = url_json["regular"]
-            response_json = requests.get(url,stream=True)
+            response = requests.get(url,stream=True)
             anime_db_json_name:str = 'anime-offline-database.json'
 
-            if response_json.status_code != 200 or self.correct_repo == False:
+            if response.status_code != 200:
                 anime_db_json_name = None
-                response_json = None
+                response = None
 
                 print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
         self.current_online_database = anime_db_json_name
-        return response_json.json()
+        
+        output_json = response.json()
+        return output_json
 
-    def save_json(self, response_json:json): # TODO - Discard download bar for now. potentially, move the the download bar back to "download_json" function if I want to maintain progress bar. Biggest hurdle: separating saving the file from the progress bar.
+    def save_json(self, response:dict): # TODO - Discard download bar for now. potentially, move the the download bar back to "download_json" function if I want to maintain progress bar. Biggest hurdle: separating saving the file from the progress bar.
         new_directory = r'./database_project_manami'
         if not os.path.exists(new_directory): # RFER 04
             os.makedirs(new_directory)
 
         # This saves the newly downloaded json to local storage.
         new_relative_path:str = f'database_project_manami/{self.current_online_database}'
-        with open(new_relative_path, mode= 'w+') as file, tqdm(
-            desc=self.current_online_database,
-            total= int(response_json.headers['content-length']),
-            unit='iB',
-            unit_scale=True,
-            unit_divisor=1000,
-        ) as p_bar: # RFER 07
+        
+        ### Version 1
+        # with open(new_relative_path, mode= 'w+') as file, tqdm(
+        #     desc=self.current_online_database,
+        #     total= int(response.headers['content-length']),
+        #     unit='iB',
+        #     unit_scale=True,
+        #     unit_divisor=1000,
+        # ) as p_bar: # RFER 07
             
-            size = file.write(json.dumps(response_json.json(), indent=1))
-            p_bar.update(size)
+        #     size = file.write(json.dumps(response, indent=4))
+        #     p_bar.update(size)
+
+        # Version 2
+        with open(new_relative_path, mode= 'w+') as file:
+            
+            file.write(json.dumps(response, indent=1))
 
         file_size:int = ((os.stat(new_relative_path).st_size) / (10**6)) # RFER 05 && RFER 06
 
@@ -244,24 +269,29 @@ class parsed_user_list:
     
 if __name__ == '__main__':
     padb = parsed_anime_database()
-    padb.download_json()
-    padb.verify_existence_local_json()
-    output:bool = padb.verify_correct_repo_of_json()
+    
+    output:dict = padb.download_json()
+    print(type(output))
 
-    print(output)
-    print()
-    print(padb.correct_repo)
+    print(output['lastUpdate'])
+    padb.save_json(output)
+    # padb.verify_existence_local_json()
+    # output:bool = padb.verify_correct_repo_of_json()
+
+    # print(output)
+    # print()
+    # print(padb.correct_repo)
 
 
-    # Testing to see how response.headers works... This isn't useful.
-    response:Response = requests.get('https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true')
+    # # Testing to see how response.headers works... This isn't useful.
+    # response:Response = requests.get('https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true')
 
-    loaded_str = json.loads(response.text)
+    # loaded_str = json.loads(response.text)
 
-    print(loaded_str['lastUpdate'])
+    # print(loaded_str['lastUpdate'])
 
-    loaded_json = response.json()
-    print(loaded_json['lastUpdate'])
+    # loaded_json = response.json()
+    # print(loaded_json['lastUpdate'])
 
-    # bar = json.load(response.json())
-    # print(bar['lastUpdate'])
+    # # bar = json.load(response.json())
+    # # print(bar['lastUpdate'])
