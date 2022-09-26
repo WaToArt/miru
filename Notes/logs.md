@@ -4,7 +4,10 @@
 
 - ENDING SESH
     - Things completed:
-        - 
+        - functions: 
+            - comparing dates
+            - correct repo
+    - The those needs tests to be written
 
 - Important info from json to verify:
     "license": {
