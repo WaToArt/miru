@@ -7,7 +7,7 @@
         - functions: 
             - comparing dates
             - correct repo
-    - The those needs tests to be written
+    - These needs unit tests to be written. Keep focusing too much on writting them to work.
 
 - Important info from json to verify:
     "license": {

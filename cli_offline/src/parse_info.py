@@ -79,7 +79,7 @@ class parsed_anime_database:
             return
         
 
-    def verify_correct_repo_of_json(self, json_file:dict= None) -> str:
+    def verify_correct_repo_of_json(self, json_file:json= None) -> str:
         """
         Things to verify:
             - licence/
@@ -143,14 +143,12 @@ class parsed_anime_database:
         
         pass
 
-    def compare_last_update(self, online_json_date:str=None) -> str: # RFER 10
+    def compare_last_update(self, online_json_date:str=None, local_json_date:str=None) -> str: # RFER 10
         """
         Check date of repo and determine whether to download newest json from repo
 
         entry in json: "lastUpdate"
         """
-        if not self.existence_json:
-            return "A local json doesn't exist :'("
 
         with open(self.pathway_json) as file:
             local_json_file:dict = json.load(file)
@@ -171,7 +169,7 @@ class parsed_anime_database:
 
         
 
-    def download_json(self, debug_force_fail_connection:bool = False) -> Response:
+    def download_json(self, debug_force_fail_connection:bool = False) -> json:
         """ Credits for anime offline database
         Link: https://github.com/manami-project/anime-offline-database
 
@@ -206,9 +204,9 @@ class parsed_anime_database:
 
                 print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
         self.current_online_database = anime_db_json_name
-        return response_json
+        return response_json.json()
 
-    def save_json(self, response_json:Response):
+    def save_json(self, response_json:json): # TODO - Discard download bar for now. potentially, move the the download bar back to "download_json" function if I want to maintain progress bar. Biggest hurdle: separating saving the file from the progress bar.
         new_directory = r'./database_project_manami'
         if not os.path.exists(new_directory): # RFER 04
             os.makedirs(new_directory)
