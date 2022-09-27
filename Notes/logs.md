@@ -1,7 +1,14 @@
 
 
+# 9/27/2022
+
+- Read this on how to remove files after running tests:
+    >> https://stackoverflow.com/a/51593679
+    >> https://docs.pytest.org/en/6.2.x/tmpdir.html
 
 # 9/26/2022
+
+
 
 - CMD of running functions in action WITH a new json online:
 

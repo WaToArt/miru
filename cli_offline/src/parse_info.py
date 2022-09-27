@@ -62,7 +62,7 @@ class download_anime_database_json:
         
         pass
     
-    def verify_existence_local_json(self) -> None:
+    def verify_existence_local_json(self, directories:list[str]= None) -> None:
         """
         Check if json exist locally in directory "database_project_manami/", and checks on several levels.
         """
@@ -74,11 +74,13 @@ class download_anime_database_json:
             'anime-offline-database.json'
         ]
 
-        # Look at two directories 
-        directories: set[str] = [
-            './database_project_manami',
-            '../database_project_manami/'
-        ]
+        # Default option if directories parameter is blank
+        if directories == None:
+            # Look at two directories 
+            directories: list[str] = [
+                './database_project_manami',
+                '../database_project_manami/'
+            ]
 
         # Search for json in various directories
         for file_name in file_names: # Look for minified version first.

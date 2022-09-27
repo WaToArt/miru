@@ -59,3 +59,7 @@
 # RFER 11
 - Implementing multiple conditions in Match Case:
 >> https://stackoverflow.com/a/69642922
+
+# RFER 12
+- 
+>> https://docs.pytest.org/en/6.2.x/tmpdir.html

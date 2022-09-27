@@ -2,7 +2,7 @@ from src.parse_info import download_anime_database_json
 
 class user_interface:
 
-    def __init__(self, class_download_anime_database_json:download_anime_database_json) -> None:
+    def __init__(self) -> None:
         self.download_anime_database_json:download_anime_database_json = download_anime_database_json()
         
         

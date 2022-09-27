@@ -10,21 +10,20 @@ name_regular_anime_database:str = "anime-offline-database.json"
 
 def fail_intentionally_sadge():
     assert None == "failed intentionally"
-class Tests_download_anime_database_json:
+class Tests_UNITS_download_anime_database_json:
 
     def check_file_existence_local_json(self, ): # Have this run when Json is downloaded instead.
         p_a_db:download_anime_database_json = download_anime_database_json()
         
         assert p_a_db.existence_json == False, f"Should report false when first launch."
 
-        output_message:str = p_a_db.verify_existence_local_json()
+        p_a_db.verify_existence_local_json()
         assert p_a_db.existence_json == True, f"Method runs and checks that the json exists locally."
-        
         assert './database_project_manami/' or '/database_project_manami/' in p_a_db.pathway_json  
         assert name_minified_anime_database or name_regular_anime_database in p_a_db.pathway_json
 
 
-        assert 'was found. This will be used :3' in output_message
+        # assert 'was found. This will be used :3' in output_message
 
 
     

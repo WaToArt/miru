@@ -1,6 +1,7 @@
 import pytest
 from pytest import CaptureFixture
 from src.ui import user_interface
+from src.parse_info import download_anime_database_json
 
 def fail_intentionally_sadge():
     assert None == "failed intentionally"
@@ -48,4 +49,10 @@ class Tests_user_cli:
             ## If download failed, pop a 5 second message and only return the raw ID and MAL link.
 
         # Purposely fail
+        fail_intentionally_sadge()
+
+class Tests_FUNCTIONAL_download_anime_database_json:
+
+    def test_download_and_saving_json():
+
         fail_intentionally_sadge()
