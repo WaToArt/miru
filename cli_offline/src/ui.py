@@ -1,18 +1,19 @@
-from parse_info import parsed_anime_database
+from parse_info import download_anime_database_json
 
 class user_interface:
 
-    def __init__(self) -> None:
-        self.parsing_anime_database:parsed_anime_database = parsed_anime_database()
+    def __init__(self, class_download_anime_database_json:download_anime_database_json) -> None:
+        self.download_anime_database_json:download_anime_database_json = download_anime_database_json()
         
         
 
     def start_program(self):
+        print("Welcome to Project miru 『見る』! Type in one of the options to continue :3\n")
+
         while True:
             print("Here are your options!")
             print("Type the worded option!")
             main_menu_options:list[str] = [
-                 
                 "Roll",
                 "download",
                 "stats",
@@ -26,10 +27,10 @@ class user_interface:
                 # print(f"{index}): {item}")
                 print(f"* {item}")
 
-            input_command:str = input('>> ')
+            input_command:str = input('>> ').lower().strip()
             print()
 
-            match input_command.lower().strip():
+            match input_command:
                 case 'quit':
                     print('Now quitting program.')
                     break

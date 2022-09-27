@@ -1,4 +1,3 @@
-from email.generator import Generator
 import pytest
 from pytest import CaptureFixture
 from src.ui import user_interface
@@ -24,9 +23,9 @@ class Tests_user_cli:
 
 
         # Mark opens the application for the first time, and is greeted with the options they can interact with. 
-        ui.start()
-        captured: CaptureFixture[str] = capsys.readouterr()
-        assert welcome_message in captured._captured_out # TODO - Check if this fixture works as like "captured.out"
+        ui.start_program()
+        captured = capsys.readouterr()
+        assert welcome_message in captured.out # TODO - Check if this fixture works as like "captured.out"
 
         # Mark decides that he wants to obtain a random anime to watch. However, the app (application) detects that this is Mark's first time launching the program. The program asks if they want to download the json of the anime database.
 

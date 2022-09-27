@@ -17,7 +17,7 @@ from jsonschema import validate, ValidationError
 from datetime import datetime
 
 
-class parsed_anime_database:
+class download_anime_database_json:
     """ Doc:
     Index:
         json = manami project's anime-offline-database
@@ -26,13 +26,14 @@ class parsed_anime_database:
     def __init__(self) -> None:
         self.existence_json:bool = False
         self.pathway_json:str = None
+
         self.latest_json:bool = False
         self.correct_repo:bool = False
 
         self.current_local_database:str = None
         self.current_online_database:str = None
 
-    def psuedocode_for_ui_execute_downloading_json(self) -> None:
+    def debug_only___psuedocode_for_ui_execute_downloading_json(self) -> None:
         """
         Psuedocode:
             - verify_existence_local_json
@@ -53,15 +54,17 @@ class parsed_anime_database:
         
         print(self.compare_last_update(online_json_date=response_json['lastUpdate']))
 
+        self.move_old_json_to_backup_folder()
+
         self.save_json(response_json)
 
 
         
         pass
     
-    def verify_existence_local_json(self) -> str:
+    def verify_existence_local_json(self) -> None:
         """
-        Check if json exist locally in directory "database_project_manami", and checks on several levels.
+        Check if json exist locally in directory "database_project_manami/", and checks on several levels.
         """
         message_existence:str = "None of the required database were found."
         
@@ -71,11 +74,13 @@ class parsed_anime_database:
             'anime-offline-database.json'
         ]
 
+        # Look at two directories 
         directories: set[str] = [
             './database_project_manami',
             '../database_project_manami/'
         ]
 
+        # Search for json in various directories
         for file_name in file_names: # Look for minified version first.
             for directory in directories:
                 for root, dirs, files, in os.walk(directory):
@@ -84,15 +89,17 @@ class parsed_anime_database:
                         self.current_local_database = file_name
                         self.pathway_json =  os.path.join(root, file_name)
 
+                        # Exit function if one of the versions are found
                         message_existence = f"{file_name} was found. This will be used :3"
-                        return message_existence
+                        print(message_existence)
+                        return
 
         # If json was not found in the directories.
         self.existence_json = False
         self.pathway_json = None
-        return message_existence
+        print(message_existence)
 
-    def verify_correct_repo_of_json(self, json_file:json= None) -> str:
+    def verify_correct_repo_of_json(self, json_file:dict= None) -> None:
         """
         Things to verify:
             - licence/
@@ -104,6 +111,9 @@ class parsed_anime_database:
 
         if json_file == None:
             self.verify_existence_local_json()
+            if not self.existence_json:
+                return
+
             with open(self.pathway_json) as file:
                 json_file = json.load(file)
                 file.close()
@@ -134,6 +144,7 @@ class parsed_anime_database:
 
         output_message:str = None
         try:
+            # If json's repo doesn't match, set the global variable "correct_repo" to False; if correct, set it to True. Display message to user about file being incorrect.
             validate(instance=json_file, schema=schema_anime_offline_database)
             self.correct_repo =  True
             output_message = "Sucess! Correct repo :3"
@@ -141,21 +152,10 @@ class parsed_anime_database:
             self.correct_repo = False
             output_message = f"Incorrect repo :'(. \n\nError message: {e}"
         
-        return output_message
+        print(output_message)
 
 
-        # If json's repo doesn't match, set the global variable "correct_repo" to False; if correct, set it to True. Display message to user about file being incorrect.
         
-
-    def move_old_json_to_backup_folder(self):
-        """
-        
-        Idea: Before the new json is saved, move the old json into a separate folder as backup incase the download of the new json fails.
-
-        """
-        
-        pass
-
     def compare_last_update(self, online_json_date:str, local_json_date:str=None) -> str: # RFER 10
         """
         Check date of repo and determine whether to download newest json from repo
@@ -168,17 +168,50 @@ class parsed_anime_database:
                 local_json_date:str = local_json_file['lastUpdate']
                 file.close()
         except:
-            return "Local json doesn't exist :'["
+            print("Local json doesn't exist :'[")
+            return
         date_parameters:str = '%Y-%m-%d'
         date_local_json:datetime = datetime.strptime(local_json_date, date_parameters)
         date_online_repo:datetime = datetime.strptime(online_json_date, date_parameters)
 
         if date_local_json >= date_online_repo:
             self.latest_json = True
-            return "The local json is up-to-date :3"
+            print("The local json is up-to-date :3")
         else:
             self.latest_json = False
-            return "There's a newer json online :O"
+            print("There's a newer json online :O")
+
+
+    def move_old_json_to_backup_folder(self) -> None: # TODO
+        """
+        
+        Idea: Before the new json is saved, move the old json into a separate folder as backup incase the download of the new json fails.
+
+        """
+        print("Currect action: moving existing json into backup folder.")
+
+        conditions:list[bool] = [
+            self.existence_json, 
+            self.latest_json,
+        ]
+
+        # Exit immedately if 2 conditions aren't met
+        match conditions:
+            case [True, False]: # move existing file into new folder # self.existence_json == True and self.latest_json == False
+                print("There is an existing json. Moving it into backup folder.")
+                
+                try: # Execute moving folder.
+                    
+                    print("Finished moving to backup folder.")
+                except:
+                    print("Action was interrupted. :'[")
+                
+            case [False, True]:
+                print("It doesn't exist, so nothing was moved")
+            case other:
+                print("Something broke, but nothing was moved.")
+
+
 
     def progress_bar_download(self, response: Response= None) -> None:
         if response == None:
@@ -267,16 +300,13 @@ class parsed_anime_database:
 
         message_download = f'Sucessfully downloaded one of the databases! "{self.current_online_database}" was downloaded and saved locally with the size of ({file_size} mb) :D'
         
-        self.current_online_database = None # Reset to None
+        # self.current_online_database = None # Reset to None
 
         print(message_download)
 
 
-        
-
-
-        
-
+class parsed_anime_database:
+    pass
 
 class parsed_user_list:
     pass
@@ -284,5 +314,5 @@ class parsed_user_list:
 if __name__ == '__main__':
     padb = parsed_anime_database()
     
-    padb.psuedocode_for_ui_execute_downloading_json()
+    padb.debug_only___psuedocode_for_ui_execute_downloading_json()
     print("done!")

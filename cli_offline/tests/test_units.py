@@ -1,7 +1,6 @@
 from enum import auto
 import pytest
-from src.parse_info import parsed_anime_database
-from src.ui import user_interface
+from src.parse_info import download_anime_database_json
 
 from pytest_socket import socket_disabled
 repository_manami_project_json:str = "https://github.com/manami-project/anime-offline-database"
@@ -11,9 +10,11 @@ name_regular_anime_database:str = "anime-offline-database.json"
 
 def fail_intentionally_sadge():
     assert None == "failed intentionally"
-class Tests_parsed_anime_database:
+class Tests_download_anime_database_json:
 
-    def check_file_existence_local_json(self, p_a_db:parsed_anime_database): # Have this run when Json is downloaded instead.
+    def check_file_existence_local_json(self, ): # Have this run when Json is downloaded instead.
+        p_a_db:download_anime_database_json = download_anime_database_json()
+        
         assert p_a_db.existence_json == False, f"Should report false when first launch."
 
         output_message:str = p_a_db.verify_existence_local_json()
@@ -28,7 +29,7 @@ class Tests_parsed_anime_database:
 
     
     def test_download_json_sucess(self):
-        p_a_db:parsed_anime_database = parsed_anime_database()
+        p_a_db:download_anime_database_json = download_anime_database_json()
         output_message = p_a_db.download_json()
 
         assert "Sucessfully downloaded one of the databases!" and "was downloaded" in output_message
@@ -38,12 +39,12 @@ class Tests_parsed_anime_database:
         
     def test_download_json_failed(self): #force offline mode so no network connection is made
         
-        p_a_db:parsed_anime_database = parsed_anime_database()
+        p_a_db:download_anime_database_json = download_anime_database_json()
         output_message = p_a_db.download_json(True)
         
         assert output_message == "Failed to either Json options for anime offline databases :'["
     def test_verify_correct_repo_local_file_exists(self):
-        p_a_db:parsed_anime_database = parsed_anime_database()
+        p_a_db:download_anime_database_json = download_anime_database_json()
 
         assert p_a_db.correct_repo == False,'Start up should be immediately False'
 

@@ -429,7 +429,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 27-Sep-2022 at 05:11:44 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 27-Sep-2022 at 04:58:48 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -445,8 +445,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.10.6</td></tr></table>
     <h2>Summary</h2>
-    <p>0 tests ran in 0.83 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">1 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>0 tests ran in 1.25 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">2 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -465,4 +465,13 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">ImportError while importing test module &#x27;/Users/watoart/VSCode/miru/cli_offline/tests/test_functional.py&#x27;.<br/>Hint: make sure your test modules/packages have valid Python names.<br/>Traceback:<br/>/opt/homebrew/Cellar/python@3.10/3.10.6_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/importlib/__init__.py:126: in import_module<br/>    return _bootstrap._gcd_import(name[level:], package, level)<br/>cli_offline/tests/test_functional.py:3: in &lt;module&gt;<br/>    from src.ui import user_interface<br/>cli_offline/src/ui.py:1: in &lt;module&gt;<br/>    from parse_info import download_anime_database_json<br/><span class="error">E   ModuleNotFoundError: No module named &#x27;parse_info&#x27;</span><br/></div></td></tr></tbody></table></body></html>
+            <div class="log">ImportError while importing test module &#x27;/Users/watoart/VSCode/miru/cli_offline/tests/test_functional.py&#x27;.<br/>Hint: make sure your test modules/packages have valid Python names.<br/>Traceback:<br/>/opt/homebrew/Cellar/python@3.10/3.10.6_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/importlib/__init__.py:126: in import_module<br/>    return _bootstrap._gcd_import(name[level:], package, level)<br/>tests/test_functional.py:4: in &lt;module&gt;<br/>    from src.ui import user_interface<br/>src/ui.py:1: in &lt;module&gt;<br/>    from parse_info import download_anime_database_json<br/><span class="error">E   ModuleNotFoundError: No module named &#x27;parse_info&#x27;</span><br/></div></td></tr></tbody>
+      <tbody class="error results-table-row">
+        <tr>
+          <td class="col-result">Error</td>
+          <td class="col-name">cli_offline/tests/test_units.py::collect</td>
+          <td class="col-duration"></td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">ImportError while importing test module &#x27;/Users/watoart/VSCode/miru/cli_offline/tests/test_units.py&#x27;.<br/>Hint: make sure your test modules/packages have valid Python names.<br/>Traceback:<br/>/opt/homebrew/Cellar/python@3.10/3.10.6_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/importlib/__init__.py:126: in import_module<br/>    return _bootstrap._gcd_import(name[level:], package, level)<br/>tests/test_units.py:4: in &lt;module&gt;<br/>    from src.ui import user_interface<br/>src/ui.py:1: in &lt;module&gt;<br/>    from parse_info import download_anime_database_json<br/><span class="error">E   ModuleNotFoundError: No module named &#x27;parse_info&#x27;</span><br/></div></td></tr></tbody></table></body></html>
