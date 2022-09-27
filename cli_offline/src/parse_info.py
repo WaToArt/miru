@@ -43,8 +43,20 @@ class parsed_anime_database:
                     - Default after timeout: Download
             - move old json (if it exists) into a separate folder that's old. # TODO - Need to create function
             - save_json
-
         """
+
+        print(self.verify_existence_local_json())
+        
+        response_json:dict = self.download_json()
+        
+        print(self.verify_correct_repo_of_json(response_json))
+        
+        print(self.compare_last_update(online_json_date=response_json['lastUpdate']))
+
+        self.save_json(response_json)
+
+
+        
         pass
     
     def verify_existence_local_json(self) -> str:
@@ -144,17 +156,19 @@ class parsed_anime_database:
         
         pass
 
-    def compare_last_update(self, online_json_date:str=None, local_json_date:str=None) -> str: # RFER 10
+    def compare_last_update(self, online_json_date:str, local_json_date:str=None) -> str: # RFER 10
         """
         Check date of repo and determine whether to download newest json from repo
 
         entry in json: "lastUpdate"
         """
-
-        with open(self.pathway_json) as file:
-            local_json_file:dict = json.load(file)
-            local_json_date:str = local_json_file['lastUpdate']
-            file.close()
+        try:
+            with open(self.pathway_json) as file:
+                local_json_file:dict = json.load(file)
+                local_json_date:str = local_json_file['lastUpdate']
+                file.close()
+        except:
+            return "Local json doesn't exist :'["
         date_parameters:str = '%Y-%m-%d'
         date_local_json:datetime = datetime.strptime(local_json_date, date_parameters)
         date_online_repo:datetime = datetime.strptime(online_json_date, date_parameters)
@@ -237,30 +251,17 @@ class parsed_anime_database:
         output_json = response.json()
         return output_json
 
-    def save_json(self, response:dict): # TODO - Discard download bar for now. potentially, move the the download bar back to "download_json" function if I want to maintain progress bar. Biggest hurdle: separating saving the file from the progress bar.
+    def save_json(self, response_json:dict): # TODO - Discard download bar for now. potentially, move the the download bar back to "download_json" function if I want to maintain progress bar. Biggest hurdle: separating saving the file from the progress bar.
         new_directory = r'./database_project_manami'
         if not os.path.exists(new_directory): # RFER 04
             os.makedirs(new_directory)
 
         # This saves the newly downloaded json to local storage.
         new_relative_path:str = f'database_project_manami/{self.current_online_database}'
-        
-        ### Version 1
-        # with open(new_relative_path, mode= 'w+') as file, tqdm(
-        #     desc=self.current_online_database,
-        #     total= int(response.headers['content-length']),
-        #     unit='iB',
-        #     unit_scale=True,
-        #     unit_divisor=1000,
-        # ) as p_bar: # RFER 07
-            
-        #     size = file.write(json.dumps(response, indent=4))
-        #     p_bar.update(size)
 
-        # Version 2
         with open(new_relative_path, mode= 'w+') as file:
             
-            file.write(json.dumps(response, indent=1))
+            file.write(json.dumps(response_json, indent=1))
 
         file_size:int = ((os.stat(new_relative_path).st_size) / (10**6)) # RFER 05 && RFER 06
 
@@ -283,28 +284,5 @@ class parsed_user_list:
 if __name__ == '__main__':
     padb = parsed_anime_database()
     
-    output:dict = padb.download_json()
-    print(type(output))
-
-    print(output['lastUpdate'])
-    padb.save_json(output)
-    # padb.verify_existence_local_json()
-    # output:bool = padb.verify_correct_repo_of_json()
-
-    # print(output)
-    # print()
-    # print(padb.correct_repo)
-
-
-    # # Testing to see how response.headers works... This isn't useful.
-    # response:Response = requests.get('https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true')
-
-    # loaded_str = json.loads(response.text)
-
-    # print(loaded_str['lastUpdate'])
-
-    # loaded_json = response.json()
-    # print(loaded_json['lastUpdate'])
-
-    # # bar = json.load(response.json())
-    # # print(bar['lastUpdate'])
+    padb.psuedocode_for_ui_execute_downloading_json()
+    print("done!")

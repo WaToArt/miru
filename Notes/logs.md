@@ -1,5 +1,25 @@
 
 
+
+# 9/26/2022
+
+- CMD of running functions in action WITH a new json online:
+
+(venv_miru) watoart@Richs-MacBook-Air miru %  /usr/bin/env /Users/watoart/VSCode/miru/venv_miru/bin/python /Users/watoart/.vscode/extensions/ms-python.python-2022.14.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/laun
+cher 54126 -- /Users/watoart/VSCode/miru/cli_offline/src/parse_info.py 
+anime-offline-database-minified.json was found. This will be used :3
+Sucess! Correct repo :3
+There's a newer json online :O
+Sucessfully downloaded one of the databases! "anime-offline-database-minified.json" was downloaded and saved locally with the size of (41.765094 mb) :D
+done!
+(venv_miru) watoart@Richs-MacBook-Air miru %  cd /Users/watoart/VSCode/miru ; /usr/bin/env /Users/watoart/VSCode/miru/venv_miru/bin/python /Users/watoart/.vscode/extensions/ms-python.python-2022.14.0/pythonFiles/lib/python/de
+bugpy/adapter/../../debugpy/launcher 54134 -- /Users/watoart/VSCode/miru/cli_offline/src/parse_info.py 
+anime-offline-database-minified.json was found. This will be used :3
+Sucess! Correct repo :3
+The local json is up-to-date :3
+Sucessfully downloaded one of the databases! "anime-offline-database-minified.json" was downloaded and saved locally with the size of (41.765094 mb) :D
+done!
+
 # 9/25/2022
 
 - ENDING SESH
