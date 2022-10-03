@@ -3,13 +3,18 @@ import pytest
 from src.parse_info import download_anime_database_json
 
 from pytest_socket import socket_disabled
-repository_manami_project_json:str = "https://github.com/manami-project/anime-offline-database"
+
+manami_project_json_license_name:str = "GNU Affero General Public License v3.0"
+manami_project_json_license_url:str = "https://github.com/manami-project/anime-offline-database/blob/master/LICENSE"
+manami_project_json_repository:str = "https://github.com/manami-project/anime-offline-database"
 
 name_minified_anime_database:str = "anime-offline-database-minified.json"
 name_regular_anime_database:str = "anime-offline-database.json"
 
 def fail_intentionally_sadge():
     assert None == "failed intentionally"
+
+
 class Tests_UNITS_download_anime_database_json:
 
     def check_file_existence_local_json(self, ): # Have this run when Json is downloaded instead.
@@ -29,12 +34,16 @@ class Tests_UNITS_download_anime_database_json:
     
     def test_download_json_sucess(self):
         p_a_db:download_anime_database_json = download_anime_database_json()
-        output_message = p_a_db.download_json()
+        output_json:dict = p_a_db.download_json()
 
-        assert "Sucessfully downloaded one of the databases!" and "was downloaded" in output_message
-        assert name_regular_anime_database or name_minified_anime_database in output_message
+        # assert "Sucessfully downloaded one of the databases!" and "was downloaded" in output_message
+        # assert name_regular_anime_database or name_minified_anime_database in output_message
 
-        self.check_file_existence_local_json(p_a_db)
+        assert output_json['license']['name'] == manami_project_json_license_name
+        assert output_json['license']['url'] == manami_project_json_license_url
+        assert output_json['repository'] == manami_project_json_repository
+
+        self.check_file_existence_local_json()
         
     def test_download_json_failed(self): #force offline mode so no network connection is made
         

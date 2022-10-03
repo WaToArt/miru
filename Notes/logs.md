@@ -1,5 +1,12 @@
 
 
+# 10/3/2022
+
+
+- Session focus:
+    - Write unit tests for all functions
+        - Was too tunnel visioned/ broke down some functions after it got too big (and realized that an object could be used elsewhere)
+
 # 9/27/2022
 
 - Read this on how to remove files after running tests:

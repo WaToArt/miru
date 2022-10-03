@@ -295,7 +295,7 @@ class download_anime_database_json:
 
         with open(new_relative_path, mode= 'w+') as file:
             
-            file.write(json.dumps(response_json, indent=1))
+            file.write(json.dumps(response_json, indent=4))
 
         file_size:int = ((os.stat(new_relative_path).st_size) / (10**6)) # RFER 05 && RFER 06
 
