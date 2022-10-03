@@ -203,7 +203,6 @@ class download_anime_database_json:
                 print("There is an existing json. Moving it into backup folder.")
                 
                 try: # Execute moving folder.
-                    
                     print("Finished moving to backup folder.")
                 except:
                     print("Action was interrupted. :'[")
@@ -314,7 +313,7 @@ class parsed_user_list:
     pass
     
 if __name__ == '__main__':
-    padb = parsed_anime_database()
+    padb = download_anime_database_json()
     
-    padb.debug_only___psuedocode_for_ui_execute_downloading_json()
-    print("done!")
+    output_result = padb.move_old_json_to_backup_folder()
+    print(output_result)
