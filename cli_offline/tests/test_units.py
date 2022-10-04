@@ -1,4 +1,5 @@
 from enum import auto
+from types import NoneType
 import pytest
 from src.parse_info import download_anime_database_json
 
@@ -30,26 +31,16 @@ class Tests_UNITS_download_anime_database_json:
 
         # assert 'was found. This will be used :3' in output_message
 
-    def test_check_internet_connection(self):
-        download_p_a_db:download_anime_database_json = download_anime_database_json()
-
-        current_connection:str = download_p_a_db.status_connection_online
-        assert current_connection == "offline",f"Connection should default to offline. Instead, it is currently '{current_connection}'."
-
-        download_p_a_db.check_internet_connection()
-        current_connection:str = download_p_a_db.status_connection_online
-        assert current_connection == "online", f"Connection should be online. Instead, it is currently '{current_connection}'."
-
     def test_download_json_sucess(self):
         download_p_a_db:download_anime_database_json = download_anime_database_json()
         output_json:dict = download_p_a_db.download_json()
+        response_message = download_p_a_db.debugging_status_code_from_downloading
 
-        # assert "Sucessfully downloaded one of the databases!" and "was downloaded" in output_message
-        # assert name_regular_anime_database or name_minified_anime_database in output_message
+        assert output_json != None, f"Download resulted in a NoneType. Error message: '{response_message}'"
 
-        assert output_json['license']['name'] == manami_project_json_license_name
-        assert output_json['license']['url'] == manami_project_json_license_url
-        assert output_json['repository'] == manami_project_json_repository
+        assert output_json['license']['name'] == manami_project_json_license_name, f"Response status code:{response_message}"
+        assert output_json['license']['url'] == manami_project_json_license_url, f"Response status code:{response_message}"
+        assert output_json['repository'] == manami_project_json_repository, f"Response status code:{response_message}"
 
         self.check_file_existence_local_json()
         

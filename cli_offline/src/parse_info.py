@@ -5,8 +5,8 @@ from xml.dom import ValidationErr
 from xml.etree import ElementTree
 
 import requests
-from requests import Response
-from requests import models
+from requests import Response, models
+from requests.exceptions import ConnectionError
 
 from tqdm.auto import tqdm
 from os import devnull
@@ -23,8 +23,8 @@ class download_anime_database_json:
         json = manami project's anime-offline-database
         
     """
-    def __init__(self) -> None:
-        self.status_connection_online = "offline"
+    def __init__(self) -> None:        
+        self.debugging_status_code_from_downloading = None
         
         self.existence_json:bool = False
         self.pathway_json:str = None
@@ -158,8 +158,6 @@ class download_anime_database_json:
         
         print(output_message)
 
-    def check_internet_connection(self):
-        pass # TODO
         
     def compare_last_update(self, online_json_date:str, local_json_date:str=None) -> str: # RFER 10
         """
@@ -262,38 +260,45 @@ class download_anime_database_json:
             'minified': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true',
             'regular': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database.json?raw=true',
         }
-        #RFER 02 # TODO - Download minified json
-        url = url_json['minified']
-        response:Response = requests.get(url, stream=True)
-        anime_db_json_name:str = 'anime-offline-database-minified.json'
+        
+        response:Response = None
+        try:
+            #RFER 02 # TODO - Download minified json
+            url = url_json['minified']
+            response:Response = requests.get(url, stream=True)
+            anime_db_json_name:str = 'anime-offline-database-minified.json'
 
-        # if response.status_code == 200:
-        #     self.progress_bar_download(response=response)
-
-        if response.status_code != 200:
-            # TODO - If failed to download minified json, download regular json
-            print("Error #1: Failed to download minified ")
-            url = url_json["regular"]
-            response = requests.get(url,stream=True)
-            anime_db_json_name:str = 'anime-offline-database.json'
-
-            # if response.status_code == 200:
-            #     self.progress_bar_download(response=response)
-            
             if response.status_code != 200:
-                anime_db_json_name = None
-                # response = None
+                # TODO - If failed to download minified json, download regular json
+                print("Error #1: Failed to download minified ")
+                url = url_json["regular"]
+                response = requests.get(url,stream=True)
+                anime_db_json_name:str = 'anime-offline-database.json'
 
-                print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
-        match response.status_code:
-            case 200: # Sucess!
-                print("Success!")
-                self.current_online_database = anime_db_json_name
-                output_json = response.json()
-                return output_json
-            case _:
-                print("Failed! Something went wrong :'[")
-                print(f"Response status:{response.status_code}")
+                if response.status_code != 200:
+                    anime_db_json_name = None
+                    # response = None
+
+                    print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
+
+            match response.status_code:
+                case 200: # Sucess!
+                    print("Success!")
+                    self.current_online_database = anime_db_json_name
+                    output_json = response.json()
+                    return output_json
+                case _:
+                    print("Failed! Something went wrong :'[")
+                    print(f"Response status:{response.status_code}")
+
+        except ConnectionError as error_connection:
+            self.debugging_status_code_from_downloading = error_connection
+        else:
+            self.debugging_status_code_from_downloading = response.status_code
+
+        
+        
+
 
 
 
