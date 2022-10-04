@@ -281,6 +281,11 @@ class download_anime_database_json:
 
                     print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
 
+        except ConnectionError as error_connection:
+            self.debugging_status_code_from_downloading = error_connection
+        else:
+            self.debugging_status_code_from_downloading = response.status_code
+            
             match response.status_code:
                 case 200: # Sucess!
                     print("Success!")
@@ -290,18 +295,6 @@ class download_anime_database_json:
                 case _:
                     print("Failed! Something went wrong :'[")
                     print(f"Response status:{response.status_code}")
-
-        except ConnectionError as error_connection:
-            self.debugging_status_code_from_downloading = error_connection
-        else:
-            self.debugging_status_code_from_downloading = response.status_code
-
-        
-        
-
-
-
-
     def save_json(self, response_json:dict): # TODO - Discard download bar for now. potentially, move the the download bar back to "download_json" function if I want to maintain progress bar. Biggest hurdle: separating saving the file from the progress bar.
         new_directory = r'./database_project_manami'
         if not os.path.exists(new_directory): # RFER 04
@@ -321,7 +314,17 @@ class download_anime_database_json:
         # self.current_online_database = None # Reset to None
 
         print(message_download)
+    
+    def delete_local_json(self):
+        """_summary_
 
+        If local json exists, delete it.
+
+        This might be primilary used for debugging, but might enable if user wants to delete it? Maybe not to reduce change of accidental delete. If user wants to delete it, manually delete it in the folder.
+
+        """
+
+        pass # TODO
 
 class parsed_anime_database:
     pass

@@ -37,10 +37,16 @@ class Tests_UNITS_download_anime_database_json:
         response_message = download_p_a_db.debugging_status_code_from_downloading
 
         assert output_json != None, f"Download resulted in a NoneType. Error message: '{response_message}'"
+        assert response_message == 200, f"Response status: {response_message}"
 
-        assert output_json['license']['name'] == manami_project_json_license_name, f"Response status code:{response_message}"
-        assert output_json['license']['url'] == manami_project_json_license_url, f"Response status code:{response_message}"
-        assert output_json['repository'] == manami_project_json_repository, f"Response status code:{response_message}"
+        output_string = output_json['license']['name']
+        assert output_string == manami_project_json_license_name, f"Output:{output_string}"
+
+        output_string = output_json['license']['url']
+        assert output_json['license']['url'] == manami_project_json_license_url, f"Output:{output_string}"
+
+        output_string = output_json['repository']
+        assert output_string == manami_project_json_repository, f"Output:{output_string}"
 
         self.check_file_existence_local_json()
         
@@ -59,3 +65,9 @@ class Tests_UNITS_download_anime_database_json:
 
         download_p_a_db.verify_correct_repo_of_json()
         assert download_p_a_db.correct_repo == True, 'After checking, the file should exist.'
+
+    def test_delete_local_json(self):
+
+
+        
+        fail_intentionally_sadge()
