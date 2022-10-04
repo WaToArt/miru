@@ -320,8 +320,14 @@ class download_anime_database_json:
 
         If local json exists, delete it.
 
-        This might be primilary used for debugging, but might enable if user wants to delete it? Maybe not to reduce change of accidental delete. If user wants to delete it, manually delete it in the folder.
-
+        This might be primilary used for debugging, but might enable if user wants to delete it? Maybe not to reduce change of accidental delete. If user wants to delete it, manually delete it in the fold
+        
+        PSUEDOCODE:
+            - use these variables:
+                - self.existence_json:bool
+                    - Should be True
+                - self.pathway_json:str
+                    - Should be anything but None
         """
 
         pass # TODO
