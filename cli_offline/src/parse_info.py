@@ -24,6 +24,8 @@ class download_anime_database_json:
         
     """
     def __init__(self) -> None:
+        self.status_connection_online = "offline"
+        
         self.existence_json:bool = False
         self.pathway_json:str = None
 
@@ -156,7 +158,8 @@ class download_anime_database_json:
         
         print(output_message)
 
-
+    def check_internet_connection(self):
+        pass # TODO
         
     def compare_last_update(self, online_json_date:str, local_json_date:str=None) -> str: # RFER 10
         """
@@ -250,8 +253,10 @@ class download_anime_database_json:
 
         message_download:str = "Failed to either Json options for anime offline databases :'["
 
-        if debug_force_fail_connection:
-            return message_download
+        # if debug_force_fail_connection:
+        #     return message_download
+
+        
 
         url_json:dict = {
             'minified': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true',
@@ -277,13 +282,20 @@ class download_anime_database_json:
             
             if response.status_code != 200:
                 anime_db_json_name = None
-                response = None
+                # response = None
 
                 print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
-        self.current_online_database = anime_db_json_name
-        
-        output_json = response.json()
-        return output_json
+        match response.status_code:
+            case 200: # Sucess!
+                print("Success!")
+                self.current_online_database = anime_db_json_name
+                output_json = response.json()
+                return output_json
+            case _:
+                print("Failed! Something went wrong :'[")
+                print(f"Response status:{response.status_code}")
+
+
 
     def save_json(self, response_json:dict): # TODO - Discard download bar for now. potentially, move the the download bar back to "download_json" function if I want to maintain progress bar. Biggest hurdle: separating saving the file from the progress bar.
         new_directory = r'./database_project_manami'
@@ -317,3 +329,6 @@ if __name__ == '__main__':
     
     output_result = padb.move_old_json_to_backup_folder()
     print(output_result)
+
+    response_head = requests.head("https://github.com/manami-project/anime-offline-database")
+    print(response_head)
