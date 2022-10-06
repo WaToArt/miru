@@ -84,7 +84,7 @@ class download_anime_database_json:
                 '../database_project_manami/'
             ]
 
-        # Search for json in various directories
+        # Search for json in various directories # TODO - Potentially BigO this. Current Big O: n**3 + 4
         for file_name in file_names: # Look for minified version first.
             for directory in directories:
                 for root, dirs, files, in os.walk(directory):
@@ -97,6 +97,8 @@ class download_anime_database_json:
                         message_existence = f"{file_name} was found. This will be used :3"
                         print(message_existence)
                         return
+        
+        
 
         # If json was not found in the directories.
         self.existence_json = False
