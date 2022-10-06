@@ -247,6 +247,8 @@ class download_anime_database_json:
 
         If the download was sucessful, it should return a message saying the "download was sucessfully". If it failed, it should return 
         
+        # TODO - Potentially add a different route if a json exists
+
         """
 
         message_download:str = "Failed to either Json options for anime offline databases :'["
@@ -263,38 +265,49 @@ class download_anime_database_json:
         
         response:Response = None
         try:
-            #RFER 02 # TODO - Download minified json
+            # RFER 02 
+            # Download minified json 1st
             url = url_json['minified']
-            response:Response = requests.get(url, stream=True)
             anime_db_json_name:str = 'anime-offline-database-minified.json'
-
+            response:Response = requests.get(url, stream=True)
+            
+            # Download regular json (with indentation) if failed to download minified json
             if response.status_code != 200:
                 # TODO - If failed to download minified json, download regular json
                 print("Error #1: Failed to download minified ")
                 url = url_json["regular"]
-                response = requests.get(url,stream=True)
                 anime_db_json_name:str = 'anime-offline-database.json'
+                response = requests.get(url,stream=True)
 
-                if response.status_code != 200:
-                    anime_db_json_name = None
-                    # response = None
+            # Set anime_db_json_name to None 
+            if response.status_code != 200:
+                anime_db_json_name = None
+                # response = None
 
-                    print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
+                print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
+
+
+            # Set global variable for used anime database
+            self.current_online_database = anime_db_json_name
 
         except ConnectionError as error_connection:
             self.debugging_status_code_from_downloading = error_connection
+            print("Failed to connect online.")
+            print(f"Error status:{error_connection}")
+            return None
         else:
             self.debugging_status_code_from_downloading = response.status_code
             
             match response.status_code:
                 case 200: # Sucess!
                     print("Success!")
-                    self.current_online_database = anime_db_json_name
                     output_json = response.json()
                     return output_json
                 case _:
                     print("Failed! Something went wrong :'[")
                     print(f"Response status:{response.status_code}")
+                    # This will default to return None
+                    return None
     def save_json(self, response_json:dict): # TODO - Discard download bar for now. potentially, move the the download bar back to "download_json" function if I want to maintain progress bar. Biggest hurdle: separating saving the file from the progress bar.
         new_directory = r'./database_project_manami'
         if not os.path.exists(new_directory): # RFER 04
