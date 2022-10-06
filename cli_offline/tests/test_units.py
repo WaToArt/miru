@@ -31,6 +31,21 @@ class Tests_UNITS_download_anime_database_json:
 
         # assert 'was found. This will be used :3' in output_message
 
+
+
+    def test_verify_correct_repo_local_file_exists(self):
+        download_p_a_db:download_anime_database_json = download_anime_database_json()
+
+        assert download_p_a_db.correct_repo == False,'Upon start up, it should be immediately False'
+
+        download_p_a_db.verify_correct_repo_of_json()
+        assert download_p_a_db.correct_repo == True, 'After checking, the file should exist.'
+    def test_compare_last_update(self):
+        fail_intentionally_sadge()
+
+    def test_move_old_json_to_backup_folder(self):
+        fail_intentionally_sadge()
+
     def test_download_json_sucess(self):
         download_p_a_db:download_anime_database_json = download_anime_database_json()
         output_json:dict = download_p_a_db.download_json()
@@ -49,25 +64,7 @@ class Tests_UNITS_download_anime_database_json:
         assert output_string == manami_project_json_repository, f"Output:{output_string}"
 
         self.check_file_existence_local_json()
-        
-    # def test_download_json_failed(self): #force offline mode so no network connection is made # Don't think this test is needed. Can't force to not connect offline.
-        
-    #     download_p_a_db:download_anime_database_json = download_anime_database_json()
-    #     output_response = download_p_a_db.download_json(True)
-        
-    #     # assert output_message == "Failed to either Json options for anime offline databases :'["
-    #     assert output_response == None
-
-    def test_verify_correct_repo_local_file_exists(self):
-        download_p_a_db:download_anime_database_json = download_anime_database_json()
-
-        assert download_p_a_db.correct_repo == False,'Upon start up, it should be immediately False'
-
-        download_p_a_db.verify_correct_repo_of_json()
-        assert download_p_a_db.correct_repo == True, 'After checking, the file should exist.'
 
     def test_delete_local_json(self):
-
-
-        
         fail_intentionally_sadge()
+

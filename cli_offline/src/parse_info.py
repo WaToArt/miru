@@ -217,7 +217,7 @@ class download_anime_database_json:
 
 
 
-    def progress_bar_download(self, response: Response= None) -> None:
+    def progress_bar_download(self, response: Response= None) -> None: # NO LONGER USING
         if response == None:
             return # Debug; end early
 
