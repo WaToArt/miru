@@ -19,8 +19,11 @@ import os, sys
 
 class download_anime_database_json:
     """ Doc:
+    Objective:
+        - Primarily handle downloading and managing file
+
     Index:
-        json = manami project's anime-offline-database
+        - json = manami project's anime-offline-database
         
     """
     def __init__(self) -> None:        
@@ -192,13 +195,12 @@ class download_anime_database_json:
         print("Currect action: moving existing json into backup folder.")
 
         conditions:list[bool] = [
-            self.existence_json, 
             self.latest_json,
         ]
 
         # Exit immedately if 2 conditions aren't met
         match conditions:
-            case [True, False]: # move existing file into new folder # self.existence_json == True and self.latest_json == False
+            case [False]: # move existing file into new folder # self.existence_json == True and self.latest_json == False
                 print("There is an existing json. Moving it into backup folder.")
                 
                 try: # Execute moving folder.
@@ -206,7 +208,7 @@ class download_anime_database_json:
                 except:
                     print("Action was interrupted. :'[")
                 
-            case [False, True]:
+            case [True]:
                 print("It doesn't exist, so nothing was moved")
             case other:
                 print("Something broke, but nothing was moved.")
@@ -316,6 +318,10 @@ class download_anime_database_json:
         pass # TODO
 
 class parsed_anime_database:
+    """_summary_
+    Objective:
+        - Handle parsing and outputting info from anime database
+    """
     pass
 
 if __name__ == '__main__':
