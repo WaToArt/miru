@@ -26,7 +26,6 @@ class download_anime_database_json:
     def __init__(self) -> None:        
         self.debugging_status_code_from_downloading = None
         
-        self.existence_json:bool = False
         self.pathway_json:str = None
 
         self.latest_json:bool = False
@@ -67,9 +66,7 @@ class download_anime_database_json:
     def verify_existence_local_json(self, directories:list[str]= None) -> None:
         """
         Check if json exist locally in directory "database_project_manami/", and checks on several levels.
-        """
-        message_existence:str = "None of the required database were found."
-        
+        """        
         # Consists of two versions for the anime offline database, provided by Manami project.
         file_names: list[str] = [
             'anime-offline-database-minified.json',
@@ -89,20 +86,19 @@ class download_anime_database_json:
             for directory in directories:
                 for root, dirs, files, in os.walk(directory):
                     if file_name in files:
-                        self.existence_json = True
                         self.current_local_database = file_name
                         self.pathway_json =  os.path.join(root, file_name)
 
                         # Exit function if one of the versions are found
-                        message_existence = f"{file_name} was found. This will be used :3"
+                        message_existence:str = f"{file_name} was found. This will be used :3"
                         print(message_existence)
                         return
         
         
 
         # If json was not found in the directories.
-        self.existence_json = False
         self.pathway_json = None
+        message_existence:str = "None of the required database were found."
         print(message_existence)
 
     def verify_correct_repo_of_json(self, json_file:dict= None) -> None:
@@ -117,7 +113,7 @@ class download_anime_database_json:
 
         if json_file == None:
             self.verify_existence_local_json()
-            if not self.existence_json:
+            if self.pathway_json == None:
                 return
 
             with open(self.pathway_json) as file:
@@ -266,7 +262,7 @@ class download_anime_database_json:
 
         except ConnectionError as error_connection:
             self.debugging_status_code_from_downloading = error_connection
-            print("Failed to connect online.")
+            print("Failed to connect online to download anime database.")
             print(f"Error message:{error_connection}")
             return None
         else:
@@ -321,76 +317,6 @@ class download_anime_database_json:
 
 class parsed_anime_database:
     pass
-
-class parsed_user_list_xml:
-    def __init__(self) -> None:
-        self.website:str = None
-
-        self.xml_location:str = None
-
-    def set_website(self, website:str=None) -> None:
-        match website:
-            case "mal":
-                print("Setting to: mal (MyAnimeList)")
-                self.website = "mal"
-            case "anilist":
-                print("Setting to: anilist")
-                self.website = "anilist"
-            case "kitsu":
-                print("Setting to: kitsu")
-                self.website = "kitsu"
-            case _:
-                print("Unexpected input. Defaulting to: 'mal' (myanimelist)")
-                self.website = "mal"
-
-    def search_xml_location(self) -> str: # TODO
-        website_locations:dict = {
-            'mal': ['./xml_files/xml_mal', 
-            '../xml_files/xml_mal'],
-
-            'anilist': ['./xml_files/xml_anilist',
-            '../xml_files/xml_anilist'],
-
-            'kitsu': ['./xml_files/xml_kitsuio',
-            '../xml_files/xml_kitsuio']
-        }
-        website_substrings:dict = {
-            'mal': ['animelist_', 
-            ],
-            
-            'anilist': ['scrape_anilistanimealt', 
-            ],
-            
-            'kitsu': ['kitsu--anime', 
-            ],
-        }
-
-        chosen_site_substring:list[str] = website_substrings.get(self.website)
-        chosen_site_locations:list[str] = website_locations.get(self.website)
-
-        for location in chosen_site_locations:
-            for root, dirs, files, in os.walk(location):
-                for file in files:
-                    for substring in chosen_site_substring:
-                        if substring in file and file.endswith('.xml'):
-                            xml_location = os.path.join(root,file)
-
-                            self.xml_location = xml_location
-                            # return xml_location
-    
-    def parse_xml(self, file_name:str = None):
-        if file_name == None:
-            file_name = self.search_xml_location()
-
-        try:
-            tree = ET.parse(file_name) # These commands negate the need for "with open"
-            return tree.getroot()
-
-        except FileNotFoundError as E:
-            print(f"Error: {E}")
-            print("Ending program now.")
-            sys.exit()
-
 
 if __name__ == '__main__':
     padb = download_anime_database_json()

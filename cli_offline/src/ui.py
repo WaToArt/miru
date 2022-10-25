@@ -1,4 +1,4 @@
-from src.parse_info import download_anime_database_json
+from src.parse_anime_db import download_anime_database_json
 
 class user_interface:
 

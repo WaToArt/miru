@@ -1,7 +1,7 @@
 import pytest
 from pytest import CaptureFixture
 from src.ui import user_interface
-from src.parse_info import download_anime_database_json
+from src.parse_anime_db import download_anime_database_json
 
 def fail_intentionally_sadge():
     assert None == "failed intentionally"
@@ -54,5 +54,5 @@ class Tests_user_cli:
 class Tests_FUNCTIONAL_download_anime_database_json:
 
     def test_download_and_saving_json():
-        
+
         fail_intentionally_sadge()

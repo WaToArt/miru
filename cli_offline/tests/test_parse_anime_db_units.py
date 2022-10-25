@@ -1,7 +1,7 @@
 from enum import auto
 from types import NoneType
 import pytest
-from src.parse_info import download_anime_database_json, parsed_user_list_xml
+from src.parse_anime_db import download_anime_database_json
 from datetime import date
 
 from pytest_socket import socket_disabled
@@ -21,11 +21,9 @@ class Tests_UNITS_download_anime_database_json:
 
     def check_file_existence_local_json(self, ): # Have this run when Json is downloaded instead.
         download_p_a_db:download_anime_database_json = download_anime_database_json()
-        
-        assert download_p_a_db.existence_json == False, f"Should report false when first launch."
 
         download_p_a_db.verify_existence_local_json()
-        assert download_p_a_db.existence_json == True, f"Method runs and checks that the json exists locally."
+
         assert './database_project_manami/' or '/database_project_manami/' in download_p_a_db.pathway_json  
         assert name_minified_anime_database or name_regular_anime_database in download_p_a_db.pathway_json
 

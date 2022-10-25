@@ -1,7 +1,7 @@
 from enum import auto
 from types import NoneType
 import pytest
-from src.parse_info import download_anime_database_json, parsed_user_list_xml
+from src.parse_user_xml import parsed_user_list_xml
 from datetime import date
 
 from pytest_socket import socket_disabled
