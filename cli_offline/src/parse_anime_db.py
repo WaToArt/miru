@@ -322,7 +322,24 @@ class parsed_anime_database:
     Objective:
         - Handle parsing and outputting info from anime database
     """
-    pass
+    def read_json_local(self):
+        """
+        JSON will always be downloaded, and it will be read directly read from.
+        """
+
+        pass
+
+    def grab_links(self, json) -> list[str]:
+        results_site:list[str] = [""] * 3
+
+        return results_site
+    
+    def grab_title(self, json) -> str:
+        title:str = ""
+        
+        return title
+
+
 
 if __name__ == '__main__':
     padb = download_anime_database_json()
