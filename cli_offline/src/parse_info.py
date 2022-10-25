@@ -267,7 +267,7 @@ class download_anime_database_json:
         except ConnectionError as error_connection:
             self.debugging_status_code_from_downloading = error_connection
             print("Failed to connect online.")
-            print(f"Error status:{error_connection}")
+            print(f"Error message:{error_connection}")
             return None
         else:
             self.debugging_status_code_from_downloading = response.status_code
