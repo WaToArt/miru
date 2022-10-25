@@ -215,34 +215,6 @@ class download_anime_database_json:
             case other:
                 print("Something broke, but nothing was moved.")
 
-
-
-    def progress_bar_download(self, response: Response= None) -> None: # NO LONGER USING
-        if response == None:
-            return # Debug; end early
-
-        # output_response = response.json()
-        output_response = None
-        
-        total_size_bytes:int = int(response.headers.get('content-length', 0))
-        block_size:int = 1024
-        progress_bar = tqdm(
-            total=total_size_bytes,
-            unit='iB',
-            unit_scale=True
-        )
-
-        for data in response.iter_content(block_size):
-            progress_bar.update(len(data))
-            output_response += data
-
-        progress_bar.close()
-
-        if total_size_bytes != 0 and progress_bar.n != total_size_bytes:
-            print("Error: The download broke :'[")
-        
-        return output_response
-
     def download_json(self, debug_force_fail_connection:bool = False) -> dict:
         """ Credits for anime offline database
         Link: https://github.com/manami-project/anime-offline-database
