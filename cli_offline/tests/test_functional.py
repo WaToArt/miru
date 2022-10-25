@@ -54,5 +54,5 @@ class Tests_user_cli:
 class Tests_FUNCTIONAL_download_anime_database_json:
 
     def test_download_and_saving_json():
-
+        
         fail_intentionally_sadge()
