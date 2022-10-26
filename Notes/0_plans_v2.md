@@ -50,3 +50,13 @@
                 >> https://github.com/tqdm/tqdm/blob/master/examples/tqdm_requests.py
             - Used this one:
                 >> https://stackoverflow.com/a/56633292
+- ***IMPORTANT*** : Implement binary search to quickly grab anime info.
+    - Reason: It works best with large set of data.
+        - Binary search works with "anime-offline-database.json" as it is:
+            - 1-dimension
+            - All of the data is sorted
+    - Lectures/ examples:
+        - https://dev.to/agusioma/big-o-notation-using-python-2ena
+        - https://runestone.academy/ns/books/published/pythonds3/SortSearch/TheBinarySearch.html
+        - https://cs50.harvard.edu/x/2022/shorts/binary_search/
+        - https://towardsdatascience.com/top-algorithms-and-data-structures-you-really-need-to-know-ab9a2a91c7b5
