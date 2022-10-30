@@ -6,7 +6,7 @@ class Search_algo:
         """ practice writing and see how this works.
         Return index of target
         """
-        if right_bound <= left_bound:
+        if not (right_bound <= left_bound):
             return -1
 
         middle_index:int = (left_bound + right_bound) // 2
@@ -25,7 +25,20 @@ class Search_algo:
 
     def binary_search_looping(self, list_values, target_string):
         start:int = 0
-        end:int = len(list_values)
+        end:int = len(list_values) - 1
+
+        while start <= end:
+            middle_index:int = (start + end) // 2
+            middle_value = list_values[middle_index]
+
+            if middle_value > target_string:
+                end = middle_index - 1
+            elif middle_value < target_string:
+                start = middle_index + 1
+            else:
+                return middle_index
+
+
 
 
 def find(L, target):
