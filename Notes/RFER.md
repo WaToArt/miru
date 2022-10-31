@@ -74,4 +74,8 @@
     - It's best to return the entry instead of the entry's index; Grabbing the entry's index does not work when using recursion
 
 # RFER 14
-- Implementing binary search with 
+- Implementing binary search by using loop
+    - Lecture:
+        - https://runestone.academy/ns/books/published/pythonds3/SortSearch/TheBinarySearch.html
+    - Example:
+        - link: https://stackoverflow.com/a/34327378

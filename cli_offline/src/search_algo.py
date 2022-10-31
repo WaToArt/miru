@@ -18,7 +18,7 @@ class Search_algo:
         else:
             return middle_value
 
-    def binary_search_looping(self, list_values, target_string): # RFER 14
+    def binary_search_looping(self, list_values, target_string): # RFER 14 
         start:int = 0
         end:int = len(list_values) - 1
 
@@ -36,43 +36,5 @@ class Search_algo:
 
 
 
-def find(L, target):
-    """ Example from SOF:
-            - link: https://stackoverflow.com/a/34327378
-    """
-    start = 0
-    end = len(L) - 1
-
-    while start <= end:
-        middle = (start + end)// 2
-        midpoint = L[middle]
-        if midpoint > target:
-            end = middle - 1
-        elif midpoint < target:
-            start = middle + 1
-        else:
-            return midpoint
-            # return L.index(midpoint)
-
-L = ["Brian", "Joe", "Lois", "Meg", "Peter", "Stewie"] # Needs to be sorted.
-
-
-
-
 if __name__ == "__main__":
-    list_values:list[str] = [
-    "Adam", 
-    "beef", 
-    "colobunga", 
-    "dude", 
-    "eric", 
-    "frieza",
-    "goku drip",
-    ]
-    print(find(list_values, "eric"))
-
-
-    s:Search_algo = Search_algo()
-    target_string:str = list_values[4]
-    result:int = s.binary_search_recursion(list_values, "eric", 0, len(list_values))
-    print(f"Result: {result}")
+    print("Hello :3")
