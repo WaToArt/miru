@@ -14,7 +14,7 @@ class Search_algo:
         if middle_value > target_string:
             return self.binary_search_recursion(list_values[:middle_index], target_string)
         elif middle_value < target_string:
-            return self.binary_search_recursion(list_values[middle_index:], target_string)
+            return self.binary_search_recursion(list_values[middle_index + 1:], target_string)
         else:
             return middle_value
 
