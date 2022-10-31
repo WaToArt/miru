@@ -63,3 +63,15 @@
 # RFER 12
 - 
 >> https://docs.pytest.org/en/6.2.x/tmpdir.html
+
+# RFER 13
+- Implementing binary search with recursion:
+- Info on how to implement recursion by utilizing Python's ability to return a list that starts at a certain point
+    - Link: https://runestone.academy/ns/books/published/pythonds3/SortSearch/TheBinarySearch.html
+    - Explanation of ":" when used to start at certain "a" index until another "b" index amount
+        - https://stackoverflow.com/a/4012395
+- NOTE:
+    - It's best to return the entry instead of the entry's index; Grabbing the entry's index does not work when using recursion
+
+# RFER 14
+- Implementing binary search with 
