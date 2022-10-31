@@ -13,7 +13,9 @@ def test_binary_search_recursion():
 
     s:Search_algo = Search_algo()
     target_string:str = list_values[4]
-    result:int = s.binary_search_recursion(list_values, "eric", 0, len(list_values) - 1)
+    start:int = 0
+    end:int = len(list_values) - 1
+    result:int = s.binary_search_recursion(list_values, "eric", start=start, end=end)
 
     assert result == 4
 

@@ -2,24 +2,24 @@
 
 class Search_algo:
 
-    def binary_search_recursion(self, list_values, target_string:str, left_bound:int, right_bound:int) -> int:
+    def binary_search_recursion(self, list_values, target_string:str, start:int, end:int) -> int:
         """ practice writing and see how this works.
         Return index of target
         """
-        if not (right_bound <= left_bound):
+        if not (end <= start):
             return -1
 
-        middle_index:int = (left_bound + right_bound) // 2
+        middle_index:int = (start + end) // 2
         middle_value = list_values[middle_index]
 
 
         print(f"DEBUGGING 'result' variable: {middle_value}")
         if middle_value > target_string:
-            right_bound = middle_index - 1
-            return self.binary_search_recursion(list_values, target_string, left_bound, right_bound)
+            end = middle_index - 1
+            return self.binary_search_recursion(list_values, target_string, start, end)
         elif middle_value < target_string:
-            left_bound = middle_index + 1
-            return self.binary_search_recursion(list_values, target_string, left_bound, right_bound)
+            start = middle_index + 1
+            return self.binary_search_recursion(list_values, target_string, start, end)
         else:
             return middle_index
 
