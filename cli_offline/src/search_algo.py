@@ -32,6 +32,27 @@ class Search_algo:
                 start = middle_index + 1
             else:
                 return middle_index
+    
+    def sequential_search_front_and_end(self, list_values, target_string) -> int: 
+        length_list:int = len(list_values)
+        middle_index:int = length_list // 2
+        for index in range(0, length_list - 1):
+            left_side_value = list_values[index]
+            
+            right_index = ((length_list - 1) - index)
+            right_side_value = list_values[right_index]
+
+            if left_side_value == target_string:
+                return index
+            elif right_side_value == target_string:
+                return right_index
+
+            
+            if index == middle_index:
+                return -1
+        
+        return -1
+
 
 
 
