@@ -1,4 +1,10 @@
 
+# 11/1/2022
+
+- Looking into the difference between "Response.json()" and "json.loads()"...
+    - They work similarly for my current needs.
+    - Source: https://stackoverflow.com/a/58049175
+
 
 # 10/3/2022
 

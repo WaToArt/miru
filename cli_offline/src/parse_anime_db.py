@@ -235,7 +235,6 @@ class download_anime_database_json:
             'regular': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database.json?raw=true',
         }
         
-        response:Response = None
         try:
             # RFER 02 
             # Download minified json 1st
@@ -253,7 +252,7 @@ class download_anime_database_json:
 
             # Set anime_db_json_name to None 
             if response.status_code != 200:
-                anime_db_json_name = None
+                anime_db_json_name = ""
                 # response = None
 
                 print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
