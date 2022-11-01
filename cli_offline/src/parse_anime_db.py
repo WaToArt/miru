@@ -213,7 +213,7 @@ class download_anime_database_json:
             case other:
                 print("Something broke, but nothing was moved.")
 
-    def download_json(self, debug_force_fail_connection:bool = False) -> dict:
+    def download_json(self, debug_force_fail_connection:bool = False):
         """ Credits for anime offline database
         Link: https://github.com/manami-project/anime-offline-database
 

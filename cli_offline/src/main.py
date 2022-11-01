@@ -1,7 +1,11 @@
-
+from parse_anime_db import download_anime_database_json
 
 def main():
-    print("nothing here sadge :'[")
+    download_db:download_anime_database_json = download_anime_database_json()
+    anime_json:dict = download_db.download_json()
+    repo = anime_json["repository"]
+    
+    print()
 
 if __name__ == "__main__":
     main()
