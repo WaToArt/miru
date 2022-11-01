@@ -61,7 +61,7 @@ def test_sequential_search_front_and_end():
     "eric", 
     "frieza",
     "goku drip",
-    "mario"
+    "mario", # Added mario to even the total
     ] # Even amount of elements
     result:int = s.sequential_search_front_and_end(list_values, target_string)
     assert result == 4
@@ -74,7 +74,6 @@ def test_sequential_search_front_and_end():
     "frieza",
     "goku drip",
     ]
-    target_string:str = "eric"
     result:int = s.sequential_search_front_and_end(list_values, target_string)
 
     assert result == -1

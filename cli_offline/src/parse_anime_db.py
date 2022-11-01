@@ -29,13 +29,13 @@ class download_anime_database_json:
     def __init__(self) -> None:        
         self.debugging_status_code_from_downloading = None
         
-        self.pathway_json:str = None
+        self.pathway_json:str = ""
 
         self.latest_json:bool = False
         self.correct_repo:bool = False
 
-        self.current_local_database:str = None
-        self.current_online_database:str = None
+        self.current_local_database:str = ""
+        self.current_online_database:str = ""
 
     def debug_only___psuedocode_for_ui_execute_downloading_json(self) -> None:
         """
@@ -100,7 +100,7 @@ class download_anime_database_json:
         
 
         # If json was not found in the directories.
-        self.pathway_json = None
+        self.pathway_json = ""
         message_existence:str = "None of the required database were found."
         print(message_existence)
 
@@ -147,7 +147,7 @@ class download_anime_database_json:
             },
         }
 
-        output_message:str = None
+        output_message:str = ""
         try:
             # If json's repo doesn't match, set the global variable "correct_repo" to False; if correct, set it to True. Display message to user about file being incorrect.
             validate(instance=json_file, schema=schema_anime_offline_database)
@@ -160,7 +160,7 @@ class download_anime_database_json:
         print(output_message)
 
         
-    def compare_last_update(self, online_json_date:str, local_json_date:str=None) -> str: # RFER 10
+    def compare_last_update(self, online_json_date:str, local_json_date:str) -> str: # RFER 10
         """
         Check date of repo and determine whether to download newest json from repo
 
@@ -173,7 +173,7 @@ class download_anime_database_json:
                 file.close()
         except:
             print("Local json doesn't exist :'[")
-            return
+            return ""
         date_parameters:str = '%Y-%m-%d'
         date_local_json:datetime = datetime.strptime(local_json_date, date_parameters)
         date_online_repo:datetime = datetime.strptime(online_json_date, date_parameters)
