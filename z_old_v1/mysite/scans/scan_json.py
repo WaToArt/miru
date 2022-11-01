@@ -58,11 +58,19 @@ class scan_json:
         '',
         ]
         user_command = input_command.strip().lower()
-            
-        if user_command == "yes":
-            self.online_status = True
-        else:
-            self.online_status = False
+        
+        match user_command:
+            case "yes":
+                self.online_status = True
+            case "no":
+                self.online_status = False
+            case _:
+                print(f"Defaulting to No")
+                self.online_status = False
+        # if user_command == "yes":
+        #     self.online_status = True
+        # else:
+        #     self.online_status = False
         
         ### Revision 1
         # elif user_command == "no" or user_command == '':
@@ -215,8 +223,5 @@ if __name__ == "__main__":
     # print(output) # This works fine
 
     scan_json_7 = scan_json()
-    scan_json_7.initialize_database()
-    scan_json_7.set_any_random_title()
-
-    output_title = scan_json_7.grab_title()
+    scan_json_7.
     print(output_title)
