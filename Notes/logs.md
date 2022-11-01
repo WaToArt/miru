@@ -1,6 +1,13 @@
 
 # 11/1/2022
 
+- Next sesh:
+    - Do TDD from manual testing code (seen in main.py)
+
+- Manually tested in main.py of how to parse info from anime database
+
+- Implementated sequential search that checks front and back at the same time.
+
 - Looking into the difference between "Response.json()" and "json.loads()"...
     - They work similarly for my current needs.
     - Source: https://stackoverflow.com/a/58049175
