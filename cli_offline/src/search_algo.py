@@ -53,7 +53,7 @@ class Search_algo:
         
         return -1
     
-    def sequential_search_fnb_myanimelist_url(self, anime_json, myanimelist_url:str):
+    def sequential_search_fnb_myanimelist_url_index(self, anime_json, myanimelist_url:str) -> int:
         """
         Search the elements from the front and rear at the same time.
         """
@@ -77,6 +77,31 @@ class Search_algo:
                 return -1
         
         return -1
+
+    def sequential_search_fnb_myanimelist_url_anime_info(self, anime_json, myanimelist_url:str):
+        """
+        Search the elements from the front and rear at the same time.
+        """
+        str_data:str = "data"
+        str_sources:str = "sources"
+
+        size_anime_data:int = len(anime_json[str_data])
+        middle_index:int = size_anime_data // 2
+
+        for start_index in range(0, size_anime_data - 1):
+            start_anime_entry = anime_json[str_data][start_index]
+            if myanimelist_url in start_anime_entry[str_sources]:
+                return start_anime_entry
+            
+            end_index:int = (size_anime_data - 1) - start_index
+            end_anime_entry = anime_json[str_data][end_index]
+            if myanimelist_url in end_anime_entry[str_sources]:
+                return end_anime_entry
+
+            if start_index == middle_index:
+                return {}
+        
+        return {}
 
 
 
