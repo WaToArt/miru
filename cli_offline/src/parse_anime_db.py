@@ -66,7 +66,7 @@ class download_anime_database_json:
         
         pass
     
-    def verify_existence_local_json(self, directories:list[str]= None) -> None:
+    def verify_existence_local_json(self, directories:list[str]= []) -> None:
         """
         Check if json exist locally in directory "database_project_manami/", and checks on several levels.
         """        
@@ -77,7 +77,7 @@ class download_anime_database_json:
         ]
 
         # Default option if directories parameter is blank
-        if directories == None:
+        if directories == []:
             # Look at two directories 
             directories: list[str] = [
                 './database_project_manami',
