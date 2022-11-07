@@ -1,4 +1,8 @@
 
+# 11/7/2022
+- Using requests.head() is quicker than requests.get() when it comes to checking status code apparently?
+    - link: https://stackoverflow.com/a/13641613
+
 # 11/1/2022
 
 - Next sesh:
