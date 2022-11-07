@@ -83,3 +83,7 @@
 # RFER 15 
 - Implementing leftmost binary search
     - https://www.piratekingdom.com/leetcode/tricks/leftmost-binary-search
+
+# RFER 16
+- Using requests.head() to quickly check status code
+    - https://stackoverflow.com/a/13641613

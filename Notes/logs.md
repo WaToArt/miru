@@ -2,7 +2,14 @@
 # 11/7/2022
 - Using requests.head() is quicker than requests.get() when it comes to checking status code apparently?
     - link: https://stackoverflow.com/a/13641613
-    - Might try to implement this when the project is past phase 1? Reworking to account for status 302 isn't important at the moment.
+        - #RFER 16 
+    -~~ Might try to implement this when the project is past phase 1? Reworking to account for status 302 isn't important at the moment. ~~
+    - Implemented check, which reduced amount of code written.
+
+- Implemented leftmost binary search
+    - link: https://www.piratekingdom.com/leetcode/tricks/leftmost-binary-search
+    - #RFER 15
+
 
 # 11/1/2022
 
