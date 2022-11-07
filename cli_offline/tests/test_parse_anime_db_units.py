@@ -45,15 +45,20 @@ class Tests_UNITS_download_anime_database_json:
     def test_move_old_json_to_backup_folder(self):
         fail_intentionally_sadge()
 
-    def test_download_json_sucess(self, download_json_minami_project):
+    def test_download_json_response_status(self, download_json_minami_project):
         download_p_a_db:download_anime_database_json = download_anime_database_json()
         output_json:dict = download_p_a_db.download_json() # Test mainly for response
         response_message = download_p_a_db.debugging_status_code_from_downloading
 
-        assert response_message == 200, f"Response status: {response_message}"
+        
 
-        output_json = download_json_minami_project
         assert output_json != None, f"Download resulted in a NoneType. Error message: '{response_message}'"
+        assert response_message == 200, f"Response status: {response_message}"
+        self.check_file_existence_local_json()
+
+
+    def test_download_json_verify_file(self, download_json_minami_project):
+        output_json = download_json_minami_project
 
         output_string = output_json['license']['name']
         assert output_string == manami_project_json_license_name, f"Output:{output_string}"
@@ -64,7 +69,6 @@ class Tests_UNITS_download_anime_database_json:
         output_string = output_json['repository']
         assert output_string == manami_project_json_repository, f"Output:{output_string}"
 
-        self.check_file_existence_local_json()
 
     def test_delete_local_json(self):
         fail_intentionally_sadge()
