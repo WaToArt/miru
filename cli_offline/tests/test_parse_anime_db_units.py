@@ -3,6 +3,7 @@ from types import NoneType
 import pytest
 from src.parse_anime_db import download_anime_database_json
 from datetime import date
+import requests
 
 from pytest_socket import socket_disabled
 
@@ -45,12 +46,19 @@ class Tests_UNITS_download_anime_database_json:
     def test_move_old_json_to_backup_folder(self):
         fail_intentionally_sadge()
 
-    def test_download_json_response_status(self, download_json_minami_project):
+    def test_status_302_project_minami_json(self):
+        # Test minified json
+        response_status:int = requests.head('https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true').status_code
+        assert response_status == 302, ''
+
+        # Test regular json
+        response_status = requests.head('https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database.json?raw=true').status_code # This results in response status '302'
+        assert response_status == 302
+
+    def test_download_json_response_status_200(self, download_json_minami_project):
         download_p_a_db:download_anime_database_json = download_anime_database_json()
         output_json:dict = download_p_a_db.download_json() # Test mainly for response
         response_message = download_p_a_db.debugging_status_code_from_downloading
-
-        
 
         assert output_json != None, f"Download resulted in a NoneType. Error message: '{response_message}'"
         assert response_message == 200, f"Response status: {response_message}"
