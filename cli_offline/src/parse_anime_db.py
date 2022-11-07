@@ -230,36 +230,30 @@ class download_anime_database_json:
 
         
 
-        url_json:dict = {
-            'minified': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true',
-            'regular': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database.json?raw=true',
+        minami_json_variants:dict = {
+            'minified': {
+                'link': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true',
+                'file_name': 'anime-offline-database-minified.json'
+            },
+            'regular': {
+                'link': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database.json?raw=true',
+                'file_name': 'anime-offline-database.json',
+            },
         }
         
         try:
-            # RFER 02 
-            # Download minified json 1st
-            url = url_json['minified']
-            anime_db_json_name:str = 'anime-offline-database-minified.json'
-            response:Response = requests.get(url, stream=True)
-            
-            # Download regular json (with indentation) if failed to download minified json
-            if response.status_code != 200:
-                # TODO - If failed to download minified json, download regular json
-                print("Error #1: Failed to download minified ")
-                url = url_json["regular"]
-                anime_db_json_name:str = 'anime-offline-database.json'
-                response = requests.get(url,stream=True)
+            response:Response = None
+            anime_db_json_name:str = ''
+            for item_name in minami_json_variants:
+                value:dict = minami_json_variants[item_name]
+                
+                url_json:str = value['link']
+                response:Response = requests.head(url_json)
 
-            # Set anime_db_json_name to None 
-            if response.status_code != 200:
-                anime_db_json_name = ""
-                # response = None
-
-                print("ERROR #2: Failed to download REGULAR anime offline database as well :[")
-
-
-            # Set global variable for used anime database
-            self.current_online_database = anime_db_json_name
+                if response.status_code == 302:
+                    response = requests.get(url_json)
+                    if response.status_code == 200:
+                        anime_db_json_name = value['file_name']
 
         except ConnectionError as error_connection:
             self.debugging_status_code_from_downloading = error_connection
@@ -269,9 +263,13 @@ class download_anime_database_json:
         else:
             self.debugging_status_code_from_downloading = response.status_code
             
+            self.current_online_database = anime_db_json_name # Set global variable for used anime database
+
+
             match response.status_code:
                 case 200: # Sucess!
                     print("Success!")
+
                     output_json = response.json()
                     return output_json
                 case _:

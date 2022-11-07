@@ -20,14 +20,14 @@ class Search_algo:
 
     def binary_search_looping(self, list_values, target_string): # RFER 14 
         start:int = 0
-        end:int = len(list_values) - 1
+        end:int = len(list_values) - 1 
 
         while start <= end:
             middle_index:int = (start + end) // 2
             middle_value = list_values[middle_index]
 
             if middle_value > target_string:
-                end = middle_index - 1
+                end = middle_index # RFER 15
             elif middle_value < target_string:
                 start = middle_index + 1
             else:

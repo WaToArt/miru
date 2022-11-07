@@ -79,3 +79,7 @@
         - https://runestone.academy/ns/books/published/pythonds3/SortSearch/TheBinarySearch.html
     - Example:
         - link: https://stackoverflow.com/a/34327378
+
+# RFER 15 
+- Implementing leftmost binary search
+    - https://www.piratekingdom.com/leetcode/tricks/leftmost-binary-search
