@@ -290,7 +290,7 @@ class download_anime_database_json:
             
             file.write(json.dumps(response_json, indent=4))
 
-        file_size:int = ((os.stat(new_relative_path).st_size) / (10**6)) # RFER 05 && RFER 06
+        file_size:float = ((os.stat(new_relative_path).st_size) / (10**6)) # RFER 05 && RFER 06
 
         message_download = f'Sucessfully downloaded one of the databases! "{self.current_online_database}" was downloaded and saved locally with the size of ({file_size} mb) :D'
         
