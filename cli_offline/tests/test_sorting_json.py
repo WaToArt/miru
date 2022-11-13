@@ -22,6 +22,10 @@ def test_sorted():
     print(f"Pathway of answer file: {pathway_of_answer}")
     assert pathway_of_answer != ""
 
+    with open(pathway_of_answer) as answer_file:
+        json_answer = json.load(answer_file)
+    print(json_answer)
+
     s = sorting_json()
 
 
