@@ -1,4 +1,10 @@
 
+# 11/13/2022
+- Plan:
+    - Create new json that's been sorted by MyAnimeList's url
+    - Took top few anime entries from manami's database and created "sample.json"
+        - Reason: To have a smaller sample and plot of expected results.
+
 # 11/7/2022
 - Using requests.head() is quicker than requests.get() when it comes to checking status code apparently?
     - link: https://stackoverflow.com/a/13641613
