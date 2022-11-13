@@ -231,13 +231,13 @@ class download_anime_database_json:
         
 
         minami_json_variants:dict = {
-            'minified': {
-                'link': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true',
-                'file_name': 'anime-offline-database-minified.json'
-            },
             'regular': {
                 'link': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database.json?raw=true',
                 'file_name': 'anime-offline-database.json',
+            },
+            'minified': {
+                'link': 'https://github.com/manami-project/anime-offline-database/blob/master/anime-offline-database-minified.json?raw=true',
+                'file_name': 'anime-offline-database-minified.json'
             },
         }
         
