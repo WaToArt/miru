@@ -439,7 +439,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 07-Nov-2022 at 06:56:01 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 13-Nov-2022 at 09:11:02 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -447,7 +447,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>{"pluggy": "1.0.0", "py": "1.11.0", "pytest": "7.1.3"}</td></tr>
       <tr>
         <td>Platform</td>
-        <td>macOS-13.0-arm64-arm-64bit</td></tr>
+        <td>macOS-13.0.1-arm64-arm-64bit</td></tr>
       <tr>
         <td>Plugins</td>
         <td>{"custom-exit-code": "0.3.0", "forked": "1.4.0", "html": "3.2.0", "metadata": "2.0.2", "mock": "3.8.2", "socket": "0.5.1", "xdist": "2.5.0"}</td></tr>
@@ -455,8 +455,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.10.8</td></tr></table>
     <h2>Summary</h2>
-    <p>21 tests ran in 5.66 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">8 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">13 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>0 tests ran in 0.12 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -466,210 +466,4 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable" col="duration">Duration</th>
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
-          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_functional.py::Tests_user_cli::test_executing_grabbing_random_anime_from_user_list</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw1] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw1] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw1] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>self = &lt;tests.test_functional.Tests_user_cli object at 0x1040d9150&gt;, capsys = &lt;_pytest.capture.CaptureFixture object at 0x104108490&gt;<br/><br/>    def test_executing_grabbing_random_anime_from_user_list(self, capsys):<br/>    <br/>        # Mark decides that he wants to obtain a random anime to watch. However, the application (app) detects that this is Mark&#x27;s first time launching the program. The program asks if they want to download the json of the anime database. The program will download the json if Mark types yes OR Mark timed out after 5 seconds.<br/>    <br/>            ## If Mark said no, the application will default to linking the anime&#x27;s raw ID and MAL (MyAnimeList) link from Mark&#x27;s list.<br/>    <br/>            ## If download failed, pop a 5 second message and only return the raw ID and MAL link.<br/>    <br/>        # Purposely fail<br/>&gt;       fail_intentionally_sadge()<br/><br/>capsys     = &lt;_pytest.capture.CaptureFixture object at 0x104108490&gt;<br/>self       = &lt;tests.test_functional.Tests_user_cli object at 0x1040d9150&gt;<br/><br/>cli_offline/tests/test_functional.py:52: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>    def fail_intentionally_sadge():<br/>&gt;       assert None == &quot;failed intentionally&quot;<br/><span class="error">E       AssertionError: assert None == &#x27;failed intentionally&#x27;</span><br/><br/><br/>cli_offline/tests/test_functional.py:7: AssertionError[gw1] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_parse_anime_db_units.py::Tests_UNITS_download_anime_database_json::test_move_old_json_to_backup_folder</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw7] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw7] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw7] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>self = &lt;tests.test_parse_anime_db_units.Tests_UNITS_download_anime_database_json object at 0x1060f6710&gt;<br/><br/>    def test_move_old_json_to_backup_folder(self):<br/>&gt;       fail_intentionally_sadge()<br/><br/>self       = &lt;tests.test_parse_anime_db_units.Tests_UNITS_download_anime_database_json object at 0x1060f6710&gt;<br/><br/>cli_offline/tests/test_parse_anime_db_units.py:47: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>    def fail_intentionally_sadge():<br/>&gt;       assert None == &quot;failed intentionally&quot;<br/><span class="error">E       AssertionError: assert None == &#x27;failed intentionally&#x27;</span><br/><br/><br/>cli_offline/tests/test_parse_anime_db_units.py:18: AssertionError[gw7] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_parse_anime_db_units.py::Tests_UNITS_download_anime_database_json::test_compare_last_update</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw6] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw6] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw6] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>self = &lt;tests.test_parse_anime_db_units.Tests_UNITS_download_anime_database_json object at 0x104ef24d0&gt;<br/><br/>    def test_compare_last_update(self):<br/>&gt;       fail_intentionally_sadge()<br/><br/>self       = &lt;tests.test_parse_anime_db_units.Tests_UNITS_download_anime_database_json object at 0x104ef24d0&gt;<br/><br/>cli_offline/tests/test_parse_anime_db_units.py:44: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>    def fail_intentionally_sadge():<br/>&gt;       assert None == &quot;failed intentionally&quot;<br/><span class="error">E       AssertionError: assert None == &#x27;failed intentionally&#x27;</span><br/><br/><br/>cli_offline/tests/test_parse_anime_db_units.py:18: AssertionError[gw6] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_functional.py::Tests_user_cli::test_executing_rolling_any_random_title_from_overall_anime_database</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>self = &lt;tests.test_functional.Tests_user_cli object at 0x107ab5000&gt;, capsys = &lt;_pytest.capture.CaptureFixture object at 0x107af01c0&gt;<br/><br/>    def test_executing_rolling_any_random_title_from_overall_anime_database(self, capsys:CaptureFixture):<br/>        ui: user_interface = user_interface()<br/>    <br/>    <br/>        # Mark opens the application for the first time, and is greeted with the options they can interact with.<br/>&gt;       ui.start_program()<br/><br/>capsys     = &lt;_pytest.capture.CaptureFixture object at 0x107af01c0&gt;<br/>self       = &lt;tests.test_functional.Tests_user_cli object at 0x107ab5000&gt;<br/>ui         = &lt;src.ui.user_interface object at 0x107af0490&gt;<br/><br/>cli_offline/tests/test_functional.py:27: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>cli_offline/src/ui.py:30: in start_program<br/>    input_command:str = input(&#x27;&gt;&gt; &#x27;).lower().strip()<br/>        index      = 3<br/>        item       = &#x27;quit&#x27;<br/>        main_menu_options = [&#x27;Roll&#x27;, &#x27;download&#x27;, &#x27;stats&#x27;, &#x27;quit&#x27;]<br/>        self       = &lt;src.ui.user_interface object at 0x107af0490&gt;<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;_pytest.capture.DontReadFromInput object at 0x106655630&gt;, args = ()<br/><br/>    def read(self, *args):<br/>&gt;       raise OSError(<br/>            &quot;pytest: reading from stdin while output is captured!  Consider using `-s`.&quot;<br/>        )<br/><span class="error">E       OSError: pytest: reading from stdin while output is captured!  Consider using `-s`.</span><br/><br/>args       = ()<br/>self       = &lt;_pytest.capture.DontReadFromInput object at 0x106655630&gt;<br/><br/>/opt/homebrew/lib/python3.10/site-packages/_pytest/capture.py:192: OSError[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/> ------------------------------Captured stdout call------------------------------ <br/>Welcome to Project miru 『見る』! Type in one of the options to continue :3
-
-Here are your options!
-Type the worded option!
-* Roll
-* download
-* stats
-* quit
-&gt;&gt; <br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_logic_sorting.py::test_logic_sorting</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw4] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw4] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw4] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>    def test_logic_sorting():<br/>    <br/>    <br/>&gt;       fail_intentionally()<br/><br/><br/>cli_offline/tests/test_logic_sorting.py:11: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>    def fail_intentionally():<br/>    <br/>&gt;       assert &quot;Failed on purpose&quot; == &quot;Keep writing your code! You got this mate ;3&quot;<br/><span class="error">E       AssertionError: assert &#x27;Failed on purpose&#x27; == &#x27;Keep writing... this mate ;3&#x27;</span><br/><span class="error">E         - Keep writing your code! You got this mate ;3</span><br/><span class="error">E         + Failed on purpose</span><br/><br/><br/>cli_offline/tests/test_logic_sorting.py:6: AssertionError[gw4] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_functional.py::Tests_FUNCTIONAL_download_anime_database_json::test_download_and_saving_json</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw2] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw2] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw2] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>cls = &lt;class &#x27;_pytest.runner.CallInfo&#x27;&gt;, func = &lt;function call_runtest_hook.&lt;locals&gt;.&lt;lambda&gt; at 0x1077f6050&gt;, when = &#x27;call&#x27;<br/>reraise = (&lt;class &#x27;_pytest.outcomes.Exit&#x27;&gt;, &lt;class &#x27;KeyboardInterrupt&#x27;&gt;)<br/><br/>    @classmethod<br/>    def from_call(<br/>        cls,<br/>        func: &quot;Callable[[], TResult]&quot;,<br/>        when: &quot;Literal[&#x27;collect&#x27;, &#x27;setup&#x27;, &#x27;call&#x27;, &#x27;teardown&#x27;]&quot;,<br/>        reraise: Optional[<br/>            Union[Type[BaseException], Tuple[Type[BaseException], ...]]<br/>        ] = None,<br/>    ) -&gt; &quot;CallInfo[TResult]&quot;:<br/>        &quot;&quot;&quot;Call func, wrapping the result in a CallInfo.<br/>    <br/>        :param func:<br/>            The function to call. Called without arguments.<br/>        :param when:<br/>            The phase in which the function is called.<br/>        :param reraise:<br/>            Exception or exceptions that shall propagate if raised by the<br/>            function, instead of being wrapped in the CallInfo.<br/>        &quot;&quot;&quot;<br/>        excinfo = None<br/>        start = timing.time()<br/>        precise_start = timing.perf_counter()<br/>        try:<br/>&gt;           result: Optional[TResult] = func()<br/><br/>cls        = &lt;class &#x27;_pytest.runner.CallInfo&#x27;&gt;<br/>duration   = 0.00014687504153698683<br/>excinfo    = &lt;ExceptionInfo TypeError(&#x27;Tests_FUNCTIONAL_download_anime_database_json.test_download_and_saving_json() takes 0 positional arguments but 1 was given&#x27;) tblen=10&gt;<br/>func       = &lt;function call_runtest_hook.&lt;locals&gt;.&lt;lambda&gt; at 0x1077f6050&gt;<br/>precise_start = 262628.627118958<br/>precise_stop = 262628.627265833<br/>reraise    = (&lt;class &#x27;_pytest.outcomes.Exit&#x27;&gt;, &lt;class &#x27;KeyboardInterrupt&#x27;&gt;)<br/>result     = None<br/>start      = 1667832956.778867<br/>stop       = 1667832956.7790139<br/>when       = &#x27;call&#x27;<br/><br/>/opt/homebrew/lib/python3.10/site-packages/_pytest/runner.py:338: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>/opt/homebrew/lib/python3.10/site-packages/_pytest/runner.py:259: in &lt;lambda&gt;<br/>    lambda: ihook(item=item, **kwds), when=when, reraise=reraise<br/>        ihook      = &lt;_HookCaller &#x27;pytest_runtest_call&#x27;&gt;<br/>        item       = &lt;Function test_download_and_saving_json&gt;<br/>        kwds       = {}<br/>/opt/homebrew/lib/python3.10/site-packages/pluggy/_hooks.py:265: in __call__<br/>    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)<br/>        argname    = &#x27;item&#x27;<br/>        args       = ()<br/>        firstresult = False<br/>        kwargs     = {&#x27;item&#x27;: &lt;Function test_download_and_saving_json&gt;}<br/>        self       = &lt;_HookCaller &#x27;pytest_runtest_call&#x27;&gt;<br/>/opt/homebrew/lib/python3.10/site-packages/pluggy/_manager.py:80: in _hookexec<br/>    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)<br/>        firstresult = False<br/>        hook_name  = &#x27;pytest_runtest_call&#x27;<br/>        kwargs     = {&#x27;item&#x27;: &lt;Function test_download_and_saving_json&gt;}<br/>        methods    = [&lt;HookImpl plugin_name=&#x27;runner&#x27;, plugin=&lt;module &#x27;_pytest.runner&#x27; from &#x27;/opt/homebrew/lib/python3.10/site-packages/_pyt...lugin=&lt;module &#x27;_pytest.threadexception&#x27; from &#x27;/opt/homebrew/lib/python3.10/site-packages/_pytest/threadexception.py&#x27;&gt;&gt;]<br/>        self       = &lt;_pytest.config.PytestPluginManager object at 0x105304c40&gt;<br/>/opt/homebrew/lib/python3.10/site-packages/_pytest/runner.py:174: in pytest_runtest_call<br/>    raise e<br/>        item       = &lt;Function test_download_and_saving_json&gt;<br/>/opt/homebrew/lib/python3.10/site-packages/_pytest/runner.py:166: in pytest_runtest_call<br/>    item.runtest()<br/>        item       = &lt;Function test_download_and_saving_json&gt;<br/>/opt/homebrew/lib/python3.10/site-packages/_pytest/python.py:1761: in runtest<br/>    self.ihook.pytest_pyfunc_call(pyfuncitem=self)<br/>        self       = &lt;Function test_download_and_saving_json&gt;<br/>/opt/homebrew/lib/python3.10/site-packages/pluggy/_hooks.py:265: in __call__<br/>    return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)<br/>        argname    = &#x27;pyfuncitem&#x27;<br/>        args       = ()<br/>        firstresult = True<br/>        kwargs     = {&#x27;pyfuncitem&#x27;: &lt;Function test_download_and_saving_json&gt;}<br/>        self       = &lt;_HookCaller &#x27;pytest_pyfunc_call&#x27;&gt;<br/>/opt/homebrew/lib/python3.10/site-packages/pluggy/_manager.py:80: in _hookexec<br/>    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)<br/>        firstresult = True<br/>        hook_name  = &#x27;pytest_pyfunc_call&#x27;<br/>        kwargs     = {&#x27;pyfuncitem&#x27;: &lt;Function test_download_and_saving_json&gt;}<br/>        methods    = [&lt;HookImpl plugin_name=&#x27;python&#x27;, plugin=&lt;module &#x27;_pytest.python&#x27; from &#x27;/opt/homebrew/lib/python3.10/site-packages/_pytest/python.py&#x27;&gt;&gt;]<br/>        self       = &lt;_pytest.config.PytestPluginManager object at 0x105304c40&gt;<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>pyfuncitem = &lt;Function test_download_and_saving_json&gt;<br/><br/>    @hookimpl(trylast=True)<br/>    def pytest_pyfunc_call(pyfuncitem: &quot;Function&quot;) -&gt; Optional[object]:<br/>        testfunction = pyfuncitem.obj<br/>        if is_async_function(testfunction):<br/>            async_warn_and_skip(pyfuncitem.nodeid)<br/>        funcargs = pyfuncitem.funcargs<br/>        testargs = {arg: funcargs[arg] for arg in pyfuncitem._fixtureinfo.argnames}<br/>&gt;       result = testfunction(**testargs)<br/><span class="error">E       TypeError: Tests_FUNCTIONAL_download_anime_database_json.test_download_and_saving_json() takes 0 positional arguments but 1 was given</span><br/><br/>funcargs   = {}<br/>pyfuncitem = &lt;Function test_download_and_saving_json&gt;<br/>testargs   = {}<br/>testfunction = &lt;bound method Tests_FUNCTIONAL_download_anime_database_json.test_download_and_saving_json of &lt;tests.test_functional.Tests_FUNCTIONAL_download_anime_database_json object at 0x1077dd2d0&gt;&gt;<br/><br/>/opt/homebrew/lib/python3.10/site-packages/_pytest/python.py:192: TypeError[gw2] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_parse_anime_db_units.py::Tests_UNITS_download_anime_database_json::test_delete_local_json</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>self = &lt;tests.test_parse_anime_db_units.Tests_UNITS_download_anime_database_json object at 0x118e7ed70&gt;<br/><br/>    def test_delete_local_json(self):<br/>&gt;       fail_intentionally_sadge()<br/><br/>self       = &lt;tests.test_parse_anime_db_units.Tests_UNITS_download_anime_database_json object at 0x118e7ed70&gt;<br/><br/>cli_offline/tests/test_parse_anime_db_units.py:82: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>    def fail_intentionally_sadge():<br/>&gt;       assert None == &quot;failed intentionally&quot;<br/><span class="error">E       AssertionError: assert None == &#x27;failed intentionally&#x27;</span><br/><br/><br/>cli_offline/tests/test_parse_anime_db_units.py:18: AssertionError[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_search_algo.py::test_sequential_search_fnb_myanimelist_url</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>    def test_sequential_search_fnb_myanimelist_url():<br/>        s:Search_algo = Search_algo()<br/>    <br/>    <br/>&gt;       s.sequential_search_fnb_myanimelist_url_index()<br/><span class="error">E       TypeError: Search_algo.sequential_search_fnb_myanimelist_url_index() missing 2 required positional arguments: &#x27;anime_json&#x27; and &#x27;myanimelist_url&#x27;</span><br/><br/>s          = &lt;src.search_algo.Search_algo object at 0x118eafa30&gt;<br/><br/>cli_offline/tests/test_search_algo.py:88: TypeError[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_search_algo.py::test_sequential_search_fnb_myanimelist_url_anime_info</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>    def test_sequential_search_fnb_myanimelist_url_anime_info():<br/>&gt;       failed_on_purpose()<br/><br/><br/>cli_offline/tests/test_search_algo.py:93: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>    def failed_on_purpose():<br/>&gt;       assert &quot;failed on purpose&quot; == &quot;finish writting tests!&quot;<br/><span class="error">E       AssertionError: assert &#x27;failed on purpose&#x27; == &#x27;finish writting tests!&#x27;</span><br/><span class="error">E         - finish writting tests!</span><br/><span class="error">E         + failed on purpose</span><br/><br/><br/>cli_offline/tests/test_search_algo.py:5: AssertionError[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_parse_user_xml.py::Tests_UNITS_parsed_user_list_xml::test_grab_anime_info</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw7] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw7] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw7] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>self = &lt;tests.test_parse_user_xml.Tests_UNITS_parsed_user_list_xml object at 0x1060f5360&gt;<br/><br/>    def test_grab_anime_info(self):<br/>        &quot;&quot;&quot; Grab Wotakoi anime info, and focus on these info:<br/>    <br/>                &lt;anime&gt;<br/>                &lt;series_animedb_id&gt;35968&lt;/series_animedb_id&gt;<br/>                &lt;my_watched_episodes&gt;11&lt;/my_watched_episodes&gt;<br/>                &lt;my_start_date&gt;2022-07-29&lt;/my_start_date&gt;<br/>                &lt;my_finish_date&gt;2022-07-29&lt;/my_finish_date&gt;<br/>                &lt;my_status&gt;Completed&lt;/my_status&gt;<br/>                &lt;my_times_watched&gt;0&lt;/my_times_watched&gt;<br/>            &lt;/anime&gt;<br/>            &quot;&quot;&quot;<br/>        expectations:dict = {<br/>            &quot;series_animedb_id&quot;: 35968,<br/>            &quot;my_watched_episodes&quot;: 11,<br/>            &quot;my_start_date&quot;: date(2022, 7, 29),<br/>            &quot;my_finish_date&quot;: date(2022, 7, 29),<br/>            &quot;my_status&quot;: &quot;Completed&quot;,<br/>            &quot;my_times_watched&quot;: 0,<br/>        }<br/>    <br/>        foo_class:parsed_user_list_xml = parsed_user_list_xml()<br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>        output:dict = None<br/>&gt;       assert output == expectations<br/><span class="error">E       AssertionError: assert None == {&#x27;my_finish_date&#x27;: datetime.date(2022, 7, 29), &#x27;my_start_date&#x27;: datetime.date(2022, 7, 29), &#x27;my_status&#x27;: &#x27;Completed&#x27;, &#x27;my_times_watched&#x27;: 0, ...}</span><br/><br/>expectations = {&#x27;my_finish_date&#x27;: datetime.date(2022, 7, 29), &#x27;my_start_date&#x27;: datetime.date(2022, 7, 29), &#x27;my_status&#x27;: &#x27;Completed&#x27;, &#x27;my_times_watched&#x27;: 0, ...}<br/>foo_class  = &lt;src.parse_user_xml.parsed_user_list_xml object at 0x10613b9d0&gt;<br/>output     = None<br/>self       = &lt;tests.test_parse_user_xml.Tests_UNITS_parsed_user_list_xml object at 0x1060f5360&gt;<br/><br/>cli_offline/tests/test_parse_user_xml.py:58: AssertionError[gw7] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_parse_user_xml.py::Tests_UNITS_parsed_user_list_xml::test_parse_xml</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw6] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw6] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw6] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>self = &lt;tests.test_parse_user_xml.Tests_UNITS_parsed_user_list_xml object at 0x104ef2380&gt;<br/><br/>    def test_parse_xml(self):<br/>&gt;       fail_intentionally_sadge()<br/><br/>self       = &lt;tests.test_parse_user_xml.Tests_UNITS_parsed_user_list_xml object at 0x104ef2380&gt;<br/><br/>cli_offline/tests/test_parse_user_xml.py:27: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>    def fail_intentionally_sadge():<br/>&gt;       assert None == &quot;failed intentionally&quot;<br/><span class="error">E       AssertionError: assert None == &#x27;failed intentionally&#x27;</span><br/><br/><br/>cli_offline/tests/test_parse_user_xml.py:11: AssertionError[gw6] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_parse_user_xml.py::Tests_UNITS_parsed_user_list_xml::test_set_website</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw4] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw4] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw4] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>self = &lt;tests.test_parse_user_xml.Tests_UNITS_parsed_user_list_xml object at 0x1065e7310&gt;<br/><br/>    def test_set_website(self):<br/>        foo_class:parsed_user_list_xml = parsed_user_list_xml()<br/>    <br/>&gt;       fail_intentionally_sadge()<br/><br/>foo_class  = &lt;src.parse_user_xml.parsed_user_list_xml object at 0x10661ce80&gt;<br/>self       = &lt;tests.test_parse_user_xml.Tests_UNITS_parsed_user_list_xml object at 0x1065e7310&gt;<br/><br/>cli_offline/tests/test_parse_user_xml.py:19: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>    def fail_intentionally_sadge():<br/>&gt;       assert None == &quot;failed intentionally&quot;<br/><span class="error">E       AssertionError: assert None == &#x27;failed intentionally&#x27;</span><br/><br/><br/>cli_offline/tests/test_parse_user_xml.py:11: AssertionError[gw4] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">cli_offline/tests/test_parse_user_xml.py::Tests_UNITS_parsed_user_list_xml::test_search_xml_location</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw5] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw5] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw5] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>self = &lt;tests.test_parse_user_xml.Tests_UNITS_parsed_user_list_xml object at 0x10610e620&gt;<br/><br/>    def test_search_xml_location(self):<br/>        foo_class:parsed_user_list_xml = parsed_user_list_xml()<br/>    <br/>&gt;       fail_intentionally_sadge()<br/><br/>foo_class  = &lt;src.parse_user_xml.parsed_user_list_xml object at 0x10610fee0&gt;<br/>self       = &lt;tests.test_parse_user_xml.Tests_UNITS_parsed_user_list_xml object at 0x10610e620&gt;<br/><br/>cli_offline/tests/test_parse_user_xml.py:24: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>    def fail_intentionally_sadge():<br/>&gt;       assert None == &quot;failed intentionally&quot;<br/><span class="error">E       AssertionError: assert None == &#x27;failed intentionally&#x27;</span><br/><br/><br/>cli_offline/tests/test_parse_user_xml.py:11: AssertionError[gw5] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">cli_offline/tests/test_info_anime.py::Tests_info_anime::test_stock_information_and_store_wotakoi</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">cli_offline/tests/test_parse_anime_db_units.py::Tests_UNITS_download_anime_database_json::test_verify_correct_repo_local_file_exists</td>
-          <td class="col-duration">0.46</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw5] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw5] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw5] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw5] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/> ------------------------------Captured stdout call------------------------------ <br/>anime-offline-database-minified.json was found. This will be used :3
-Sucess! Correct repo :3
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">cli_offline/tests/test_search_algo.py::test_binary_search_recursion</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/> ------------------------------Captured stdout call------------------------------ <br/>DEBUGGING &#x27;result&#x27; variable: dude
-DEBUGGING &#x27;result&#x27; variable: frieza
-DEBUGGING &#x27;result&#x27; variable: eric
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">cli_offline/tests/test_search_algo.py::test_sequential_search_front_and_end</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw3] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">cli_offline/tests/test_parse_anime_db_units.py::Tests_UNITS_download_anime_database_json::test_status_302_project_minami_json</td>
-          <td class="col-duration">0.51</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">cli_offline/tests/test_parse_anime_db_units.py::Tests_UNITS_download_anime_database_json::test_download_json_verify_file</td>
-          <td class="col-duration">2.42</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw2] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw2] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw2] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw2] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/> -----------------------------Captured stdout setup------------------------------ <br/>Success!
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">cli_offline/tests/test_parse_anime_db_units.py::Tests_UNITS_download_anime_database_json::test_download_json_response_status_200</td>
-          <td class="col-duration">4.22</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw1] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw1] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw1] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw1] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/> -----------------------------Captured stdout setup------------------------------ <br/>Success!
-<br/> ------------------------------Captured stdout call------------------------------ <br/>Success!
-anime-offline-database-minified.json was found. This will be used :3
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">cli_offline/tests/test_search_algo.py::test_binary_search_looping</td>
-          <td class="col-duration">0.02</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">[gw1] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw1] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw1] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw1] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/></div></td></tr></tbody></table></body></html>
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead></table></body></html>
