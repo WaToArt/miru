@@ -439,7 +439,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 13-Nov-2022 at 09:11:02 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 13-Nov-2022 at 10:03:34 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -455,8 +455,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.10.8</td></tr></table>
     <h2>Summary</h2>
-    <p>0 tests ran in 0.12 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>1 tests ran in 1.20 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -466,4 +466,17 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable" col="duration">Duration</th>
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
-          <th colspan="4">No results found. Try to check the filters</th></tr></thead></table></body></html>
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">cli_offline/tests/test_sorting_json.py::test_sorted</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>    def test_sorted():<br/>        answer_file_name:str = &#x27;sample_expectations.json&#x27;<br/>        directories:list[str] = [<br/>            &#x27;/database_project_manami/testing_json/&#x27;,<br/>            &#x27;./database_project_manami/testing_json&#x27;,<br/>            &#x27;../database_project_manami/testing_json&#x27;<br/>        ]<br/>    <br/>        pathway_of_answer:str = &quot;&quot;<br/>        for directory in directories:<br/>            for root, dirs, files, in os.walk(directory):<br/>                print(root)<br/>                print(dirs)<br/>                print(files)<br/>                if answer_file_name in files:<br/>                    pathway_of_answer = os.path.join(root, answer_file_name)<br/>        print(f&quot;Pathway of answer file: {pathway_of_answer}&quot;)<br/>        assert pathway_of_answer != &quot;&quot;<br/>    <br/>        s = sorting_json()<br/>    <br/>    <br/>&gt;       assert &quot;Finish writing your test!&quot; == &quot;you got this :3&quot;<br/><span class="error">E       AssertionError: assert &#x27;Finish writing your test!&#x27; == &#x27;you got this :3&#x27;</span><br/><span class="error">E         - you got this :3</span><br/><span class="error">E         + Finish writing your test!</span><br/><br/>answer_file_name = &#x27;sample_expectations.json&#x27;<br/>directories = [&#x27;/database_project_manami/testing_json/&#x27;, &#x27;./database_project_manami/testing_json&#x27;, &#x27;../database_project_manami/testing_json&#x27;]<br/>directory  = &#x27;../database_project_manami/testing_json&#x27;<br/>dirs       = []<br/>files      = [&#x27;sample_expectations.json&#x27;, &#x27;sample_orignal.json&#x27;]<br/>pathway_of_answer = &#x27;./database_project_manami/testing_json/sample_expectations.json&#x27;<br/>root       = &#x27;./database_project_manami/testing_json&#x27;<br/>s          = &lt;src.sorting_json.sorting_json object at 0x104069570&gt;<br/><br/>cli_offline/tests/test_sorting_json.py:28: AssertionError[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/> ------------------------------Captured stdout call------------------------------ <br/>./database_project_manami/testing_json
+[]
+[&#x27;sample_expectations.json&#x27;, &#x27;sample_orignal.json&#x27;]
+Pathway of answer file: ./database_project_manami/testing_json/sample_expectations.json
+<br/></div></td></tr></tbody></table></body></html>

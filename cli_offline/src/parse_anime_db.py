@@ -80,6 +80,7 @@ class download_anime_database_json:
         if directories == []:
             # Look at two directories 
             directories: list[str] = [
+                '/database_project_manami',
                 './database_project_manami',
                 '../database_project_manami/'
             ]
