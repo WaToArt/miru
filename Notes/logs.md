@@ -1,5 +1,11 @@
 
 # 11/13/2022
+- Ending sesh:
+    - Next time:
+        - Finishing figuring out how to sort by MAL URL
+        - Setup debugging prints to see the order of MAL url's id
+        
+
 - Plan:
     - Create new json that's been sorted by MyAnimeList's url
     - Took top few anime entries from manami's database and created "sample.json"
