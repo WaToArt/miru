@@ -1,3 +1,5 @@
+import json
+
 
 class sorting_json:
     def __init__(self) -> None:
@@ -8,6 +10,10 @@ class sorting_json:
 
         ### Finish writing code #TODO
 
-        print(sorted(output_json['data'], key=lambda item: item['sources'].split()[-1]))
+        output_json = sorted(output_json['data'], key=lambda item: item['sources'])
+        print(output_json)
 
+        print("\n=======new line========\n")
+
+        print(json.dumps(output_json, indent=4))
         return output_json
