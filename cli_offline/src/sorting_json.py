@@ -31,7 +31,7 @@ class sorting_json:
             print("\n")
             print(f"Index: {index}")
             print(f"Title: {title_name}")
-            print(f"MAL's url: {item['sources'][index_mal_url]}")
+            print(f"MAL's url: {(item['sources'][index_mal_url]).split('/')[-1]}")
         
         print("\n\n ====== output_json ====== \n")
         output_json = dict_json_data
