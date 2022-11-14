@@ -60,3 +60,7 @@
         - https://runestone.academy/ns/books/published/pythonds3/SortSearch/TheBinarySearch.html
         - https://cs50.harvard.edu/x/2022/shorts/binary_search/
         - https://towardsdatascience.com/top-algorithms-and-data-structures-you-really-need-to-know-ab9a2a91c7b5
+
+- ***IMPORTANT*** Sorting all data by substring from MAL's url
+    - Sorting by substring:
+        - https://stackoverflow.com/a/16150890
