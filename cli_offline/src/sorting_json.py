@@ -8,6 +8,6 @@ class sorting_json:
 
         ### Finish writing code #TODO
 
-        print(sorted(output_json['data'], key= output_json['data']['sources'].split()[-1]))
+        print(sorted(output_json['data'], key=lambda item: item['sources'].split()[-1]))
 
         return output_json
