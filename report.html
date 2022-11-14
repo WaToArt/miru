@@ -439,7 +439,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 13-Nov-2022 at 17:18:38 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 13-Nov-2022 at 17:34:57 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -455,8 +455,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.10.8</td></tr></table>
     <h2>Summary</h2>
-    <p>0 tests ran in 0.13 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>1 tests ran in 1.09 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -466,4 +466,54 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable" col="duration">Duration</th>
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
-          <th colspan="4">No results found. Try to check the filters</th></tr></thead></table></body></html>
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">cli_offline/tests/test_sorting_json.py::test_sorted</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/>[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/><br/>    def test_sorted():<br/>        file_name_original:str = &#x27;sample_orignal.json&#x27;<br/>        file_name_answer:str = &#x27;sample_expectations.json&#x27;<br/>        directories:list[str] = [<br/>            &#x27;/database_project_manami/testing_json/&#x27;,<br/>            &#x27;./database_project_manami/testing_json&#x27;,<br/>            &#x27;../database_project_manami/testing_json&#x27;<br/>        ]<br/>    <br/>        pathway_of_original:str = &#x27;&#x27;<br/>        pathway_of_answer:str = &#x27;&#x27;<br/>        for directory in directories:<br/>            for root, dirs, files, in os.walk(directory):<br/>                # print(root)<br/>                # print(dirs)<br/>                # print(files)<br/>    <br/>                if file_name_original in files:<br/>                    pathway_of_original = os.path.join(root, file_name_original)<br/>                if file_name_answer in files:<br/>                    pathway_of_answer = os.path.join(root, file_name_answer)<br/>        # print(f&quot;Pathway of oringal file: {pathway_of_original}&quot;)<br/>        # print(f&quot;Pathway of answer file: {pathway_of_answer}&quot;)<br/>        assert pathway_of_original != &#x27;&#x27;<br/>        assert pathway_of_answer != &#x27;&#x27;<br/>    <br/>        with open(pathway_of_original) as original_file:<br/>            json_orignal = json.load(original_file)<br/>    <br/>        with open(pathway_of_answer) as answer_file:<br/>            json_answer = json.load(answer_file)<br/>    <br/>    <br/>        s = sorting_json()<br/>        output_json = s.sort_by_MAL_url(json_orignal)<br/>    <br/>&gt;       assert output_json == json_answer<br/><span class="error">E       AssertionError: assert [{&#x27;animeSeaso...&#x27;, ...], ...}] == {&#x27;data&#x27;: [{&#x27;a...ine-database&#x27;}</span><br/><span class="error">E         Use -v to get more diff</span><br/><br/>answer_file = &lt;_io.TextIOWrapper name=&#x27;./database_project_manami/testing_json/sample_expectations.json&#x27; mode=&#x27;r&#x27; encoding=&#x27;UTF-8&#x27;&gt;<br/>directories = [&#x27;/database_project_manami/testing_json/&#x27;, &#x27;./database_project_manami/testing_json&#x27;, &#x27;../database_project_manami/testing_json&#x27;]<br/>directory  = &#x27;../database_project_manami/testing_json&#x27;<br/>dirs       = []<br/>file_name_answer = &#x27;sample_expectations.json&#x27;<br/>file_name_original = &#x27;sample_orignal.json&#x27;<br/>files      = [&#x27;sample_expectations.json&#x27;, &#x27;sample_orignal.json&#x27;]<br/>json_answer = {&#x27;data&#x27;: [{&#x27;animeSeason&#x27;: {&#x27;season&#x27;: &#x27;FALL&#x27;, &#x27;year&#x27;: 2009}, &#x27;episodes&#x27;: 1, &#x27;picture&#x27;: &#x27;https://cdn.myanimelist.net/ima...anime-offline-database/blob/master/LICENSE&#x27;}, &#x27;repository&#x27;: &#x27;https://github.com/manami-project/anime-offline-database&#x27;}<br/>json_orignal = {&#x27;data&#x27;: [{&#x27;animeSeason&#x27;: {&#x27;season&#x27;: &#x27;FALL&#x27;, &#x27;year&#x27;: 2020}, &#x27;episodes&#x27;: 1, &#x27;picture&#x27;: &#x27;https://cdn.myanimelist.net/ima...anime-offline-database/blob/master/LICENSE&#x27;}, &#x27;repository&#x27;: &#x27;https://github.com/manami-project/anime-offline-database&#x27;}<br/>original_file = &lt;_io.TextIOWrapper name=&#x27;./database_project_manami/testing_json/sample_orignal.json&#x27; mode=&#x27;r&#x27; encoding=&#x27;UTF-8&#x27;&gt;<br/>output_json = [{&#x27;animeSeason&#x27;: {&#x27;season&#x27;: &#x27;FALL&#x27;, &#x27;year&#x27;: 2020}, &#x27;episodes&#x27;: 1, &#x27;picture&#x27;: &#x27;https://cdn.myanimelist.net/images/anime...yatsu-hatsukoi&#x27;, &#x27;https://anime-planet.com/anime/bungaku-shoujo-movie&#x27;, &#x27;https://anisearch.com/anime/5387&#x27;, ...], ...}]<br/>pathway_of_answer = &#x27;./database_project_manami/testing_json/sample_expectations.json&#x27;<br/>pathway_of_original = &#x27;./database_project_manami/testing_json/sample_orignal.json&#x27;<br/>root       = &#x27;./database_project_manami/testing_json&#x27;<br/>s          = &lt;src.sorting_json.sorting_json object at 0x1021fd8d0&gt;<br/><br/>cli_offline/tests/test_sorting_json.py:42: AssertionError[gw0] darwin -- Python 3.10.8 /opt/homebrew/opt/python@3.10/bin/python3.10<br/> ------------------------------Captured stdout call------------------------------ <br/>
+
+ ====== assigning variable for json&#x27;s data ======
+
+assigned content of &#x27;data&#x27; to variable &#x27;dict_json_data&#x27;
+
+
+=== sorted data === 
+
+
+
+Index: 0
+Title: !NVADE SHOW!
+MAL&#x27;s url: https://myanimelist.net/anime/51478
+
+
+Index: 1
+Title: &quot;0&quot;
+MAL&#x27;s url: https://myanimelist.net/anime/20707
+
+
+Index: 2
+Title: &quot;Aesop&quot; no Ohanashi yori: Ushi to Kaeru, Yokubatta Inu
+MAL&#x27;s url: https://myanimelist.net/anime/25627
+
+
+Index: 3
+Title: &quot;Bungaku Shoujo&quot; Kyou no Oyatsu: Hatsukoi
+MAL&#x27;s url: https://myanimelist.net/anime/7669
+
+
+Index: 4
+Title: &quot;Bungaku Shoujo&quot; Memoire
+MAL&#x27;s url: https://myanimelist.net/anime/8481
+
+
+ ====== output_json ====== 
+
+
+=======new line========
+
+<br/></div></td></tr></tbody></table></body></html>

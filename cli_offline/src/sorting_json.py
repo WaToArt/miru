@@ -22,14 +22,22 @@ class sorting_json:
         
         print("\n\n=== sorted data === \n")
 
-        dict_json_data.sort(key=lambda item: filter(item['sources'].startswith(url_MyAnimeList)))
-        print(json.dumps(dict_json_data, indent=2))
+        dict_json_data.sort(key=lambda item: url_MyAnimeList in item['sources'])
+        # print(json.dumps(dict_json_data, indent=2))
+        for index, item in enumerate(dict_json_data):
+            title_name:str = item['title']
+
+            index_mal_url:str = [index for index, url in enumerate(item['sources']) if url_MyAnimeList in url][0]
+            print("\n")
+            print(f"Index: {index}")
+            print(f"Title: {title_name}")
+            print(f"MAL's url: {item['sources'][index_mal_url]}")
         
         print("\n\n ====== output_json ====== \n")
         output_json = dict_json_data
-        print(output_json)
+        # print(json.dumps(output_json, indent=3))
 
         print("\n=======new line========\n")
 
-        print(json.dumps(output_json, indent=2))
+        # print(json.dumps(output_json, indent=2))
         return output_json
