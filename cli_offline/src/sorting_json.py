@@ -10,7 +10,7 @@ class sorting_json:
 
         ### Finish writing code #TODO
 
-        output_json = sorted(output_json['data'], key=lambda item: item['sources'])
+        output_json = sorted(output_json.items(), key=lambda item: item['data']['sources'])
         print(output_json)
 
         print("\n=======new line========\n")
