@@ -6,7 +6,6 @@ class sorting_json:
         pass
 
     def sort_by_MAL_url(self, response_json):
-
         """### Finish writing code #TODO
 
         - obtain data from json and assign to variable 'dict_json_data'
@@ -14,13 +13,16 @@ class sorting_json:
         - replace 'response_json''s 'data' with sorted 'dict_json_data' 
 
         """
+        url_MyAnimeList:str = 'https://myanimelist.net/anime/'
+
+
         print("\n\n ====== assigning variable for json's data ======\n")
         dict_json_data:list = (response_json['data'])
         print(f"assigned content of 'data' to variable 'dict_json_data'")
         
         print("\n\n=== sorted data === \n")
 
-        dict_json_data.sort(key=lambda item: item['sources'])
+        dict_json_data.sort(key=lambda item: filter(item['sources'].startswith(url_MyAnimeList)))
         print(json.dumps(dict_json_data, indent=2))
         
         print("\n\n ====== output_json ====== \n")
